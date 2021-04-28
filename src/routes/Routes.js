@@ -6,6 +6,7 @@ import Footer from '../components/Footer/Footer'
 import HomePage from '../components/HomePage/HomePage'
 import AuthContextProvider from '../contexts/AuthContext'
 import PrivateRoute from './PrivateRoutes';
+import Login from '../components/Loginin/Login';
 
 
 
@@ -21,6 +22,7 @@ const Routes = () => {
                         {/* <Route exact path='/login' component={SignIn} /> */}
                         {/* <Route exact path='/signup' component={SignUp} /> */}
                         {/* <Route exact path='/cart' component={Cart} /> */}
+                        <Route exact path='/login' component={Login}/>
                     </Switch>
                 </BrowserRouter>
             </AuthContextProvider>
