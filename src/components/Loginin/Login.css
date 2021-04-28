@@ -1,0 +1,31 @@
+
+
+.button{
+    color:blue
+}
+
+.app{
+    display: flex;
+    justify-content: center;
+   
+       
+}
+
+form{
+      margin: 100px;
+    width: 200px;
+}
+
+.some-class {
+    width:200px;
+    padding:20px;
+  }
+
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+
+ 
+
