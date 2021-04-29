@@ -5,5 +5,21 @@ ul {
     width: 35%;
 }
 ul li {
-    
+    width: 350px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color ease-in-out 0.2s;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+ul li a:hover {
+    color: #ff793a;
 }

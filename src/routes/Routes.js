@@ -7,6 +7,7 @@ import HomePage from '../components/HomePage/HomePage'
 import AuthContextProvider from '../contexts/AuthContext'
 import PrivateRoute from './PrivateRoutes';
 import Login from '../components/Loginin/Login';
+import Catalog1 from '../components/Products/Catalog1';
 
 
 
