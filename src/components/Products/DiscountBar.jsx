@@ -11,22 +11,17 @@ import Header from '../Header/Header';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-    productList__root: {
+    root: {
         flexGrow: 1,
         overflow: 'hidden',
         padding: theme.spacing(0, 3),
-        margin: '0 auto',
-        // display: "flex",
       },
       paper: {
         width: 800,
         margin: `${theme.spacing(1)}px auto`,
         padding: theme.spacing(2),
       },
-      productList__container: {
-          display: 'flex',
-          justifyContent: 'space-evenly'
-      }
+    
   }));
 
 
@@ -51,31 +46,22 @@ const ProductList = () => {
         getProductsData(history)}, []
     )
     return (
-            <Grid className={classes.productList__root} xs={10}>
-                <Grid className={classes.productList__container}>
-                    <Grid container item xs={8} spacing={6}>
-                        {
-                            productsData.map((item) => (
-                                <ProductCard xs={12} sm={12} className={classes.paper} item={item} key={item.id} />
-                                ))
-                            }
-                    </Grid>
-                    <Grid container item xs={3} spacing={6}>
-                        {
-                            productsData.map((item) => (
-                                <ProductCard xs={12} sm={12} className={classes.paper} item={item} key={item.id} />
-                                ))
-                            }
-                    </Grid>
-                </Grid>
-                <Pagination page={+page} onChange={(event, page) => {handlePage(event, page)}} count={paginationPages} color="primary" />
-                <Link exact to="/catalogue1">CLICK 1</Link>
-                <Link exact to="/catalogue2">CLICK 2</Link>
-                <Link exact to="/test">TEST</Link>
-                <Route exact path='/catalogue1' component={Catalog1}/>
-                <Route exact path='/catalogue2' component={Catalog2}/>
-                <Route exact path="/test" component={Header} />
+            <div className={classes.root}>
+            <Grid container item xs={8} spacing={6}>
+                {
+                    productsData.map((item) => (
+                        <ProductCard className={classes.paper} item={item} key={item.id} />
+                        ))
+                    }
             </Grid>
+            <Pagination page={+page} onChange={(event, page) => {handlePage(event, page)}} count={paginationPages} color="primary" />
+            <Link exact to="/catalogue1">CLICK 1</Link>
+            <Link exact to="/catalogue2">CLICK 2</Link>
+            <Link exact to="/test">TEST</Link>
+                    <Route exact path='/catalogue1' component={Catalog1}/>
+                    <Route exact path='/catalogue2' component={Catalog2}/>
+                    <Route exact path="/test" component={Header} />
+            </div>
     );
 }
 
