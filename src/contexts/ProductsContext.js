@@ -29,9 +29,9 @@ const ProductsContextProvider = ({ children }) => {
 
     const getProductsData = async (history) => {
         const search = new URLSearchParams(history.location.search)
-        search.set('_limit', 4)
+        search.set('_limit', 8)
         history.push(`${history.location.pathname}?${search.toString()}`)
-        let res = await axios(`${JSON_API}?_limit=4&${window.location.search}`)
+        let res = await axios(`${JSON_API}?_limit=8&${window.location.search}`)
         dispatch({
             type: "GET_PRODUCTS_DATA",
             payload: res

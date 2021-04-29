@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-.container{
+.footer__container{
    
     margin-right: auto;
     margin-left: auto;
@@ -16,7 +16,7 @@
     
 }
 
-.icons{
+.footer__container__icons{
     width: 45px;
     height: 45px;
     display: flex;
@@ -28,7 +28,7 @@
     
 }
  
-.main{
+.footer__container__main{
     font-size: 14px;
     display: flex;
     justify-content: center;
@@ -37,24 +37,24 @@
     margin: 20px;
 }
 
-.footer{
+.footer__container__footer{
     
     margin: 10px;
 }
-.block{
+.footer__container__block{
     display: flex;
     justify-content: center;
 }
 
 
-.href{
+.footer__container__href{
     display: flex;
     justify-content: space-between;
     
     
 }
 
-.text{
+.footer__container__text{
     font-size: 14px;
 }
 
@@ -75,6 +75,6 @@ a{
   
 
 
-.color{
+/* .color{
     color: white;
-}
+} */

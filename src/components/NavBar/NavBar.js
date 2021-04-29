@@ -26,7 +26,9 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     navbar__container: {
-        backgroundColor: "white"
+        backgroundColor: "white",
+        maxWidth: 1296,
+        margin: "0 auto"
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -91,6 +93,7 @@ const useStyles = makeStyles((theme) => ({
     },
     sectionDesktop: {
         display: 'none',
+        
         [theme.breakpoints.up('md')]: {
             display: 'flex',
         },
@@ -219,9 +222,9 @@ export default function Navbar() {
                         <MenuIcon className={classes.navbar__menuicon} />
                     </IconButton>
                         <ul>
-                            <li>КАТАЛОГ ПРОДУКЦИИ</li>
-                            <li>ПОДДЕРЖКА</li>
-                            <li>МОИ ПОКУПКИ</li>
+                            <li><Link>КАТАЛОГ ПРОДУКЦИИ</Link></li>
+                            <li><Link>ПОДДЕРЖКА</Link></li>
+                            <li><Link>МОИ ПОКУПКИ</Link></li>
                         </ul>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
@@ -238,20 +241,13 @@ export default function Navbar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    <div className={classes.grow} />
+                    {/* <div className={classes.grow} /> */}
                     <div className={classes.sectionDesktop}>
-                        <IconButton aria-label="show 4 new mails" color="inherit">
+                        {/* <IconButton aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="secondary">
                                 <MailIcon className={classes.navbaar__mailIcon} />
                             </Badge>
-                        </IconButton>
-                        <Link style={{color: "inherit"}} exact to="/cart" >
-                            <IconButton aria-label="show 17 new notifications" color="inherit">
-                                <Badge badgeContent={cartLength} color="secondary">
-                                    <ShoppingCartIcon className={classes.navbar__ShoppingCartIcon} />
-                                </Badge>
-                            </IconButton>
-                        </Link>
+                        </IconButton> */}
                         <IconButton
                             edge="end"
                             aria-label="account of current user"
@@ -262,6 +258,13 @@ export default function Navbar() {
                         >
                             <AccountCircle className={classes.navbar__AccountCircle} />
                         </IconButton>
+                        <Link style={{color: "inherit"}} exact to="/cart" >
+                            <IconButton aria-label="show 17 new notifications" color="inherit">
+                                <Badge badgeContent={cartLength} color="secondary">
+                                    <ShoppingCartIcon className={classes.navbar__ShoppingCartIcon} />
+                                </Badge>
+                            </IconButton>
+                        </Link>
                     </div>
                     <div className={classes.sectionMobile}>
                         <IconButton
