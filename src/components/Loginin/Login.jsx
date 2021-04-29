@@ -28,7 +28,6 @@ const Login = () => {
         }else{
             setEmailError("")
         }
-
     }
 
     const passwordHandler = (e) =>{
@@ -68,9 +67,7 @@ const Login = () => {
                 <Link to="/">
                 <button className='button' disabled={!formValid} type='submit'>Registration</button>
                 </Link>
-            </form>
-          
-            
+            </form>            
         </div>
     );
 };

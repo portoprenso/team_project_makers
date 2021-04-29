@@ -12,13 +12,17 @@ import { productsContext } from '../../contexts/ProductsContext';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: 345,
-        display: "flex"
+        // maxWidth: "100%",
+        width: "100%",
+        display: "flex",
+        border: "solid black 1px"
     },
     media: {
         backgroundSize: "contain",
-        width: 500,
-        paddingTop: '56.25%', // 16:9
+        // width: 500,
+        width: "25%",
+        minWidth: "10%",
+        // paddingTop: '56.25%', // 16:9
     },
     productCard__price: {
         alignSelf: 'center'

@@ -4,11 +4,13 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import ProductList from '../Products/ProductList';
 import Catalog1 from '../Products/Catalog1'
+import MainCarousel from '../Carousel/Carousel';
 
 const HomePage = () => {
     return (
         <div>
             <Header/>
+            <MainCarousel/>
             <ProductList />
             <Footer/>
         </div>

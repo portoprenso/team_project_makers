@@ -67,12 +67,13 @@ a:hover{
     color: orange;
     text-decoration: none;
     
-   } 
-a{
+}
+
+.footer__container__href a{
     text-decoration: none;
     color: hsla(0,0%,100%,.3);
 }
-  
+
 
 
 /* .color{
