@@ -13,7 +13,7 @@ import SignUp from '../components/Authorization/SignUp'
 import ForgotPassword from '../components/Authorization/ForgotPassword'
 import UpdateProfile from '../components/Authorization/UpdateProfile'
 import DashBoard from '../components/Authorization/DashBoard'
-import RpgPage from '../components/GenresPages/RpgPage'
+import GenresPages from '../components/GenresPages/GenresPages'
 
 
 
@@ -24,7 +24,7 @@ const Routes = () => {
                 <BrowserRouter>
                     <Header />
                     <Switch>
-                    <PrivateRoute exact path="/" component={HomePage} />
+                    <PrivateRoute exact path="/homepage/" component={HomePage} />
                     <PrivateRoute exact path="/profile" component={DashBoard} />
                     <PrivateRoute path="/update-profile" component={UpdateProfile} />
                         {/* <Route exact path='/cart' component={Cart} /> */}
@@ -32,7 +32,7 @@ const Routes = () => {
                         <Route exact path='/signup' component={SignUp} />
                         <Route exact path='/login' component={SignIn}/>
                         <Route exact path='/update-profile' component={UpdateProfile}/>
-                        <Route exact path='/rpg' component={RpgPage}/>
+                        <Route exact path='/catalogue' component={GenresPages}/>
                     </Switch>
                     <Footer />
                 </BrowserRouter>

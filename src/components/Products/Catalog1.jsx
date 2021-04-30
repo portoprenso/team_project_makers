@@ -49,6 +49,11 @@ const Catalog1 = () => {
     return (
         <div>
             <h1>CATALOGUE 1</h1>
+            <h1>CATALOGUE 1</h1>
+            <h1>CATALOGUE 1</h1>
+            <h1>CATALOGUE 1</h1>
+            <h1>CATALOGUE 1</h1>
+
         </div>
     );
 };

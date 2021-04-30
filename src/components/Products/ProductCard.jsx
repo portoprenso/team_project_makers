@@ -10,7 +10,14 @@ import Typography from '@material-ui/core/Typography';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { productsContext } from '../../contexts/ProductsContext';
 import { calcDiscountPercent } from '../../helpers/calcPrice'
-import { Button } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import EditIcon from '@material-ui/icons/Edit';
+import { JSON_API } from '../../helpers/constants'
+import axios from 'axios'
+import { useHistory } from 'react-router-dom'
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,8 +48,25 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ProductCard({ item }) {
+    const history = useHistory()
     const classes = useStyles();
-    const { addProductToCart, checkProductInCart } = useContext(productsContext)
+    const { addProductToCart, checkProductInCart, getProductsData } = useContext(productsContext)
+
+    console.log(history);
+
+    async function addNewProduct(newGame) {
+        await axios.post(JSON_API, newGame)
+        getProductsData(history)
+    }
+
+    async function deleteProduct(id) {
+        await axios.delete(`${JSON_API}/${id}`)
+        getProductsData(history)
+    }
+
+
+
+
     return (
         <Card className={classes.root}>
             <CardMedia
@@ -54,6 +78,15 @@ export default function ProductCard({ item }) {
                 title={<Typography variant="h7">{item.title}</Typography>}
                 subheader={<Typography color="textSecondary">{item.category}</Typography>}
             />
+            <Grid xs={1}>
+                <Button onClick={() => deleteProduct(item.id)}>
+                    <DeleteForeverIcon />
+                </Button>
+                <Button>
+                    <EditIcon />
+                </Button>
+            </Grid>
+
             {/* <CardContent>
                 <Typography variant="body2" color="textPrimary" component="p">
                     {item.description}
