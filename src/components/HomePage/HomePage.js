@@ -9,6 +9,7 @@ import MainCarousel from '../Carousel/Carousel';
 const HomePage = () => {
     return (
         <div>
+            <h1>some text</h1>
             <Header/>
             <MainCarousel/>
             <ProductList />
