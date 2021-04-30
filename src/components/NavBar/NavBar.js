@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     navbar__container: {
         backgroundColor: "white",
         maxWidth: 1296,
+        width: "100%",
         margin: "0 auto"
     },
     menuButton: {
@@ -112,6 +113,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Navbar() {
     const classes = useStyles();
     let history = useHistory()
+    console.log();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
     const [searchValue, setSearchValue] = useState(getSearchValue())
