@@ -58,7 +58,7 @@ const UpdateProfile = () => {
 
     }
     return (
-        <div>
+        <div className="profile">
             <>
             <Card>
                 <Card.Body className={classes.updateProfile__card}>
@@ -84,6 +84,7 @@ const UpdateProfile = () => {
             </Card>
             </>
         </div>
+
     );
 };
 
