@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
       },
       productList__container__discountbar:{
 
+      },
+      paginationClass:{
+        marginTop: 50
       }
   }));
 
@@ -72,13 +75,18 @@ const ProductList = () => {
                             }
                     </Grid>
                 </Grid>
-                <Pagination page={+page} onChange={(event, page) => {handlePage(event, page)}} count={paginationPages} color="primary" />
-                <Link exact to="/catalogue1">CLICK 1</Link>
-                <Link exact to="/catalogue2">CLICK 2</Link>
-                <Link exact to="/test">TEST</Link>
-                <Route exact path='/catalogue1' component={Catalog1}/>
-                <Route exact path='/catalogue2' component={Catalog2}/>
-                <Route exact path="/test" component={Header} />
+                <Pagination className={classes.paginationClass} page={+page} onChange={(event, page) => {handlePage(event, page)}} count={paginationPages} color="primary" />
+                {/* <Link exact to="/homepage/catalogue1">CLICK 1</Link>
+                <Link exact to="/homepage/catalogue2">CLICK 2</Link>
+                <Link exact to="/homepage/test">TEST</Link>
+                
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path='/homepage/catalogue1' component={Catalog1}/>
+                        <Route exact path='/homepage/catalogue2' component={Catalog2}/>
+                        <Route exact path="/homepage/test" component={Header} />
+                    </Switch>
+                </BrowserRouter> */}
             </Grid>
     );
 }

@@ -1,10 +1,10 @@
-ul {
+.navbar__ul {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     width: 35%;
 }
-ul li {
+.navbar__ul li {
     width: 350px;
     display: flex;
     text-align: center;
@@ -12,7 +12,7 @@ ul li {
     justify-content: center;
 }
 
-ul li a {
+.navbar__ul li a {
     text-decoration: none;
     color: inherit;
     transition: color ease-in-out 0.2s;
@@ -20,6 +20,6 @@ ul li a {
     font-size: 14px;
     text-transform: uppercase;
 }
-ul li a:hover {
+.navbar__ul li a:hover {
     color: #ff793a;
 }

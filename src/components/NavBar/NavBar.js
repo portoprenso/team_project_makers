@@ -212,7 +212,7 @@ export default function Navbar() {
         <div className={classes.grow}>
             <AppBar position="static" color="text.primary">
                 <Toolbar className={classes.navbar__container}>
-                    <Link style={{color: "inherit", textDecoration: "none"}} exact to="/">
+                    <Link style={{color: "inherit", textDecoration: "none"}} exact to="/homepage">
                         <img src={Logo} className={classes.navbar__logo}/>
                     </Link>
                     <IconButton
@@ -223,11 +223,11 @@ export default function Navbar() {
                     >
                         <MenuIcon className={classes.navbar__menuicon} />
                     </IconButton>
-                        <ul>
-                            <li><Link>КАТАЛОГ ПРОДУКЦИИ</Link></li>
-                            <li><Link>ПОДДЕРЖКА</Link></li>
-                            <li><Link>МОИ ПОКУПКИ</Link></li>
-                        </ul>
+                    <ul className="navbar__ul">
+                        <li><Link exact to="/catalogue">КАТАЛОГ ПРОДУКЦИИ</Link></li>
+                        <li><Link>ПОДДЕРЖКА</Link></li>
+                        <li><Link>МОИ ПОКУПКИ</Link></li>
+                    </ul>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />

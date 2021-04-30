@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-const ProductList = (props) => {
+const GenresPages = (props) => {
     const classes = useStyles()
     const history = useHistory()
     const { getProductsData, productsData, paginationPages } = useContext(productsContext)
@@ -78,4 +78,4 @@ const ProductList = (props) => {
     );
 }
 
-export default ProductList;
+export default GenresPages;

@@ -108,6 +108,16 @@ const ProductsContextProvider = ({ children }) => {
         return newCart.length > 0 ? true : false
     }
 
+    // async function addNewProduct(newGame) {
+    //     await axios.post(JSON_API, newGame)
+    //     getProductsData(history)
+    // }
+
+    // async function deleteProduct(id) {
+    //     await axios.delete(`${JSON_API}/${id}`)
+    //     getProductsData(history)
+    // }
+
 
     const [state, dispatch] = useReducer(reducer, INIT_STATE)
 
@@ -120,7 +130,9 @@ const ProductsContextProvider = ({ children }) => {
         addProductToCart,
         getCart,
         changeProductCount,
-        checkProductInCart
+        checkProductInCart,
+        // addNewProduct,
+        // deleteProduct
     }
 
     return (
