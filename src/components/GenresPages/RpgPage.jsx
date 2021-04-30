@@ -8,6 +8,7 @@ import AuthContextProvider, {authContext} from "../../contexts/AuthContext";
 import Header from '../Header/Header';
 import { makeStyles } from '@material-ui/core/styles';
 import ProductCardSmall from '../Products/ProductCardSmall';
+import SideBar from '../SideBar/SideBar';
 
 const useStyles = makeStyles((theme) => ({
     productList__root: {
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-const ProductList = () => {
+const ProductList = (props) => {
     const classes = useStyles()
     const history = useHistory()
     const { getProductsData, productsData, paginationPages } = useContext(productsContext)
@@ -63,13 +64,14 @@ const ProductList = () => {
                                 ))
                             }
                     </Grid>
-                    <Grid className={classes.productList__container__discountbar} container item xs={3} spacing={6}>
+                    {/* <Grid className={classes.productList__container__discountbar} container item xs={3} spacing={6}>
                         {
                             productsData.map((item) => (
                                 <ProductCardSmall xs={12} sm={12} className={classes.paper} item={item} key={item.id} />
                                 ))
                             }
-                    </Grid>
+                    </Grid> */}
+                    <SideBar {...props}/>
                 </Grid>
                 <Pagination page={+page} onChange={(event, page) => {handlePage(event, page)}} count={paginationPages} color="primary" />
             </Grid>
