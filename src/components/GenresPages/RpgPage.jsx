@@ -1,15 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react';
 import ProductsContextProvider, {productsContext} from "../../contexts/ProductsContext";
-import {Button, Grid} from "@material-ui/core";
-import ProductCard from "./ProductCard";
+import {Button, Grid, Typography} from "@material-ui/core";
+import ProductCard from "../Products/ProductCard";
 import Pagination from '@material-ui/lab/Pagination';
 import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom'
 import AuthContextProvider, {authContext} from "../../contexts/AuthContext";
-import Catalog1 from './Catalog1';
-import Catalog2 from './Catalog2';
 import Header from '../Header/Header';
 import { makeStyles } from '@material-ui/core/styles';
-import ProductCardSmall from './ProductCardSmall';
+import ProductCardSmall from '../Products/ProductCardSmall';
 
 const useStyles = makeStyles((theme) => ({
     productList__root: {
@@ -56,6 +54,7 @@ const ProductList = () => {
     )
     return (
             <Grid className={classes.productList__root} xs={11}>
+                <Typography className={classes.productCard__price} align="center" variant="h4" color="textPrimary">Ролевые игры</Typography>
                 <Grid className={classes.productList__container}>
                     <Grid className={classes.productList__container__mainbar} container item xs={8} spacing={6}>
                         {
@@ -73,12 +72,6 @@ const ProductList = () => {
                     </Grid>
                 </Grid>
                 <Pagination page={+page} onChange={(event, page) => {handlePage(event, page)}} count={paginationPages} color="primary" />
-                <Link exact to="/catalogue1">CLICK 1</Link>
-                <Link exact to="/catalogue2">CLICK 2</Link>
-                <Link exact to="/test">TEST</Link>
-                <Route exact path='/catalogue1' component={Catalog1}/>
-                <Route exact path='/catalogue2' component={Catalog2}/>
-                <Route exact path="/test" component={Header} />
             </Grid>
     );
 }

@@ -9,10 +9,10 @@ import MainCarousel from '../Carousel/Carousel';
 const HomePage = () => {
     return (
         <div>
-            <Header/>
+            {/* <Header/> */}
             <MainCarousel/>
             <ProductList />
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     );
 };
