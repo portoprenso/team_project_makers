@@ -16,7 +16,7 @@ const INIT_STATE = {
 const reducer = (state=INIT_STATE, action) =>{
     switch(action.type){
         case "GET_PRODUCTS_DATA":
-            return {...state, productsData: action.payload.data, paginationPages: Math.ceil(action.payload.headers["x-total-count"] / 4)}
+            return {...state, productsData: action.payload.data, paginationPages: Math.ceil(action.payload.headers["x-total-count"] / 8)}
         case 'GET_CART':
             return {...state, cart: action.payload}
         case 'CHANGE_COUNT':

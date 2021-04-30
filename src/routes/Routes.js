@@ -13,6 +13,8 @@ import SignUp from '../components/Authorization/SignUp'
 import ForgotPassword from '../components/Authorization/ForgotPassword'
 import UpdateProfile from '../components/Authorization/UpdateProfile'
 import DashBoard from '../components/Authorization/DashBoard'
+import RpgPage from '../components/GenresPages/RpgPage'
+
 
 
 const Routes = () => {
@@ -20,19 +22,19 @@ const Routes = () => {
         <ProductsContextProvider>
             <AuthContextProvider>
                 <BrowserRouter>
+                    <Header />
                     <Switch>
                     <PrivateRoute exact path="/" component={HomePage} />
                     <PrivateRoute exact path="/profile" component={DashBoard} />
                     <PrivateRoute path="/update-profile" component={UpdateProfile} />
-                        {/* <Route exact path='/login' component={SignIn} /> */}
                         {/* <Route exact path='/cart' component={Cart} /> */}
-                        
-                        
                         <Route exact path='/forgot-password' component={ForgotPassword} />
                         <Route exact path='/signup' component={SignUp} />
                         <Route exact path='/login' component={SignIn}/>
                         <Route exact path='/update-profile' component={UpdateProfile}/>
+                        <Route exact path='/rpg' component={RpgPage}/>
                     </Switch>
+                    <Footer />
                 </BrowserRouter>
             </AuthContextProvider>
         </ProductsContextProvider>

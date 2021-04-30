@@ -12,13 +12,14 @@ import { productsContext } from '../../contexts/ProductsContext';
 import { calcDiscountPercent } from '../../helpers/calcPrice'
 import { Button } from '@material-ui/core';
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
         // maxWidth: "100%",
         width: "100%",
         display: "flex",
         border: "solid black 1px",
-        padding: 20,
+        padding: 5,
         justifyContent: "space-between"
     },
     media: {
@@ -28,19 +29,31 @@ const useStyles = makeStyles((theme) => ({
         minWidth: "10%",
         // paddingTop: '56.25%', // 16:9
     },
-    productCard__price: {
+    productCardSmall__price: {
         alignSelf: 'center',
         display: 'flex',
-        // flexDirection: 'column'
+        flexDirection: 'column',
         alignItems: 'center',
         width: '25%'
     },
-    productCard__header: {
-        width: '40%'
+    productCardSmall__header: {
+        width: '50%',
+        padding: 5
+    },
+    productCardSmall__header__div:{
+        fontSize: 10
+    },
+    productCardSmall__price__icon:{
+        padding: 1
+    },
+    productCardSmall__discountButton:{
+        maxHeight: "100%",
+        height: "40%",
+        alignSelf: 'center'
     }
 }));
 
-export default function ProductCard({ item }) {
+export default function ProductCardSmall({ item }) {
     const classes = useStyles();
     const { addProductToCart, checkProductInCart } = useContext(productsContext)
     return (
@@ -50,20 +63,21 @@ export default function ProductCard({ item }) {
                 image={item.image}
                 title={item.title}
             />
-            <CardHeader className={classes.productCard__header}
-                title={<Typography variant="h7">{item.title}</Typography>}
-                subheader={<Typography color="textSecondary">{item.category}</Typography>}
+            <CardHeader className={classes.productCardSmall__header}
+                // title={<Typography variant="body1">{item.title}</Typography>}
+                title={<div className={classes.productCardSmall__header__div}>{item.title}</div>}
+                // subheader={<Typography color="textSecondary">{item.category}</Typography>}
             />
+                <Button className={classes.productCardSmall__discountButton} variant="contained" color="primary">{`-${calcDiscountPercent(item.oldPrice, item.price)}%`}</Button>
             {/* <CardContent>
                 <Typography variant="body2" color="textPrimary" component="p">
                     {item.description}
                 </Typography>
             </CardContent> */}
-                <Typography className={classes.productCard__price} align="center" variant="h5" color="textPrimary" component="p">
-                    <Button variant="contained" color="primary">{`-${calcDiscountPercent(item.oldPrice, item.price)}%`}</Button>
+                <Typography className={classes.productCardSmall__price} align="center" variant="h6" color="textPrimary">
                     {`${item.price}с`}
                     <CardActions disableSpacing>
-                        <IconButton onClick={() =>
+                        <IconButton className={classes.productCardSmall__price__icon} onClick={() =>
                         {addProductToCart(item)}}
                         aria-label="share"
                         color={checkProductInCart(item.id) ? "secondary" : "primary"}>
