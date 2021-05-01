@@ -14,12 +14,14 @@ const DashBoard = ({title, body}) => {
     // console.log(createCookie)
     const { addNewProduct } = useContext(productsContext)
     const [error, setError] = useState("")
+    const [perc, setPerc] = useState(0)
     const { currentUser, logout } = useAuth()
     const history = useHistory()
     const titleRef = useRef()
     const descriptionRef = useRef()
     const priceRef = useRef()
     const oldPriceRef = useRef()
+    const discountPercentPriceRef = useRef()
     const authorRef = useRef()
     const categoryRef = useRef()
     const imageRef = useRef()
@@ -43,6 +45,7 @@ const DashBoard = ({title, body}) => {
           description: descriptionRef.current.value,
           price: priceRef.current.value,
           oldPrice: oldPriceRef.current.value,
+          discountPercent: discountPercentPriceRef.current.value,
           author: authorRef.current.value,
           category: categoryRef.current.value,
           image: imageRef.current.value,
@@ -50,6 +53,22 @@ const DashBoard = ({title, body}) => {
           countInStock: countInStockRef.current.value
         }
         await addNewProduct(newObj, history)
+        titleRef.current.value = null
+        descriptionRef.current.value = null
+        priceRef.current.value = null 
+        oldPriceRef.current.value = null
+        discountPercentPriceRef.current.value = null
+        authorRef.current.value = null 
+        categoryRef.current.value = null 
+        imageRef.current.value = null 
+        imageLargeRef.current.value = null 
+        countInStockRef.current.value = null
+
+    }
+
+    function calcDiscountpercent(first, second){
+        let discount = Math.ceil(100 - ( first / second )*100)
+        setPerc(discount)
     }
 
 
@@ -104,7 +123,11 @@ const DashBoard = ({title, body}) => {
       </Grid>
       <Grid className="inp-type__inputContainers">
         <Typography variant='h6'>Цена без скидки</Typography>
-        <TextareaAutosize className="inp-type__input" ref={oldPriceRef} placeholder="Цена без скидки"/>
+        <TextareaAutosize onChange={() => calcDiscountpercent(priceRef.current.value, oldPriceRef.current.value)} className="inp-type__input" ref={oldPriceRef} placeholder="Цена без скидки"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Процент скидки</Typography>
+        <TextareaAutosize className="inp-type__input" ref={discountPercentPriceRef} value={perc} placeholder="Процент скидки"/>
       </Grid>
       <Grid className="inp-type__inputContainers">
         <Typography variant='h6'>Издатель</Typography>
@@ -126,7 +149,7 @@ const DashBoard = ({title, body}) => {
         <Typography variant='h6'>Количество в наличии</Typography>
         <TextareaAutosize className="inp-type__input" ref={countInStockRef} placeholder="Количество в наличии"/>
       </Grid>
-      <Button onClick={() => handleChange()} color="primary" variant="contained">Отправить</Button>
+      <Button onClick={() => handleChange()} color="primary" variant="contained">Добавить новый товар</Button>
     </form>
     </div>
     </div>

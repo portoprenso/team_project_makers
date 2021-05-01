@@ -8,8 +8,20 @@ import AuthContextProvider, {authContext} from "../../contexts/AuthContext";
 import Catalog1 from './Catalog1';
 import Catalog2 from './Catalog2';
 import Header from '../Header/Header';
-import { makeStyles } from '@material-ui/core/styles';
 import ProductCardSmall from './ProductCardSmall';
+import PropTypes from 'prop-types';
+import SwipeableViews from 'react-swipeable-views';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import { JSON_API } from '../../helpers/constants'
+import axios from 'axios'
+
+
+// useStyles start here ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
 const useStyles = makeStyles((theme) => ({
     productList__root: {
@@ -19,33 +31,108 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 auto',
         // display: "flex",
       },
-      paper: {
-        // margin: `${theme.spacing(1)}px auto`,
-        // padding: theme.spacing(2),
-      },
       productList__container: {
           display: 'flex',
           justifyContent: 'space-evenly',
-          marginTop: 50
+          marginTop: 50,
       },
       productList__container__discountbar:{
 
       },
       paginationClass:{
         marginTop: 50
+      },
+      root: {
+        backgroundColor: theme.palette.background.paper,
+        width: "60%",
+      },
+      discountText: {
+          height: 10,
+        //   marginBottom: 10
+      },
+      paperSmall: {
+          height: 10
       }
   }));
 
+  // useStyles end here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
-const ProductList = () => {
+  function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+  
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`full-width-tabpanel-${index}`}
+        aria-labelledby={`full-width-tab-${index}`}
+        {...other}
+      >
+        {value === index && (
+          <Box p={3}>
+            <Typography>{children}</Typography>
+          </Box>
+        )}
+      </div>
+    );
+  }
+  
+  TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.any.isRequired,
+    value: PropTypes.any.isRequired,
+  };
+
+  function a11yProps(index) {
+    return {
+      id: `full-width-tab-${index}`,
+      'aria-controls': `full-width-tabpanel-${index}`,
+    };
+  }
+  
+
+
+const ProductList = (props) => {
     const classes = useStyles()
+    const theme = useTheme();
     const history = useHistory()
-    const { getProductsData, productsData, paginationPages } = useContext(productsContext)
+    const [value, setValue] = React.useState(0);
+    const [testDiscount, settestDiscount] = useState(0);
+
+    const getTestDiscount = async (history) => {
+        let res = await axios(`${JSON_API}?_limit=8&${window.location.search}&_sort=discountPercent&_order=desc`)
+        settestDiscount(res)
+        console.log(res.data);
+    }
+
+
+    const {
+        getProductsData,
+        productsData,
+        paginationPages,
+        getProductsDataIdSorted,
+        getProductsDataStockSorted,
+        getProductsDataExpectedSorted,
+        getProductsDataDiscountSorted,
+        productsWithDiscount
+    } = useContext(productsContext)
     function getPage() {
         const search = new URLSearchParams(history.location.search)
         // console.log(history);
         return search.get('_page')
     }
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+      };
+
+    const handleChangeIndex = (index) => {
+        setValue(index);
+    };
+    
+
+    
+
     const [page, setPage] = useState(getPage())
     const handlePage = (event, page) => {
         const search = new URLSearchParams(history.location.search)
@@ -53,40 +140,85 @@ const ProductList = () => {
         history.push(`${history.location.pathname}?${search.toString()}`)
         setPage(page)
         getProductsData(history)
+        getProductsDataDiscountSorted();
     }
     useEffect(() => {
-        getProductsData(history)}, []
+        getProductsData(history);
+        getTestDiscount(history)
+        // getProductsDataDiscountSorted(history);
+        // console.log(productsWithDiscount);
+    }
+        , []
     )
     return (
             <Grid className={classes.productList__root} xs={11}>
                 <Grid className={classes.productList__container}>
-                    <Grid className={classes.productList__container__mainbar} container item xs={8} spacing={6}>
+
+
+                    <div className={classes.root}>
+                        <AppBar position="static" color="default">
+                            <Tabs
+                            value={value}
+                            onChange={handleChange}
+                            indicatorColor="primary"
+                            textColor="primary"
+                            variant="fullWidth"
+                            aria-label="full width tabs example"
+                            >
+                            <Tab onClick={() => getProductsDataIdSorted(history)} label="Новинки" {...a11yProps(0)} />
+                            <Tab onClick={() => getProductsDataStockSorted(history)} label="В наличии" {...a11yProps(1)} />
+                            <Tab onClick={() => getProductsDataExpectedSorted(history)} label="Ожидаемые" {...a11yProps(2)} />
+                            </Tabs>
+                        </AppBar>
+                        <SwipeableViews
+                            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+                            index={value}
+                            onChangeIndex={handleChangeIndex}
+                        >
+                            <TabPanel value={value} index={0} dir={theme.direction}>
+                                <Grid className={classes.productList__container__mainbar} container item spacing={4}>
+                                    {
+                                    productsData.map((item) => (
+                                        <ProductCard xs={12} sm={12} className={classes.paper} item={item} key={item.id} />
+                                        ))
+                                    }
+                                </Grid>
+                            </TabPanel>
+                            <TabPanel value={value} index={1} dir={theme.direction}>
+                                <Grid className={classes.productList__container__mainbar} container item spacing={4}>
+                                    {
+                                    productsData.map((item) => (
+                                        <ProductCard xs={12} sm={12} className={classes.paper} item={item} key={item.id} />
+                                        ))
+                                    }
+                                </Grid>
+                            </TabPanel>
+                            <TabPanel value={value} index={2} dir={theme.direction}>
+                                <Grid className={classes.productList__container__mainbar} container item spacing={4}>
+                                    {
+                                    productsData.map((item) => (
+                                        <ProductCard xs={12} sm={12} className={classes.paper} item={item} key={item.id} />
+                                        ))
+                                    }
+                                </Grid>
+                            </TabPanel>
+                        </SwipeableViews>
+                    </div>
+
+
+
+                    <Grid className={classes.productList__container__discountbar} container item xs={3}>
+                    <Typography variant="h4" className={classes.discountText}>Скидки</Typography>
                         {
-                            productsData.map((item) => (
-                                <ProductCard xs={12} sm={12} className={classes.paper} item={item} key={item.id} />
-                                ))
-                            }
-                    </Grid>
-                    <Grid className={classes.productList__container__discountbar} container item xs={3} spacing={6}>
-                        {
-                            productsData.map((item) => (
-                                <ProductCardSmall xs={12} sm={12} className={classes.paper} item={item} key={item.id} />
-                                ))
+                            testDiscount ?
+                            (testDiscount && testDiscount.data.map((item) => (
+                                <ProductCardSmall xs={12} sm={12} item={item} key={item.id} />
+                                ))) 
+                                : (<div>asd</div>)
                             }
                     </Grid>
                 </Grid>
                 <Pagination className={classes.paginationClass} page={+page} onChange={(event, page) => {handlePage(event, page)}} count={paginationPages} color="primary" />
-                {/* <Link exact to="/homepage/catalogue1">CLICK 1</Link>
-                <Link exact to="/homepage/catalogue2">CLICK 2</Link>
-                <Link exact to="/homepage/test">TEST</Link>
-                
-                <BrowserRouter>
-                    <Switch>
-                        <Route exact path='/homepage/catalogue1' component={Catalog1}/>
-                        <Route exact path='/homepage/catalogue2' component={Catalog2}/>
-                        <Route exact path="/homepage/test" component={Header} />
-                    </Switch>
-                </BrowserRouter> */}
             </Grid>
     );
 }

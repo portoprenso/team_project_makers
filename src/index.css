@@ -2,6 +2,10 @@
     font-family: Arial, Helvetica, sans-serif, Helvetica Neue
 }
 
+body{
+    background-color: #f3f3f3;
+}
+
 @font-face {
     font-family: 'Helvetica Neue';
     src: local('Helvetica Neue Light'), local('Helvetica-Neue-Light'),

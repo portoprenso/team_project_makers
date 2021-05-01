@@ -47,7 +47,7 @@ const Login = () => {
             <>
             <Card>
                 <div className={classes.signin__card}>
-                    <h2 className={classes.signin__card__h2}>Log in</h2>
+                    <h2 className={classes.signin__card__h2}>Авторизация</h2>
                     {error && <Alert variant="danger">{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">
@@ -55,16 +55,16 @@ const Login = () => {
                             <Form.Control type="email" ref={emailRef} required />
                         </Form.Group>
                         <Form.Group id="password">
-                            <Form.Label>Password</Form.Label>
+                            <Form.Label>Пароль</Form.Label>
                             <Form.Control type="password" ref={passwordRef} required />
                         </Form.Group>
-                        <Button disabled={loading} className="w-100" type="submit">Log in</Button>
+                        <Button disabled={loading} className="w-100" type="submit">Авторизоваться</Button>
                     </Form>
                     <div className="w-100 text-center mt-3">
-                        <Link to='/forgot-password'>Forgot Password?</Link>
+                        <Link to='/forgot-password'>Забыли пароль?</Link>
                     </div>
                     <div className="w-100 text-center mt-2">
-                        Need an account? <Link to="/signup">Sign Up</Link>
+                        Нужен аккаунт? <Link to="/signup">Зарегистрироваться</Link>
                     </div>
                 </div>
             </Card>
