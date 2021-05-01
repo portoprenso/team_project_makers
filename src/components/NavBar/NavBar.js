@@ -19,6 +19,7 @@ import {productsContext} from "../../contexts/ProductsContext";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Logo from '../../assets/img/logo.svg'
 
+
 import './NavBar.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -162,7 +163,7 @@ export default function Navbar() {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+            <Link exact to="/profile"><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
             <MenuItem onClick={handleMenuClose}>My account</MenuItem>
         </Menu>
     );

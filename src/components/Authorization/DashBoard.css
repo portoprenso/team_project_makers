@@ -77,3 +77,11 @@ a{
 .fff{
     display: flex;
 }
+
+.dashboard__updateButton{
+    margin: 30px;
+}
+
+.dashboard__logoutButton{
+    margin: 0 auto;
+}
