@@ -50,22 +50,9 @@ const useStyles = makeStyles((theme) => ({
 export default function ProductCard({ item }) {
     const history = useHistory()
     const classes = useStyles();
-    const { addProductToCart, checkProductInCart, getProductsData, addNewProduct, deleteProduct } = useContext(productsContext)
+    const { addProductToCart, checkProductInCart, getProductsData, deleteProduct } = useContext(productsContext)
 
-    console.log(history);
-
-    // async function addNewProduct(newGame) {
-    //     await axios.post(JSON_API, newGame)
-    //     getProductsData(history)
-    // }
-
-    // async function deleteProduct(id) {
-    //     await axios.delete(`${JSON_API}/${id}`)
-    //     getProductsData(history)
-    // }
-
-
-
+    // console.log(history);
 
     return (
         <Card className={classes.root}>
@@ -86,12 +73,6 @@ export default function ProductCard({ item }) {
                     <EditIcon />
                 </Button>
             </Grid>
-
-            {/* <CardContent>
-                <Typography variant="body2" color="textPrimary" component="p">
-                    {item.description}
-                </Typography>
-            </CardContent> */}
                 <Typography className={classes.productCard__price} align="center" variant="h5" color="textPrimary" component="p">
                     <Button variant="contained" color="primary">{`-${calcDiscountPercent(item.oldPrice, item.price)}%`}</Button>
                     {`${item.price}с`}
