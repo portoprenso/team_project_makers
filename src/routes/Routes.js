@@ -14,6 +14,7 @@ import ForgotPassword from '../components/Authorization/ForgotPassword'
 import UpdateProfile from '../components/Authorization/UpdateProfile'
 import DashBoard from '../components/Authorization/DashBoard'
 import GenresPages from '../components/GenresPages/GenresPages'
+import Cart from '../components/Cart/Cart';
 
 
 
@@ -26,7 +27,7 @@ const Routes = () => {
                     <Switch>
                     <PrivateRoute exact path="/profile" component={DashBoard} />
                     <PrivateRoute path="/update-profile" component={UpdateProfile} />
-                        {/* <Route exact path='/cart' component={Cart} /> */}
+                        <Route exact path='/cart' component={Cart} />
                         <Route exact path="/homepage/" component={HomePage} />
                         <Route exact path="/">
                             <Redirect to="/homepage"/>

@@ -13,7 +13,8 @@ const INIT_STATE = {
     productDetails: {},
     paginationPages: 1,
     cart: {},
-    cartLength: getCountProductsInCart()
+    cartLength: getCountProductsInCart(),
+    productsWithDiscount: []
 }
 
 const reducer = (state=INIT_STATE, action) =>{
@@ -24,6 +25,8 @@ const reducer = (state=INIT_STATE, action) =>{
             return {...state, cart: action.payload}
         case 'CHANGE_COUNT':
             return {...state, cartLength: action.payload}
+        case 'GET_PRODUCTS_DATA_WITH_DISCOUNT':
+            return {...state, productsWithDiscount: action.payload}
         default: return state
     }
 }
@@ -40,6 +43,66 @@ const ProductsContextProvider = ({ children }) => {
             payload: res
         })
     }
+
+    const getProductsDataIdSorted = async (history) => {
+        const search = new URLSearchParams(history.location.search)
+        search.set('_limit', 8)
+        search.delete('_sort')
+        search.delete('_order')
+        search.delete('countInStock_gte')
+        search.delete('countInStock_lte')
+        search.set('_sort', "id")
+        search.set('_order', "desc")
+        history.push(`${history.location.pathname}?${search.toString()}`)
+        let res = await axios(`${JSON_API}?_limit=8&${window.location.search}`)
+        dispatch({
+            type: "GET_PRODUCTS_DATA",
+            payload: res
+        })
+    }
+
+
+    const getProductsDataStockSorted = async (history) => {
+        const search = new URLSearchParams(history.location.search)
+        search.set('_limit', 8)
+        search.delete('_sort')
+        search.delete('_order')
+        search.delete('countInStock_lte')
+        search.set('countInStock_gte', 1)
+        history.push(`${history.location.pathname}?${search.toString()}`)
+        let res = await axios(`${JSON_API}?_limit=8&${window.location.search}`)
+        dispatch({
+            type: "GET_PRODUCTS_DATA",
+            payload: res
+        })
+    }
+
+
+    const getProductsDataExpectedSorted = async (history) => {
+        const search = new URLSearchParams(history.location.search)
+        search.set('_limit', 8)
+        search.delete('_sort')
+        search.delete('_order')
+        search.delete('countInStock_gte')
+        search.set('countInStock_lte', 1)
+        history.push(`${history.location.pathname}?${search.toString()}`)
+        let res = await axios(`${JSON_API}?_limit=8&${window.location.search}`)
+        dispatch({
+            type: "GET_PRODUCTS_DATA",
+            payload: res
+        })
+    }
+
+
+    const getProductsDataDiscountSorted = async (history) => {
+        let res = await axios(`${JSON_API}?_limit=8&${window.location.search}&_sort=discountPercent&_order=desc`)
+        dispatch({
+            type: "GET_PRODUCTS_DATA_WITH_DISCOUNT",
+            payload: res
+        })
+    }
+
+
 
     function addProductToCart(product) {
         let cart = JSON.parse(localStorage.getItem('cart'))
@@ -129,13 +192,18 @@ const ProductsContextProvider = ({ children }) => {
         paginationPages: state.paginationPages,
         cartLength: state.cartLength,
         cart: state.cart,
+        productsWithDiscount: state.productsWithDiscount,
         getProductsData,
+        getProductsDataIdSorted,
         addProductToCart,
         getCart,
         changeProductCount,
         checkProductInCart,
         addNewProduct,
-        deleteProduct
+        deleteProduct,
+        getProductsDataStockSorted,
+        getProductsDataExpectedSorted,
+        getProductsDataDiscountSorted
     }
 
     return (

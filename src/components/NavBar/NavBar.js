@@ -163,8 +163,8 @@ export default function Navbar() {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <Link exact to="/profile"><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            <Link exact to="/profile"><MenuItem onClick={handleMenuClose}>Мой профиль</MenuItem></Link>
+            {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
         </Menu>
     );
 
@@ -236,7 +236,7 @@ export default function Navbar() {
                         <InputBase
                             value={searchValue}
                             onChange={handleValue}
-                            placeholder="Search…"
+                            placeholder="Поиск игр..."
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,

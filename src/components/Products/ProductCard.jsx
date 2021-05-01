@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
         // maxWidth: "100%",
         width: "100%",
         display: "flex",
-        border: "solid black 1px",
         padding: 20,
         justifyContent: "space-between"
     },
@@ -50,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ProductCard({ item }) {
     const history = useHistory()
     const classes = useStyles();
-    const { addProductToCart, checkProductInCart, getProductsData, deleteProduct } = useContext(productsContext)
+    const { addProductToCart, checkProductInCart, deleteProduct } = useContext(productsContext)
 
     // console.log(history);
 

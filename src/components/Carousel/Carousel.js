@@ -7,7 +7,7 @@ import './Carousel.css'
 
 const MainCarousel = () => {
     return (
-        <Carousel showThumbs={false}>
+        <Carousel className="carouselContainer" showThumbs={false}>
         <div className="video">
             {/* <img className="foto" src={Dota} alt="logo" /> */}
             <video autoplay="autoplay" src="https://cdn-prod.mortalkombat.com/roster/spawn/video.mp4" muted loop></video>
@@ -19,7 +19,7 @@ const MainCarousel = () => {
         </div>
       
         
-    </Carousel>
+        </Carousel>
         );
 };
 
