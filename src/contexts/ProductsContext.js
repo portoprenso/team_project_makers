@@ -3,6 +3,9 @@ import { JSON_API } from '../helpers/constants'
 import axios from 'axios'
 import { calcSubPrice, calcTotalPrice } from "../helpers/calcPrice"
 import { getCountProductsInCart } from '../helpers/calcPrice'
+import { useHistory } from 'react-router';
+
+
 
 export const productsContext = React.createContext();
 const INIT_STATE = {
@@ -26,7 +29,7 @@ const reducer = (state=INIT_STATE, action) =>{
 }
 
 const ProductsContextProvider = ({ children }) => {
-
+    const history = useHistory()
     const getProductsData = async (history) => {
         const search = new URLSearchParams(history.location.search)
         search.set('_limit', 8)
@@ -108,15 +111,15 @@ const ProductsContextProvider = ({ children }) => {
         return newCart.length > 0 ? true : false
     }
 
-    // async function addNewProduct(newGame) {
-    //     await axios.post(JSON_API, newGame)
-    //     getProductsData(history)
-    // }
+    async function addNewProduct(newGame, story) {
+        await axios.post(JSON_API, newGame)
+        getProductsData(story)
+    }
 
-    // async function deleteProduct(id) {
-    //     await axios.delete(`${JSON_API}/${id}`)
-    //     getProductsData(history)
-    // }
+    async function deleteProduct(id, story) {
+        await axios.delete(`${JSON_API}/${id}`)
+        getProductsData(story)
+    }
 
 
     const [state, dispatch] = useReducer(reducer, INIT_STATE)
@@ -131,8 +134,8 @@ const ProductsContextProvider = ({ children }) => {
         getCart,
         changeProductCount,
         checkProductInCart,
-        // addNewProduct,
-        // deleteProduct
+        addNewProduct,
+        deleteProduct
     }
 
     return (

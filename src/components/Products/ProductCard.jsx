@@ -50,19 +50,19 @@ const useStyles = makeStyles((theme) => ({
 export default function ProductCard({ item }) {
     const history = useHistory()
     const classes = useStyles();
-    const { addProductToCart, checkProductInCart, getProductsData } = useContext(productsContext)
+    const { addProductToCart, checkProductInCart, getProductsData, addNewProduct, deleteProduct } = useContext(productsContext)
 
     console.log(history);
 
-    async function addNewProduct(newGame) {
-        await axios.post(JSON_API, newGame)
-        getProductsData(history)
-    }
+    // async function addNewProduct(newGame) {
+    //     await axios.post(JSON_API, newGame)
+    //     getProductsData(history)
+    // }
 
-    async function deleteProduct(id) {
-        await axios.delete(`${JSON_API}/${id}`)
-        getProductsData(history)
-    }
+    // async function deleteProduct(id) {
+    //     await axios.delete(`${JSON_API}/${id}`)
+    //     getProductsData(history)
+    // }
 
 
 
@@ -79,7 +79,7 @@ export default function ProductCard({ item }) {
                 subheader={<Typography color="textSecondary">{item.category}</Typography>}
             />
             <Grid xs={1}>
-                <Button onClick={() => deleteProduct(item.id)}>
+                <Button onClick={() => deleteProduct(item.id, history)}>
                     <DeleteForeverIcon />
                 </Button>
                 <Button>

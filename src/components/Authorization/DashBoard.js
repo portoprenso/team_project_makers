@@ -47,10 +47,6 @@ const DashBoard = ({title, body}) => {
       </div>
       <div className="btn">
         <button>
-          <a>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias debitis fuga! Dolores, laboriosam quod at facilis ipsam ipsa ipsum harum, tempora natus excepturi esse praesentium. Libero optio exercitationem voluptatem.
-  Earum culpa ipsa sit inventore eum qui recusandae. Quisquam illo consectetur nostrum provident! Fuga accusamus sunt inventore, rem minima dolor impedit expedita commodi soluta libero. Odit laboriosam itaque exercitationem tempore.
-         </a>
             {error && <Alert variant="danger">{error}</Alert>}
             <strong>Email:</strong> {currentUser.email}
         </button>
@@ -59,25 +55,23 @@ const DashBoard = ({title, body}) => {
        
     </div>
       </div>
-  
-            <Link to="/update-profile" className="btn btn-primary w-100 mt-3">Update profile</Link>
+            <Link to="/update-profile" className="btn btn-primary w-100 mt-3 dashboard__updateButton">Update profile</Link>
+            <Button className="dashboard__logoutButton" variant="link" onClick={handleLogout}>Log Out</Button>
         </Card.Body>
     </Card>
     <div>
     <form className="inp-type" >
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
+      <input value="" placeholder="Название"/>
+      <input value="" placeholder="Описание"/>
+      <input value="" placeholder="Цена со скидкой"/>
+      <input value="" placeholder="Цена без скидки"/>
+      <input value="" placeholder="Издатель"/>
+      <input value="" placeholder="Жанр"/>
+      <input value="" placeholder="Маленькое изображение"/>
+      <input value="" placeholder="Большое изображение"/>
+      <input value="" placeholder="Количество в наличии"/>
     </form>
     <div className="w-100 text-center mt-2">
-        <Button variant="link" onClick={handleLogout}>Log Out</Button>
     </div>
     </div>
     </div>
