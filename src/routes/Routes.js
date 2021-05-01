@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
 import ProductsContextProvider from "../contexts/ProductsContext";
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
@@ -24,10 +24,13 @@ const Routes = () => {
                 <BrowserRouter>
                     <Header />
                     <Switch>
-                    <PrivateRoute exact path="/homepage/" component={HomePage} />
                     <PrivateRoute exact path="/profile" component={DashBoard} />
                     <PrivateRoute path="/update-profile" component={UpdateProfile} />
                         {/* <Route exact path='/cart' component={Cart} /> */}
+                        <Route exact path="/homepage/" component={HomePage} />
+                        <Route exact path="/">
+                            <Redirect to="/homepage"/>
+                        </Route>
                         <Route exact path='/forgot-password' component={ForgotPassword} />
                         <Route exact path='/signup' component={SignUp} />
                         <Route exact path='/login' component={SignIn}/>

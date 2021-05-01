@@ -1,19 +1,31 @@
-import React, {useState} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import './DashBoard.css'
 import Pro from './../../assets/img/hqdefault.jpg'
-import { Card, Button, Alert } from 'react-bootstrap'
+import { Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import { Button, ButtonGroup, Grid, TextareaAutosize, Typography } from '@material-ui/core';
+import { productsContext } from '../../contexts/ProductsContext';
 
 
 
 const DashBoard = ({title, body}) => {
  // const { receiveCookie, createCookie, setCookie } = useAuth()
     // console.log(createCookie)
+    const { addNewProduct } = useContext(productsContext)
     const [error, setError] = useState("")
     const { currentUser, logout } = useAuth()
     const history = useHistory()
-    
+    const titleRef = useRef()
+    const descriptionRef = useRef()
+    const priceRef = useRef()
+    const oldPriceRef = useRef()
+    const authorRef = useRef()
+    const categoryRef = useRef()
+    const imageRef = useRef()
+    const imageLargeRef = useRef()
+    const countInStockRef = useRef()    
+
     async function handleLogout() {
         setError('')
         try {
@@ -21,9 +33,26 @@ const DashBoard = ({title, body}) => {
             history.push("/login")
         } catch(error) {
             console.log(error);
-            setError('Failed to log out')
+            setError('Ошибка при авторизации')
         }
       }
+
+    async function handleChange() {
+        let newObj = {
+          title: titleRef.current.value,
+          description: descriptionRef.current.value,
+          price: priceRef.current.value,
+          oldPrice: oldPriceRef.current.value,
+          author: authorRef.current.value,
+          category: categoryRef.current.value,
+          image: imageRef.current.value,
+          imageLarge: imageLargeRef.current.value,
+          countInStock: countInStockRef.current.value
+        }
+        await addNewProduct(newObj, history)
+    }
+
+
   
   return (
     <div style={{dispaly:"flex"}}>
@@ -50,29 +79,55 @@ const DashBoard = ({title, body}) => {
             {error && <Alert variant="danger">{error}</Alert>}
             <strong>Email:</strong> {currentUser.email}
         </button>
-        
-       
        
     </div>
       </div>
-            <Link to="/update-profile" className="btn btn-primary w-100 mt-3 dashboard__updateButton">Update profile</Link>
-            <Button className="dashboard__logoutButton" variant="link" onClick={handleLogout}>Log Out</Button>
+      <ButtonGroup className="dashBoard__buttongroup">
+            <Button color="primary" variant="contained"><Link to="/update-profile">Ред. профиль</Link></Button>
+            <Button color="primary" variant="contained" className="dashboard__logoutButton" onClick={handleLogout}><Link>Выйти</Link></Button>
+      </ButtonGroup>
         </Card.Body>
     </Card>
     <div>
     <form className="inp-type" >
-      <input value="" placeholder="Название"/>
-      <input value="" placeholder="Описание"/>
-      <input value="" placeholder="Цена со скидкой"/>
-      <input value="" placeholder="Цена без скидки"/>
-      <input value="" placeholder="Издатель"/>
-      <input value="" placeholder="Жанр"/>
-      <input value="" placeholder="Маленькое изображение"/>
-      <input value="" placeholder="Большое изображение"/>
-      <input value="" placeholder="Количество в наличии"/>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Название</Typography>
+        <TextareaAutosize className="inp-type__input" ref={titleRef} placeholder="Название"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Описание</Typography>
+        <TextareaAutosize className="inp-type__input" ref={descriptionRef} placeholder="Описание"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Цена со скидкой</Typography>
+        <TextareaAutosize className="inp-type__input" ref={priceRef} placeholder="Цена со скидкой"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Цена без скидки</Typography>
+        <TextareaAutosize className="inp-type__input" ref={oldPriceRef} placeholder="Цена без скидки"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Издатель</Typography>
+        <TextareaAutosize className="inp-type__input" ref={authorRef} placeholder="Издатель"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Жанр</Typography>
+        <TextareaAutosize className="inp-type__input" ref={categoryRef} placeholder="Жанр"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Маленькое изображение</Typography>
+        <TextareaAutosize className="inp-type__input" ref={imageRef} placeholder="Маленькое изображение"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Большое изображение</Typography>
+        <TextareaAutosize className="inp-type__input" ref={imageLargeRef} placeholder="Большое изображение"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Количество в наличии</Typography>
+        <TextareaAutosize className="inp-type__input" ref={countInStockRef} placeholder="Количество в наличии"/>
+      </Grid>
+      <Button onClick={() => handleChange()} color="primary" variant="contained">Отправить</Button>
     </form>
-    <div className="w-100 text-center mt-2">
-    </div>
     </div>
     </div>
         {/* <button onClick={receiveCookie}>Receive Cookie</button>
