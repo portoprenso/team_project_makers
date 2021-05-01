@@ -27,6 +27,8 @@ const reducer = (state=INIT_STATE, action) =>{
             return {...state, cartLength: action.payload}
         case 'GET_PRODUCTS_DATA_WITH_DISCOUNT':
             return {...state, productsWithDiscount: action.payload}
+        case 'GET_PRODUCTS_DETAILS':
+            return {...state, productDetails: action.payload}
         default: return state
     }
 }
@@ -42,6 +44,20 @@ const ProductsContextProvider = ({ children }) => {
             type: "GET_PRODUCTS_DATA",
             payload: res
         })
+    }
+
+    const getProductDetails = async (id) => {
+        let { data } = await axios(`${JSON_API}/${id}`)
+        // console.log(data);
+        dispatch({
+            type: 'GET_PRODUCTS_DETAILS',
+            payload: data
+        })
+    }
+
+    const editProduct = async (id, newObj, story) => {
+        await axios.patch(`${JSON_API}/${id}`, newObj)
+        getProductsData(story)
     }
 
     const getProductsDataIdSorted = async (history) => {
@@ -193,6 +209,7 @@ const ProductsContextProvider = ({ children }) => {
         cartLength: state.cartLength,
         cart: state.cart,
         productsWithDiscount: state.productsWithDiscount,
+        productDetails: state.productDetails,
         getProductsData,
         getProductsDataIdSorted,
         addProductToCart,
@@ -203,7 +220,9 @@ const ProductsContextProvider = ({ children }) => {
         deleteProduct,
         getProductsDataStockSorted,
         getProductsDataExpectedSorted,
-        getProductsDataDiscountSorted
+        getProductsDataDiscountSorted,
+        getProductDetails,
+        editProduct
     }
 
     return (

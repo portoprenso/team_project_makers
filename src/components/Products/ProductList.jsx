@@ -102,7 +102,7 @@ const ProductList = (props) => {
     const getTestDiscount = async (history) => {
         let res = await axios(`${JSON_API}?_limit=8&${window.location.search}&_sort=discountPercent&_order=desc`)
         settestDiscount(res)
-        console.log(res.data);
+        // console.log(res.data);
     }
 
 
