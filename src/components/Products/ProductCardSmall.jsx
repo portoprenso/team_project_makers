@@ -11,6 +11,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { productsContext } from '../../contexts/ProductsContext';
 import { calcDiscountPercent } from '../../helpers/calcPrice'
 import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -63,10 +64,13 @@ export default function ProductCardSmall({ item }) {
                 image={item.image}
                 title={item.title}
             />
+            {/* <Typography>asd</Typography> */}
             <CardHeader className={classes.productCardSmall__header}
                 // title={<Typography variant="body1">{item.title}</Typography>}
                 title={<div className={classes.productCardSmall__header__div}>{item.title}</div>}
-                // subheader={<Typography color="textSecondary">{item.category}</Typography>}
+                subheader={<Typography color="textSecondary">
+                    <Link id={item.id} exact to={`/catalogue/gamedetails/${item.id}`}>Подробнее</Link>
+                </Typography>}
             />
                 <Button className={classes.productCardSmall__discountButton} variant="contained" color="primary">{`-${calcDiscountPercent(item.oldPrice, item.price)}%`}</Button>
             {/* <CardContent>
