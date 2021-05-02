@@ -150,6 +150,24 @@ const ProductsContextProvider = ({ children }) => {
         })
     }
 
+    async function removeProductFromCart(product) {
+        let cart = JSON.parse(localStorage.getItem('cart'))
+        let filteredCart = {
+            products: [...cart.products.filter(elem => elem.item.id !== product.id)],
+            totalPrice: 0            
+        }
+        await filteredCart.products.filter(elem => elem.item.id != product.id)
+        await localStorage.removeItem('cart')
+        // localStorage.clear();
+        filteredCart.totalPrice = calcTotalPrice(filteredCart.products)
+        await localStorage.setItem('cart', JSON.stringify(filteredCart))
+        await dispatch({
+            type: "CHANGE_COUNT",
+            payload: filteredCart.products.length
+        })
+        await getCart()
+    }
+
     function getCart() {
         let cart = JSON.parse(localStorage.getItem('cart'))
         if (!cart) {
@@ -222,7 +240,8 @@ const ProductsContextProvider = ({ children }) => {
         getProductsDataExpectedSorted,
         getProductsDataDiscountSorted,
         getProductDetails,
-        editProduct
+        editProduct,
+        removeProductFromCart
     }
 
     return (

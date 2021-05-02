@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Cart = () => {
     const classes = useStyles();
-    const { getCart, cart, changeProductCount } = useContext(productsContext)
+    const { getCart, cart, changeProductCount, removeProductFromCart } = useContext(productsContext)
 
     useEffect(() => {
         getCart()
@@ -40,6 +40,7 @@ const Cart = () => {
                                 <th>Скидка</th>
                                 <th>Количество</th>
                                 <th>Предварительный итог</th>
+                                <th>Убрать из корзины</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,6 +55,7 @@ const Cart = () => {
                                         <td>{elem.item.discountPercent}%</td>
                                         <td><input onChange={(e) => changeProductCount(e.target.value, elem.item.id)} type="number" value={elem.count} /></td>
                                         <td>{elem.subPrice}</td>
+                                        <td><Button onClick={() => removeProductFromCart(elem.item)}>Удалить</Button></td>
                                     </tr>
                             ))}
                         </tbody>

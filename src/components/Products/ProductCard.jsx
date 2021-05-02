@@ -71,7 +71,7 @@ export default function ProductCard({ item }) {
                     subheader={<Typography color="textSecondary">{item.category}</Typography>}
                 />
                 <Typography className={classes.productCard__header__link}>
-                    <Link id={item.id} exact to={`/catalogue/gamedetails/${item.id}`}>Подробнее</Link>
+                    <Link item={item} id={item.id} exact to={`/catalogue/gamedetails/${item.id}`}>Подробнее</Link>
                 </Typography>
             <Grid xs={1}>
                 { currentUser ? (<div>

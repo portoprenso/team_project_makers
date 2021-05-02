@@ -1,39 +1,60 @@
 import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { productsContext } from '../../contexts/ProductsContext';
+import './ProductDetails.css'
+import { makeStyles } from '@material-ui/core/styles';
 
-const ProductDetails = () => {
+
+const ProductDetails = (props) => {
+    console.log(props);
     const { id } = useParams()
-    const { productDetails, getProductDetails } = useContext(productsContext)
+    const { addProductToCart, productDetails, getProductDetails } = useContext(productsContext)
+
     
     useEffect(() => {
-        getProductDetails(id)
+        getProductDetails(id);
     }, [])
+    
+    const useStyles = makeStyles((theme) => ({
+        main_img:{
+            alignSelf: 'center',
+            width: 375,
+            height: 479,
+            backgroundImage: `url(${productDetails.imageLarge})`,
+            backgroundSize: '100%',
+            backgroundRepeat: 'no-repeat',
+            color: 'chocolate',
+            backgroundBlendMode: 'multiply',
+            backgroundColor: 'rgba(0, 0, 0, 0.363)',
+            textAlign: 'center',
+            transition: '0.7s'
+        }
+    }));
 
+    const classes = useStyles()
 
     return (
         <div>
-            {productDetails.title}
-
             <div className="details" >
-            <ul className="one">
+            <div className="details__topBackgroung"></div>
+            {/* <ul className="one">
                 <li>Главная</li>
                 <li>Каталог</li>
-            </ul>
-            <h1>plants vs. zombies goty edition</h1>
+            </ul> */}
+            <h1>{productDetails.title}</h1>
             <div className="main">
                 <div className="main_menu_left">
 
-                    <div className="main_img">
+                    <div className={`${classes.main_img} main_img`}>
+                    {/* <div className='asd'> */}
                         <p>трейлер и скриншоты</p>
                     </div>
                     <div className="main_info">
-                        <p>Жанр <span>Стратегии</span></p>
-                        <p>Язык <span>Английский</span></p>
-                        <p>Дата выхода <span>18 июня 2012</span></p>
-                        <p>Издатель <span>PopCap Games, inc.</span></p>
-                        <p>Разработчик <span>PopCap Games, inc.</span></p>
-                        <p>Особенности <span>Для одного игрока</span></p>
+                        <p>Жанр <span>{productDetails.category}</span></p>
+                        <p>Язык <span>Английский, Русский</span></p>
+                        {/* <p>Дата выхода <span>18 июня 2012</span></p> */}
+                        <p>Издатель <span>{productDetails.author}</span></p>
+                        {/* <p>Особенности <span>Для одного игрока</span></p> */}
                         <p>Цель <span>Достижения</span></p>
                         <p>Регион <span>Россия</span></p>
                     </div>
@@ -43,7 +64,12 @@ const ProductDetails = () => {
                     <div className="mains_price_menu">
                         <div className="mains_info">
                             <ul>
-                                <li>Наличие: <span>много</span></li>
+                                <li>Наличие: <span>{
+                                productDetails.countInStock>1 ? 
+                                ('Много')
+                                :
+                                ('Ожидается') 
+                                }</span></li>
                                 <li>Моментальная доставка</li>
                                 <li>Лицензионный <span>ключ</span> активации</li>
                                 <li>Регион: Россия</li>
@@ -53,15 +79,17 @@ const ProductDetails = () => {
                         <div className="vse">
                             <div className="mains_price">
                                 <div className="mains_price_one">
-                                <p>-30%</p> 
+                                <p>-{productDetails.discountPercent}%</p> 
                                 </div>
                                 <div className="main_price_two">
-                                    <del>249руб</del>
-                                    <h2>175руб</h2>
+                                    <del>{productDetails.oldPrice}с</del>
+                                    <h2>{productDetails.price}с</h2>
                                 </div>
                             </div>
                             <div className="btn_offset">
-                               <button class="offset">В корзину</button>
+                               <button 
+                               onClick={() => {addProductToCart(productDetails)}} 
+                        class="offset">В корзину</button>
                             </div>
                             <div className="two_btn">
                             <button class="fill">Как активировать?</button>
@@ -75,8 +103,7 @@ const ProductDetails = () => {
                         <p>Максимальное время ожидания ключа - до 5 часов. <br/>
                         Если вы приобрели продукт с 21.00 до 10.00 по Московскому времени, то ваш заказ будет <br/> укомплектован после 10.00.</p>
                         <h2>Описание</h2>
-                        <p>Неугомонные зомби снова атакуют ваш дом. Не ищите спасительных пушек и мечей, а скорее <br/> сажайте чудо-растения, способные действительно эффективно противостоять лавинам противника.<br/> 
-                        Генномодифицированная поросль готова убивать зомби пачками и самыми изысканными <br/> способами, так что не упустите шанс показать врагу, что природа отдохнула не только на них.</p>
+                        <p>{productDetails.description}</p>
                     </div>
                     <div className="nakonecto2">
                         <h2>Минимальные системные требования</h2>
