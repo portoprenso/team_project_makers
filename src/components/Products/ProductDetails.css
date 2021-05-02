@@ -3,6 +3,22 @@
     margin: 0;
 }
 
+.details__topBackgroung{
+    position: absolute;
+    width: 100%;
+    height: 479px;
+    background-image: url(https://steampay.com/img/background_product.jpg);
+    background-size: 100vw;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    color: chocolate;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.363);
+    text-align: center;
+    transition: 0.7s;
+    z-index: -1;
+}
+
 .one{
     display: flex;
     margin-left: 80px;
@@ -26,7 +42,7 @@ h1{
 .main{
     display: flex;
 }
-.main_img{
+/* .main_img{
     width: 375px;
     height: 479px;
     background-image: url(https://st-de.jigsawplanet.com/i/7a2312013303a20200cd641f6a263ea7e0/320/jp.jpg);
@@ -37,7 +53,7 @@ h1{
     background-color: rgba(0, 0, 0, 0.363);
     text-align: center;
     transition: 0.7s;
-}
+} */
 .main_img:hover{
     color: #fff;
 }
@@ -48,8 +64,10 @@ h1{
 .main_info{
     background-color: rgb(54, 52, 51);
     width: 375px;
-    height: 360px;
+    height: fit-content;
     margin-top: 20px;
+    /* padding: 20px; */
+    padding-bottom: 20px;
     text-align: center;
 }
 .main_info p{
@@ -82,6 +100,7 @@ h1{
 .mains_menu_right{
     margin-left: 100px;
     margin-top: 100px;
+    width: 60%;
 }
 .mains_info span{
     color: chocolate;
@@ -181,7 +200,7 @@ h1{
 .nakonecto{
     background-color: rgb(224, 217, 217);
     height: 400px;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 .nakonecto p{
     padding-top: 40px;
