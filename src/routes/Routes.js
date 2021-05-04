@@ -19,6 +19,7 @@ import GenresPages from '../components/GenresPages/GenresPages'
 import Cart from '../components/Cart/Cart';
 import ProductDetails from '../components/Products/ProductDetails';
 import EditProduct from '../components/Products/EditProduct';
+import Support from '../components/Support/Support';
 import Card from '../components/Cart/Buy/Buy';
 import CheckoutPage from '../components/Cart/CheckoutPage';
 
@@ -48,6 +49,7 @@ const Routes = () => {
                         <Route exact path='/catalogue' component={GenresPages}/>
                         <Route exact path='/catalogue/gamedetails/:id' component={ProductDetails}/>
                         <Route exact path='/catalogue/editproduct/:id' component={EditProduct}/>
+                        <Route exact path='/support' component={Support}/>
                         <Route exact path="/checkout" component={CheckoutPage}/>
                         <Route exact path="/buy" component={Card}/>
                     </Switch>

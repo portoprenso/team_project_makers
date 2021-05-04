@@ -1,0 +1,114 @@
+.top{
+    height: 350px;
+    background-color: rgb(43, 22, 134);
+}
+.logo{
+    display: flex;
+}
+.logo_img{
+    margin-left: 650px;
+    margin-top: 50px;
+}
+.logo_img img{
+    width: 200px;
+
+}
+.navbar{
+    margin-top: 46px;
+}
+.top_text{
+    padding-top: 120px;
+    text-align: center;
+    color: #fff;
+}
+.top_text h2{
+    font-size: 20px;
+}
+.top_text h1{
+    padding-right: 70px;
+    font-size: 40px;
+}
+.main{
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.icon{
+    -webkit-box-shadow: 11px 15px 23px 6px rgba(34, 60, 80, 0.62);
+    -moz-box-shadow: 11px 15px 23px 6px rgba(34, 60, 80, 0.62);
+    box-shadow: 11px 15px 23px 6px rgba(34, 60, 80, 0.62);
+    width: 200px;
+    height: 80px;
+    text-align: center;
+    display: flex;
+    margin-top: 50px;
+    padding-left: 20px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+.icon:hover{
+    transform: scale(1.1);
+    color: rgb(207, 76, 25);
+}
+.icon p{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+.wrapper{
+    border: 2px solid rgb(207, 76, 25);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-top: 20px;
+    padding-top: 6px;
+    color: rgb(207, 76, 25);
+}
+.wrapper:hover{
+    background-color: rgb(207, 76, 25) ;
+    color: #fff;
+}
+.question{
+    text-align: center;
+}
+.question h2{
+    font-size: 50px;
+    padding-bottom: 30px;
+}
+#drop_menu{
+    margin-bottom: 40px;
+}
+.otzyv{
+    padding-left: 400px;
+    display: flex;
+}
+.otzyv button{
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+    outline: none;
+    cursor: pointer;
+}
+.otzyv p{
+    
+    padding-top: 15px;
+}
+#red{
+    background-color: rgba(255, 0, 0, 0);
+    border: 2px solid red;
+    color: #000;
+    transition: 0.5s;
+}
+#red:hover{
+    background-color: red;
+    color: #fff;
+}
+#green{
+    background-color: rgba(0, 128, 0, 0);
+    border: 2px solid green;
+    color: #000;
+    transition: 0.5s;
+}
+#green:hover{
+    background-color: green;
+    color: #fff;
+}
