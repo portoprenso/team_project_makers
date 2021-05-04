@@ -19,6 +19,8 @@ import GenresPages from '../components/GenresPages/GenresPages'
 import Cart from '../components/Cart/Cart';
 import ProductDetails from '../components/Products/ProductDetails';
 import EditProduct from '../components/Products/EditProduct';
+import Card from '../components/Cart/Buy/Buy';
+
 
 
 const Routes = () => {
@@ -45,6 +47,7 @@ const Routes = () => {
                         <Route exact path='/catalogue' component={GenresPages}/>
                         <Route exact path='/catalogue/gamedetails/:id' component={ProductDetails}/>
                         <Route exact path='/catalogue/editproduct/:id' component={EditProduct}/>
+                        <Route exact path="/buy" component={Card}/>
                     </Switch>
                     <Footer />
                 </BrowserRouter>
