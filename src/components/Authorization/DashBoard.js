@@ -26,7 +26,8 @@ const DashBoard = ({title, body}) => {
     const categoryRef = useRef()
     const imageRef = useRef()
     const imageLargeRef = useRef()
-    const countInStockRef = useRef()    
+    const countInStockRef = useRef()  
+    console.log(currentUser);  
 
     async function handleLogout() {
         setError('')

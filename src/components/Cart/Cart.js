@@ -61,7 +61,7 @@ const Cart = () => {
                         </tbody>
                     </table>
                     <h4>Общий итог: {calcTotalPrice(cart.products)}</h4>
-                    <Link exact to="/Buy"><Button>Купить</Button></Link>
+                    <Link exact to="/checkout"><Button>Купить</Button></Link>
                 </div>
             ) : (
                 <CircularProgress />
