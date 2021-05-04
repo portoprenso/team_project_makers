@@ -6,6 +6,12 @@
 // import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom'
 // import {authContext} from "../../contexts/AuthContext";
 
+
+
+
+// COMPONENT IS DEPRECATED ***********************************************************
+
+
 // const Catalog1 = () => {
 //     const history = useHistory()
 //     const { getProductsData, productsData, paginationPages } = useContext(productsContext)
