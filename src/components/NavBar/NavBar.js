@@ -180,12 +180,14 @@ export default function Navbar() {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
-                <IconButton aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="secondary">
-                        <MailIcon className={classes.navbaar__mailIcon} />
-                    </Badge>
-                </IconButton>
-                <p>Messages</p>
+                <Link exact to="/catalogue">КАТАЛОГ ПРОДУКЦИИ</Link>
+
+
+
+
+
+
+
             </MenuItem>
             <MenuItem>
                 <IconButton aria-label="show 11 new notifications" color="inherit">

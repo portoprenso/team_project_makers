@@ -1,17 +1,23 @@
-import React, {useState, Cards} from 'react';
+import React, {useState, Cards, useContext} from 'react';
 import './Buy.css'
 import Card from 'react-credit-cards'
 import 'react-credit-cards/es/styles-compiled.css'
 import {Link} from 'react-router-dom'
+import { productsContext } from '../../../contexts/ProductsContext';
 
 
-const Buy = () => {
+const Buy = (props) => {
     const [number, setNumber] = useState('')
     const [name, setName] = useState('')
     const [expiry, setExpiry] = useState('')
     const [cvc, setCvc] = useState('')
     const [focus, setFocus] = useState('')
+    const { removeAllProductsFromCart } = useContext(productsContext)
 
+    function clearCart(history){
+        removeAllProductsFromCart()
+        history.push('/')
+    }
     
     return (
         <>
@@ -63,7 +69,7 @@ const Buy = () => {
                 />
                
                 <Link to="/">
-                <button className="card__btn">Buy</button>
+                <button onClick={() => clearCart(props.history)} className="card__btn">Buy</button>
                 
                     </Link> 
             </form>

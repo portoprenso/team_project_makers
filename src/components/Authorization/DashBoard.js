@@ -1,18 +1,26 @@
-import React, {useContext, useRef, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import './DashBoard.css'
 import Pro from './../../assets/img/hqdefault.jpg'
 import { Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
-import { Button, ButtonGroup, Grid, TextareaAutosize, Typography } from '@material-ui/core';
+import { Button, ButtonGroup, Grid, makeStyles, TextareaAutosize, Typography } from '@material-ui/core';
 import { productsContext } from '../../contexts/ProductsContext';
+import axios from 'axios';
 
+const useStyles = makeStyles((theme) => ({
+  oldOrders__itemContainer: {
+      margin: '10px auto',
+
+    }
+  }));
 
 
 const DashBoard = ({title, body}) => {
  // const { receiveCookie, createCookie, setCookie } = useAuth()
     // console.log(createCookie)
-    const { addNewProduct } = useContext(productsContext)
+    const classes = useStyles()
+    const { addNewProduct, cart } = useContext(productsContext)
     const [error, setError] = useState("")
     const [perc, setPerc] = useState(0)
     const { currentUser, logout } = useAuth()
@@ -27,7 +35,7 @@ const DashBoard = ({title, body}) => {
     const imageRef = useRef()
     const imageLargeRef = useRef()
     const countInStockRef = useRef()  
-    console.log(currentUser);  
+    // console.log(currentUser);  
 
     async function handleLogout() {
         setError('')
@@ -72,8 +80,28 @@ const DashBoard = ({title, body}) => {
         setPerc(discount)
     }
 
+    const [ oldOrders, setOldOrders] = useState([])
 
+    async function getOldOrders() {
+      // console.log('asd')
+      let { data } = await axios(`http://localhost:8000/dbUsers`)
+      // console.log(data);
+      let filteredOrders = []
+      data.forEach(element => {
+        if(currentUser.email == element.email){
+          filteredOrders.push(element.orders)
+        }
+      });
+      setOldOrders(filteredOrders)
+      // console.log(filteredOrders);
+    }
   
+    useEffect(() => {
+      getOldOrders()
+    }, []);
+
+    // getOldOrders()
+
   return (
     <div style={{dispaly:"flex"}}>
       <div className='fff'>
@@ -158,7 +186,57 @@ const DashBoard = ({title, body}) => {
         <button onClick={() => setCookie()}>Create Cookie</button> */}
 
   
+        <div>
+          {oldOrders.length > 0 ? 
+          
+          (
+            oldOrders[0].map(item => {
+              console.log(oldOrders)
+              // console.log(item);
+            return(
+            <Grid className={classes.oldOrders__itemContainer}>
+                  <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Изображение</th>
+                                <th>Название</th>
+                                <th>Цена</th>
+                                <th>Старая цена</th>
+                                <th>Скидка</th>
+                                <th>Количество</th>
+                                <th>Предварительный итог</th>
+                                <th>Убрать из корзины</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {item.products.map(elem => (
+                                    <tr key={elem.item.id}>
+                                        <td>
+                                            <img style={{width: 100}} src={elem.item.image} />
+                                        </td>
+                                        <td>{elem.item.title}</td>
+                                        <td>{elem.item.price}</td>
+                                        <td>{elem.item.oldPrice}</td>
+                                        <td>{elem.item.discountPercent}%</td>
+                                        <td>{elem.count}</td>
+                                        <td>{elem.subPrice}</td>
+                                    </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    {/* <h4>Общий итог: {calcTotalPrice(cart.products)}</h4> */}
+                    {/* <Link exact to="/checkout"><Button>Купить</Button></Link> */}
+                </div>
+            </Grid>
+            )
+          })
 
+          )
+          :
+          ('asd')
+        }
+        </div>
     </div>
   );
 };
