@@ -32,16 +32,17 @@ const Cart = () => {
                 <div>
                     <table>
                         <thead>
-                            <tr>
-                                <th>Изображение</th>
-                                <th>Название</th>
-                                <th>Цена</th>
-                                <th>Старая цена</th>
-                                <th>Скидка</th>
-                                <th>Количество</th>
-                                <th>Предварительный итог</th>
-                                <th>Убрать из корзины</th>
-                            </tr>
+                            <div className="img">
+                                <img src="https://прообзор.рф/wp-content/uploads/2019/04/cs-go-stream.jpg"/>
+                            </div>
+                            <ul>
+                                <li>Название: <span>CS Go</span></li>
+                                <li>Цена: <span>12$</span></li>
+                                <li>Старая цена: <span>11$</span></li>
+                                <li>Скидка: <span>1$</span></li>
+                                <li>Количество: <span>1</span></li>
+                                <li>Предварительный итог: <span>12$</span></li>
+                            </ul>
                         </thead>
                         <tbody>
                             {cart.products.map(elem => (
@@ -59,6 +60,10 @@ const Cart = () => {
                                     </tr>
                             ))}
                         </tbody>
+                        <div className="btn_sum">
+                            <h4>Общий итог: {calcTotalPrice(cart.products)}</h4>
+                            <button className="btn_click">Купить</button>
+                        </div>
                     </table>
                     <h4>Общий итог: {calcTotalPrice(cart.products)}</h4>
                     <Link exact to="/checkout"><Button>Купить</Button></Link>
