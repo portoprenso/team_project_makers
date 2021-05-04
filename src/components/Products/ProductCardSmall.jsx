@@ -11,16 +11,17 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { productsContext } from '../../contexts/ProductsContext';
 import { calcDiscountPercent } from '../../helpers/calcPrice'
 import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+    root__small: {
         // maxWidth: "100%",
         width: "100%",
         display: "flex",
-        border: "solid black 1px",
         padding: 5,
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        height: 'auto'
     },
     media: {
         backgroundSize: "contain",
@@ -48,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     },
     productCardSmall__discountButton:{
         maxHeight: "100%",
-        height: "40%",
+        height: "25%",
         alignSelf: 'center'
     }
 }));
@@ -57,16 +58,19 @@ export default function ProductCardSmall({ item }) {
     const classes = useStyles();
     const { addProductToCart, checkProductInCart } = useContext(productsContext)
     return (
-        <Card className={classes.root}>
+        <Card className={classes.root__small}>
             <CardMedia
                 className={classes.media}
                 image={item.image}
                 title={item.title}
             />
+            {/* <Typography>asd</Typography> */}
             <CardHeader className={classes.productCardSmall__header}
                 // title={<Typography variant="body1">{item.title}</Typography>}
                 title={<div className={classes.productCardSmall__header__div}>{item.title}</div>}
-                // subheader={<Typography color="textSecondary">{item.category}</Typography>}
+                subheader={<Typography color="textSecondary">
+                    <Link id={item.id} exact to={`/catalogue/gamedetails/${item.id}`}>Подробнее</Link>
+                </Typography>}
             />
                 <Button className={classes.productCardSmall__discountButton} variant="contained" color="primary">{`-${calcDiscountPercent(item.oldPrice, item.price)}%`}</Button>
             {/* <CardContent>

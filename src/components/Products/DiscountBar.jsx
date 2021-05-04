@@ -24,14 +24,12 @@ const useStyles = makeStyles((theme) => ({
     
   }));
 
-
 const ProductList = () => {
     const classes = useStyles()
     const history = useHistory()
     const { getProductsData, productsData, paginationPages } = useContext(productsContext)
     function getPage() {
         const search = new URLSearchParams(history.location.search)
-        // console.log(history);
         return search.get('_page')
     }
     const [page, setPage] = useState(getPage())

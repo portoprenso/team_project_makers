@@ -50,7 +50,13 @@ const SideBar = ({ history }) => {
             return
         }
         const search = new URLSearchParams(history.location.search)
-        if(search.has('category')){
+        if(search.has('category', event.target.value)){
+            await search.delete('category', event.target.value)
+            await history.push(`${history.location.pathname}?${search.toString()}`)
+            getProductsData(history)
+            setGenre(event.target.value)
+            return
+        } else if(search.has('category')) {
             await search.append('category', event.target.value)
             await history.push(`${history.location.pathname}?${search.toString()}`)
             getProductsData(history)
@@ -59,7 +65,6 @@ const SideBar = ({ history }) => {
         }
         await search.set('category', event.target.value)
         await history.push(`${history.location.pathname}?${search.toString()}`)
-        search.
         getProductsData(history)
         setGenre(event.target.value)
     }
@@ -77,7 +82,7 @@ const SideBar = ({ history }) => {
         <Grid item md={3}>
             <Paper className={classes.paper}>
             <FormControl component="fieldset">
-            <FormLabel component="legend">Memory</FormLabel>
+            <FormLabel component="legend">Жанры</FormLabel>
             <FormGroup value={genre} onChange={handleChangeGenre} aria-label="genre" name="genre1">
                 <FormControlLabel value="Экшены" control={<Checkbox />} label="Экшены" name="actions"/>
                 <FormControlLabel value="РПГ" control={<Checkbox />} label="РПГ" name="rpg"/>

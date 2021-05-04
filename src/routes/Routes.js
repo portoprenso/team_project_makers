@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
 import ProductsContextProvider from "../contexts/ProductsContext";
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
@@ -15,8 +15,10 @@ import UpdateProfile from '../components/Authorization/UpdateProfile'
 import DashBoard from '../components/Authorization/DashBoard'
 import RpgPage from '../components/GenresPages/RpgPage'
 import Popular from '../components/Popular/Popular';
-
-
+import GenresPages from '../components/GenresPages/GenresPages'
+import Cart from '../components/Cart/Cart';
+import ProductDetails from '../components/Products/ProductDetails';
+import EditProduct from '../components/Products/EditProduct';
 
 
 const Routes = () => {
@@ -26,16 +28,23 @@ const Routes = () => {
                 <BrowserRouter>
                     <Header />
                     <Switch>
+
                     <PrivateRoute exact path="/" component={HomePage} />
                     {/* <PrivateRoute exact path="/" component={Popular}/>  */}
                     <PrivateRoute exact path="/profile" component={DashBoard} />
                     <PrivateRoute path="/update-profile" component={UpdateProfile} />
-                        {/* <Route exact path='/cart' component={Cart} /> */}
+                        <Route exact path='/cart' component={Cart} />
+                        <Route exact path="/homepage/" component={HomePage} />
+                        <Route exact path="/">
+                            <Redirect to="/homepage"/>
+                        </Route>
                         <Route exact path='/forgot-password' component={ForgotPassword} />
                         <Route exact path='/signup' component={SignUp} />
                         <Route exact path='/login' component={SignIn}/>
                         <Route exact path='/update-profile' component={UpdateProfile}/>
-                        <Route exact path='/rpg' component={RpgPage}/>
+                        <Route exact path='/catalogue' component={GenresPages}/>
+                        <Route exact path='/catalogue/gamedetails/:id' component={ProductDetails}/>
+                        <Route exact path='/catalogue/editproduct/:id' component={EditProduct}/>
                     </Switch>
                     <Footer />
                 </BrowserRouter>

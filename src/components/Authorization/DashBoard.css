@@ -67,13 +67,38 @@ a{
 
 
 .inp-type{
-    margin-top: 60px;
-    margin-left: +400px;
+    margin: 0 auto;
+    padding: 50px
 }
-.inp-type input{
-    margin-top: 10px;
-    margin-bottom: 10px;
+
+.inp-type__input {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: gainsboro;
+    /* color: white; */
 }
+
+.inp-type__inputContainers{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* min-width: 20vw; */
+}
+
 .fff{
     display: flex;
+}
+
+.dashboard__updateButton{
+    margin: 30px;
+}
+
+.dashboard__logoutButton{
+    margin: 0 auto;
+}
+
+.dashBoard__buttongroup{
+    margin: 15px
 }

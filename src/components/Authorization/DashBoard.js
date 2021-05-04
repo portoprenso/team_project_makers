@@ -1,19 +1,33 @@
-import React, {useState} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import './DashBoard.css'
 import Pro from './../../assets/img/hqdefault.jpg'
-import { Card, Button, Alert } from 'react-bootstrap'
+import { Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import { Button, ButtonGroup, Grid, TextareaAutosize, Typography } from '@material-ui/core';
+import { productsContext } from '../../contexts/ProductsContext';
 
 
 
 const DashBoard = ({title, body}) => {
  // const { receiveCookie, createCookie, setCookie } = useAuth()
     // console.log(createCookie)
+    const { addNewProduct } = useContext(productsContext)
     const [error, setError] = useState("")
+    const [perc, setPerc] = useState(0)
     const { currentUser, logout } = useAuth()
     const history = useHistory()
-    
+    const titleRef = useRef()
+    const descriptionRef = useRef()
+    const priceRef = useRef()
+    const oldPriceRef = useRef()
+    const discountPercentPriceRef = useRef()
+    const authorRef = useRef()
+    const categoryRef = useRef()
+    const imageRef = useRef()
+    const imageLargeRef = useRef()
+    const countInStockRef = useRef()    
+
     async function handleLogout() {
         setError('')
         try {
@@ -21,9 +35,43 @@ const DashBoard = ({title, body}) => {
             history.push("/login")
         } catch(error) {
             console.log(error);
-            setError('Failed to log out')
+            setError('Ошибка при авторизации')
         }
       }
+
+    async function handleChange() {
+        let newObj = {
+          title: titleRef.current.value,
+          description: descriptionRef.current.value,
+          price: priceRef.current.value,
+          oldPrice: oldPriceRef.current.value,
+          discountPercent: discountPercentPriceRef.current.value,
+          author: authorRef.current.value,
+          category: categoryRef.current.value,
+          image: imageRef.current.value,
+          imageLarge: imageLargeRef.current.value,
+          countInStock: countInStockRef.current.value
+        }
+        await addNewProduct(newObj, history)
+        titleRef.current.value = null
+        descriptionRef.current.value = null
+        priceRef.current.value = null 
+        oldPriceRef.current.value = null
+        discountPercentPriceRef.current.value = null
+        authorRef.current.value = null 
+        categoryRef.current.value = null 
+        imageRef.current.value = null 
+        imageLargeRef.current.value = null 
+        countInStockRef.current.value = null
+
+    }
+
+    function calcDiscountpercent(first, second){
+        let discount = Math.ceil(100 - ( first / second )*100)
+        setPerc(discount)
+    }
+
+
   
   return (
     <div style={{dispaly:"flex"}}>
@@ -47,38 +95,62 @@ const DashBoard = ({title, body}) => {
       </div>
       <div className="btn">
         <button>
-          <a>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias debitis fuga! Dolores, laboriosam quod at facilis ipsam ipsa ipsum harum, tempora natus excepturi esse praesentium. Libero optio exercitationem voluptatem.
-  Earum culpa ipsa sit inventore eum qui recusandae. Quisquam illo consectetur nostrum provident! Fuga accusamus sunt inventore, rem minima dolor impedit expedita commodi soluta libero. Odit laboriosam itaque exercitationem tempore.
-         </a>
             {error && <Alert variant="danger">{error}</Alert>}
             <strong>Email:</strong> {currentUser.email}
         </button>
-        
-       
        
     </div>
       </div>
-  
-            <Link to="/update-profile" className="btn btn-primary w-100 mt-3">Update profile</Link>
+      <ButtonGroup className="dashBoard__buttongroup">
+            <Button color="primary" variant="contained"><Link to="/update-profile">Ред. профиль</Link></Button>
+            <Button color="primary" variant="contained" className="dashboard__logoutButton" onClick={handleLogout}><Link>Выйти</Link></Button>
+      </ButtonGroup>
         </Card.Body>
     </Card>
     <div>
     <form className="inp-type" >
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Название</Typography>
+        <TextareaAutosize className="inp-type__input" ref={titleRef} placeholder="Название"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Описание</Typography>
+        <TextareaAutosize className="inp-type__input" ref={descriptionRef} placeholder="Описание"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Цена со скидкой</Typography>
+        <TextareaAutosize className="inp-type__input" ref={priceRef} placeholder="Цена со скидкой"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Цена без скидки</Typography>
+        <TextareaAutosize onChange={() => calcDiscountpercent(priceRef.current.value, oldPriceRef.current.value)} className="inp-type__input" ref={oldPriceRef} placeholder="Цена без скидки"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Процент скидки</Typography>
+        <TextareaAutosize className="inp-type__input" ref={discountPercentPriceRef} value={perc} placeholder="Процент скидки"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Издатель</Typography>
+        <TextareaAutosize className="inp-type__input" ref={authorRef} placeholder="Издатель"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Жанр</Typography>
+        <TextareaAutosize className="inp-type__input" ref={categoryRef} placeholder="Жанр"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Маленькое изображение</Typography>
+        <TextareaAutosize className="inp-type__input" ref={imageRef} placeholder="Маленькое изображение"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Большое изображение</Typography>
+        <TextareaAutosize className="inp-type__input" ref={imageLargeRef} placeholder="Большое изображение"/>
+      </Grid>
+      <Grid className="inp-type__inputContainers">
+        <Typography variant='h6'>Количество в наличии</Typography>
+        <TextareaAutosize className="inp-type__input" ref={countInStockRef} placeholder="Количество в наличии"/>
+      </Grid>
+      <Button onClick={() => handleChange()} color="primary" variant="contained">Добавить новый товар</Button>
     </form>
-    <div className="w-100 text-center mt-2">
-        <Button variant="link" onClick={handleLogout}>Log Out</Button>
-    </div>
     </div>
     </div>
         {/* <button onClick={receiveCookie}>Receive Cookie</button>

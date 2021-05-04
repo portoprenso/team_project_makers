@@ -10,16 +10,23 @@ import Typography from '@material-ui/core/Typography';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { productsContext } from '../../contexts/ProductsContext';
 import { calcDiscountPercent } from '../../helpers/calcPrice'
-import { Button } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import EditIcon from '@material-ui/icons/Edit';
+import { JSON_API } from '../../helpers/constants'
+import axios from 'axios'
+import { Link, useHistory } from 'react-router-dom'
+import { useAuth } from '../../contexts/AuthContext';
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
         // maxWidth: "100%",
         width: "100%",
         display: "flex",
-        border: "solid black 1px",
         padding: 20,
-        justifyContent: "space-between"
+        justifyContent: "space-between",
     },
     media: {
         backgroundSize: "contain",
@@ -37,28 +44,49 @@ const useStyles = makeStyles((theme) => ({
     },
     productCard__header: {
         width: '40%'
+    },
+    productCard__header__link: {
+        alignSelf: 'center'
     }
 }));
 
 export default function ProductCard({ item }) {
+    const history = useHistory()
     const classes = useStyles();
-    const { addProductToCart, checkProductInCart } = useContext(productsContext)
+    const { addProductToCart, checkProductInCart, deleteProduct } = useContext(productsContext)
+    const { currentUser } = useAuth()
+
+    // console.log(history);
+
     return (
         <Card className={classes.root}>
-            <CardMedia
-                className={classes.media}
-                image={item.image}
-                title={item.title}
-            />
-            <CardHeader className={classes.productCard__header}
-                title={<Typography variant="h7">{item.title}</Typography>}
-                subheader={<Typography color="textSecondary">{item.category}</Typography>}
-            />
-            {/* <CardContent>
-                <Typography variant="body2" color="textPrimary" component="p">
-                    {item.description}
+                <CardMedia
+                    className={classes.media}
+                    image={item.image}
+                    title={item.title}
+                />
+                <CardHeader className={classes.productCard__header}
+                    title={<Typography variant="h7">{item.title}</Typography>}
+                    subheader={<Typography color="textSecondary">{item.category}</Typography>}
+                    subheader={<Typography color="textSecondary">{item.category}</Typography>}
+                />
+                <Typography className={classes.productCard__header__link}>
+                    <Link item={item} id={item.id} exact to={`/catalogue/gamedetails/${item.id}`}>Подробнее</Link>
                 </Typography>
-            </CardContent> */}
+            <Grid xs={1}>
+                { currentUser ? (<div>
+                    <Button onClick={() => deleteProduct(item.id, history)}>
+                        <DeleteForeverIcon />
+                    </Button>
+                    <Link id={item.id} exact to={`/catalogue/editproduct/${item.id}`}>
+                        <Button><EditIcon /></Button>
+                    </Link>
+                    </div>
+                ) 
+                : (
+                    <div></div>
+                )}
+            </Grid>
                 <Typography className={classes.productCard__price} align="center" variant="h5" color="textPrimary" component="p">
                     <Button variant="contained" color="primary">{`-${calcDiscountPercent(item.oldPrice, item.price)}%`}</Button>
                     {`${item.price}с`}
