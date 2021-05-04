@@ -20,7 +20,7 @@ const Popular = () => {
                 <div className="popular__header">
                     <h2 className="popular__title">Популярные игры</h2>
                     <div className="popular__header-content">
-                        <ul className="popular_tabs">
+                        {/* <ul className="popular_tabs">
                             <li className="popular__tabs-item popular__tabs-item--active" data-val="100000" role="button"><a href="" alt=""> Все </a> </li>                                                                                          
                            
                             <li className="popular__tabs-item" data-val="100" role="button">
@@ -35,7 +35,7 @@ const Popular = () => {
                             <li className="popular__tabs-item" data-val="800" role="button"><a href="" alt=""> До 800 руб </a> </li>                              
                            
                             
-                        </ul>
+                        </ul> */}
                         <div className="popular__buttons section-arrows section-arrows--ligth">
                             <div className="section-arrows__prev section-arrows__disabled"></div>
                             <div className="section-arrows__next"></div>

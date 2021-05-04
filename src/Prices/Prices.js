@@ -12,9 +12,9 @@ const Prices = () => {
                      <div className="container-fluid">
                       <div className="reduction-prices__header">
                           <h2 className="reduction-prices__title">Снижение цен</h2>
-                          <div class="reduction-prices__buttons section-arrows">
-                              <div class="section-arrows__prev section-arrows__disabled"></div>
-                              <div class="section-arrows__next"></div>
+                          <div className="reduction-prices__buttons section-arrows">
+                              <div className="section-arrows__prev section-arrows__disabled"></div>
+                              <div className="section-arrows__next"></div>
                           </div>
                       </div>
                       <div className="reduction-prices__list game-list">
@@ -40,7 +40,7 @@ const Prices = () => {
                                   <div className="game__image-wrapper">
                                       <img className="game__image" src={foto2} alt="Star Wars : Rebellion"/>
                                   </div>
-                                  <div class="game__desc">
+                                  <div className="game__desc">
                                       <div className="game__price-overlay">
                                           <div className="game__price">
                                               35 $
@@ -52,9 +52,9 @@ const Prices = () => {
                                   </div>
                               </a>
                           </div>
-                          <div class="game-list__item">
+                          <div className="game-list__item">
                               <a href="" className="game">
-                                  <div class="game__image-wrapper">
+                                  <div className="game__image-wrapper">
                                       <img className="game__image" src={foto3} alt="LEGO Pirates of the Caribbean"/>
                                   </div>
                                   <div className="game__desc">
@@ -143,7 +143,7 @@ const Prices = () => {
                                      </p>
                                      <div className="bottom"></div>
                                      </div>
-                                     <label for="read-more-checker" className="read-more-button"></label>
+                                     <label htmlFor="read-more-checker" className="read-more-button"></label>
                                  </div>
                                  
                              </div>
