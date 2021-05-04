@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
 const SideBar = ({ history }) => {
     const classes = useStyles();
     const { getProductsData } = useContext(productsContext)
-    const [sliderValue, setSliderValue] = useState(getSlider())
+    const [sliderValue, setSliderValue] = useState([0, 20000])
     const [genre, setGenre] = useState((getGenre()))
     const [checkedGenre, setcheckedGenre] = useState({
         actions: false,
@@ -57,9 +57,9 @@ const SideBar = ({ history }) => {
 
         async function handleSliderValue(e, value) {
         console.log(e, value)
-        const search = new URLSearchParams(history.location.search)
-        await search.set('price_lte', value)
-        await history.push(`${history.location.pathname}?${search.toString()}`)
+        // const search = new URLSearchParams(history.location.search)
+        // await search.set('price_lte', value)
+        await history.push(`${history.location.pathname}?_limit=8&price_gte=${value[0]}&price_lte=${value[1]}`)
         getProductsData(history)
             setSliderValue(value)
     }

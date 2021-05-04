@@ -23,3 +23,9 @@
 .navbar__ul li a:hover {
     color: #ff793a;
 }
+
+@media screen and (max-width: 768px){
+    .navbar__ul{
+        display: none;
+    }
+}

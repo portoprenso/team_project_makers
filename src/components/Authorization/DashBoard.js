@@ -206,7 +206,6 @@ const DashBoard = ({title, body}) => {
                                 <th>Скидка</th>
                                 <th>Количество</th>
                                 <th>Предварительный итог</th>
-                                <th>Убрать из корзины</th>
                             </tr>
                         </thead>
                         <tbody>
