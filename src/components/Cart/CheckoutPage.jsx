@@ -4,6 +4,8 @@ import React, { useContext, useEffect, useRef } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { productsContext } from '../../contexts/ProductsContext';
 import { calcTotalPrice } from '../../helpers/calcPrice';
+import { Link } from 'react-router-dom'
+
 
 const useStyles = makeStyles((theme) => ({
     checkout__root: {
@@ -61,24 +63,35 @@ const useStyles = makeStyles((theme) => ({
     const commentaryRef = useRef()
 
         async function getUserFromJson(email){
+            
+        }
+
+
+        const handleChange = async (email) => {
             let { data } = await axios('http://localhost:8000/dbUsers')
-            await data.forEach(item => (
-                console.log(item)
-            ))
-        }
-
-
-    const handleChange = () => {
-        getUserFromJson(currentUser.email)
-        let newUser = {
-            name: nameRef.current.children[1].children[0].value,
-            phone: phoneRef.current.children[1].children[0].value,
-            mail: mailRef.current.children[1].children[0].value,
-            comment: commentaryRef.current.children[1].children[0].value,
-            orders: [cart]
-        }
-        console.log(cart);
-        console.log(currentUser);
+                await data.forEach(item => {
+                    console.log(item)
+                    cart.comment = commentaryRef.current.children[1].children[0].value
+                    if (email==item.email){
+                        let newUser = {
+                            name: item.name,
+                            phone: item.phone,
+                            mail: item.mail,
+                            orders: [...item.orders, cart]
+                        }
+                        axios.patch(`http://localhost:8000/dbUsers/${item.id}`, newUser)
+                    } else {
+                        let newUser = {
+                            name: nameRef.current.children[1].children[0].value,
+                            phone: phoneRef.current.children[1].children[0].value,
+                            mail: mailRef.current.children[1].children[0].value,
+                            orders: [cart]
+                        }
+                        axios.post('http://localhost:8000/dbUsers', newUser)
+                    }
+                })
+            console.log(cart);
+            // console.log(currentUser);
     }
 
 
@@ -136,7 +149,7 @@ const useStyles = makeStyles((theme) => ({
                 </form>
 
 
-                <Button onClick={() => handleChange()} color='primary' variant='contained'>Оплатить</Button>
+                <Button onClick={() => handleChange(currentUser.email)} color='primary' variant='contained'><Link exact to="/buy">Оплатить</Link></Button>
 
                     {/* <Typography required={true} className={classes.textfieldsHeaders} variant='p'>Ваше имя</Typography>
                     <TextareaAutosize required placeholder='Your name...'></TextareaAutosize>

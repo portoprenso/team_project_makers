@@ -33,6 +33,7 @@ const reducer = (state=INIT_STATE, action) =>{
     }
 }
 
+
 const ProductsContextProvider = ({ children }) => {
     const history = useHistory()
     const getProductsData = async (history) => {
@@ -168,6 +169,14 @@ const ProductsContextProvider = ({ children }) => {
         await getCart()
     }
 
+    async function removeAllProductsFromCart() {
+        await localStorage.removeItem('cart')
+        await dispatch({
+            type: "CHANGE_COUNT",
+            payload: null
+        })
+    }
+
     function getCart() {
         let cart = JSON.parse(localStorage.getItem('cart'))
         if (!cart) {
@@ -241,7 +250,8 @@ const ProductsContextProvider = ({ children }) => {
         getProductsDataDiscountSorted,
         getProductDetails,
         editProduct,
-        removeProductFromCart
+        removeProductFromCart,
+        removeAllProductsFromCart
     }
 
     return (
