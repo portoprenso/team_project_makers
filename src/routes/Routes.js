@@ -13,7 +13,7 @@ import SignUp from '../components/Authorization/SignUp'
 import ForgotPassword from '../components/Authorization/ForgotPassword'
 import UpdateProfile from '../components/Authorization/UpdateProfile'
 import DashBoard from '../components/Authorization/DashBoard'
-import RpgPage from '../components/GenresPages/RpgPage'
+// import GenresPages from '../components/GenresPages/GenresPages'
 import Popular from '../components/Popular/Popular';
 import GenresPages from '../components/GenresPages/GenresPages'
 import Cart from '../components/Cart/Cart';

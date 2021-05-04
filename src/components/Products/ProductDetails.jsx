@@ -89,11 +89,11 @@ const ProductDetails = (props) => {
                             <div className="btn_offset">
                                <button 
                                onClick={() => {addProductToCart(productDetails)}} 
-                        class="offset">В корзину</button>
+                        className="offset">В корзину</button>
                             </div>
                             <div className="two_btn">
-                            <button class="fill">Как активировать?</button>
-                            <button class="fill">Хочу дешевле!</button>
+                            <button className="fill">Как активировать?</button>
+                            <button className="fill">Хочу дешевле!</button>
                             </div>
                         </div>
                     

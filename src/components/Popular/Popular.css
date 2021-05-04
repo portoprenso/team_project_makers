@@ -1,7 +1,7 @@
 
 
 
-body{
+/* body{
     margin: 0;
     padding: 0;
     font-family: Open Sans,Arial,Helvetica,Verdana,sans-serif;
@@ -20,7 +20,7 @@ body{
     -ms-flex-direction: column;
     flex-direction: column;
     min-height: 100%;
-}
+} */
 
 
 .game__image{
@@ -35,14 +35,15 @@ body{
     padding-bottom: 0;
 }
 
-ul.popular__list.game-list{
+/* ul.popular__list.game-list{
     margin: 0!;
     padding: 0 !important;
-}
+} */
 .popular__list{
     display: flex;
     flex-wrap: wrap;
     margin-right: 20px;
+    justify-content: center;
 }
 
 
@@ -60,9 +61,11 @@ ul.popular__list.game-list{
 }
 
 .popular__header{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
+    /* display: flex;
+    flex-direction: row; */
+    /* justify-content: space-between;
+    margin-left: 10px; */
+    width: 100%;
 
 }
 
@@ -80,6 +83,11 @@ ul.popular__list.game-list{
 
 .popular_tabs{
     margin-left: 150px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+
 }
 
 .popular__tabs-item:hover{
@@ -96,7 +104,18 @@ ul.popular__list.game-list{
     -webkit-transition: color .3s ease;
     transition: color .3s ease;
     padding: 0 20px 15px;
+    width: 350px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
+
+
+.popular__tabs-item a {
+    color: inherit;
+}
+
 
 .game {
     width: 100%;
@@ -116,13 +135,13 @@ ul.popular__list.game-list{
 }
 
 
-a {
+/* a {
     color: #0094e9;
     -webkit-transition: color .3s ease;
     transition: color .3s ease;
     outline: none!important;
     text-decoration: none;
-}
+} */
 
 .game__discount {
     background-color: #01b599;
@@ -136,6 +155,30 @@ div {
 }
 
 
+/* .navbar__ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+}
+.navbar__ul li {
+    width: 350px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
 
+.navbar__ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color ease-in-out 0.2s;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.navbar__ul li a:hover {
+    color: #ff793a;
+}
 
-
+ */
