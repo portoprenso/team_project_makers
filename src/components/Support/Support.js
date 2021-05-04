@@ -115,20 +115,20 @@ export default function Support() {
                
                <MonetizationOnIcon/>
                </div>
-               <p>Продукты</p>
+               <p>Платежи</p>
            </div>
            <div className="icon">
            <div className="wrapper">
                
                <ErrorOutlineIcon/>
            </div>
-               <p>Продукты</p>
+               <p>Проблема</p>
            </div>
            <div className="icon">
                <div className="wrapper">
                    <MoreHorizIcon/>
                </div>
-               <p>Продукты</p>
+               <p>Подержка</p>
            </div>
         </div>
         <div className="question">
