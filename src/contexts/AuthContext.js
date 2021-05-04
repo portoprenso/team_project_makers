@@ -51,6 +51,13 @@ function AuthProvider({children}) {
         return currentUser.updateEmail(email)
     }
 
+    // function checkEmail(email) {
+        
+    //     return {
+    //         if(email)
+    //     }
+    // }
+
     // function cookieExpireDate() {
     //     let newDate = Date.now()
     //     newDate = new Date(newDate).toUTCString()
