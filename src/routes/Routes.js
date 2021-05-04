@@ -13,11 +13,15 @@ import SignUp from '../components/Authorization/SignUp'
 import ForgotPassword from '../components/Authorization/ForgotPassword'
 import UpdateProfile from '../components/Authorization/UpdateProfile'
 import DashBoard from '../components/Authorization/DashBoard'
+// import GenresPages from '../components/GenresPages/GenresPages'
+import Popular from '../components/Popular/Popular';
 import GenresPages from '../components/GenresPages/GenresPages'
 import Cart from '../components/Cart/Cart';
 import ProductDetails from '../components/Products/ProductDetails';
 import EditProduct from '../components/Products/EditProduct';
 import Support from '../components/Support/Support';
+import Card from '../components/Cart/Buy/Buy';
+import CheckoutPage from '../components/Cart/CheckoutPage';
 
 
 
@@ -28,6 +32,9 @@ const Routes = () => {
                 <BrowserRouter>
                     <Header />
                     <Switch>
+
+                    <PrivateRoute exact path="/" component={HomePage} />
+                    {/* <PrivateRoute exact path="/" component={Popular}/>  */}
                     <PrivateRoute exact path="/profile" component={DashBoard} />
                     <PrivateRoute path="/update-profile" component={UpdateProfile} />
                         <Route exact path='/cart' component={Cart} />
@@ -43,6 +50,8 @@ const Routes = () => {
                         <Route exact path='/catalogue/gamedetails/:id' component={ProductDetails}/>
                         <Route exact path='/catalogue/editproduct/:id' component={EditProduct}/>
                         <Route exact path='/support' component={Support}/>
+                        <Route exact path="/checkout" component={CheckoutPage}/>
+                        <Route exact path="/buy" component={Card}/>
                     </Switch>
                     <Footer />
                 </BrowserRouter>

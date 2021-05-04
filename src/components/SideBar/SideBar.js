@@ -8,7 +8,6 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Slider from '@material-ui/core/Slider';
 import { productsContext } from '../../contexts/ProductsContext';
 import Checkbox from '@material-ui/core/Checkbox';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import FormGroup from '@material-ui/core/FormGroup';
 
 const useStyles = makeStyles(theme => ({
@@ -50,19 +49,6 @@ const SideBar = ({ history }) => {
             return
         }
         const search = new URLSearchParams(history.location.search)
-        if(search.has('category', event.target.value)){
-            await search.delete('category', event.target.value)
-            await history.push(`${history.location.pathname}?${search.toString()}`)
-            getProductsData(history)
-            setGenre(event.target.value)
-            return
-        } else if(search.has('category')) {
-            await search.append('category', event.target.value)
-            await history.push(`${history.location.pathname}?${search.toString()}`)
-            getProductsData(history)
-            setGenre(event.target.value)
-            return
-        }
         await search.set('category', event.target.value)
         await history.push(`${history.location.pathname}?${search.toString()}`)
         getProductsData(history)
@@ -83,12 +69,13 @@ const SideBar = ({ history }) => {
             <Paper className={classes.paper}>
             <FormControl component="fieldset">
             <FormLabel component="legend">Жанры</FormLabel>
-            <FormGroup value={genre} onChange={handleChangeGenre} aria-label="genre" name="genre1">
-                <FormControlLabel value="Экшены" control={<Checkbox />} label="Экшены" name="actions"/>
-                <FormControlLabel value="РПГ" control={<Checkbox />} label="РПГ" name="rpg"/>
-                <FormControlLabel value="Стратегии" control={<Checkbox />} label="Стратегии" name="strategy"/>
-                <FormControlLabel value="all" control={<Checkbox />} label="All" name="all"/>
-            </FormGroup>
+            <RadioGroup value={genre} onChange={handleChangeGenre} aria-label="genre" name="genre1">
+                <FormControlLabel value="Экшены" control={<Radio />} label="Экшены" name="actions"/>
+                <FormControlLabel value="РПГ" control={<Radio />} label="РПГ" name="rpg"/>
+                <FormControlLabel value="Стратегии" control={<Radio />} label="Стратегии" name="strategy"/>
+                <FormControlLabel value="all" control={<Radio />} label="All" name="all"/>
+            </RadioGroup>
+
             {/* <RadioGroup value={memory} onChange={handleChangeMemory} aria-label="memory" name="memory1">
                 <FormControlLabel value="Экшены" control={<Radio />} label="Экшены" />
                 <FormControlLabel value="РПГ" control={<Radio />} label="РПГ" />

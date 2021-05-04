@@ -26,7 +26,8 @@ const DashBoard = ({title, body}) => {
     const categoryRef = useRef()
     const imageRef = useRef()
     const imageLargeRef = useRef()
-    const countInStockRef = useRef()    
+    const countInStockRef = useRef()  
+    console.log(currentUser);  
 
     async function handleLogout() {
         setError('')
@@ -43,14 +44,14 @@ const DashBoard = ({title, body}) => {
         let newObj = {
           title: titleRef.current.value,
           description: descriptionRef.current.value,
-          price: priceRef.current.value,
-          oldPrice: oldPriceRef.current.value,
-          discountPercent: discountPercentPriceRef.current.value,
+          price: parseInt(priceRef.current.value),
+          oldPrice: parseInt(oldPriceRef.current.value),
+          discountPercent: parseInt(discountPercentPriceRef.current.value),
           author: authorRef.current.value,
           category: categoryRef.current.value,
           image: imageRef.current.value,
           imageLarge: imageLargeRef.current.value,
-          countInStock: countInStockRef.current.value
+          countInStock: parseInt(countInStockRef.current.value)
         }
         await addNewProduct(newObj, history)
         titleRef.current.value = null

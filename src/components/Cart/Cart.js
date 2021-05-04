@@ -65,6 +65,8 @@ const Cart = () => {
                             <button className="btn_click">Купить</button>
                         </div>
                     </table>
+                    <h4>Общий итог: {calcTotalPrice(cart.products)}</h4>
+                    <Link exact to="/checkout"><Button>Купить</Button></Link>
                 </div>
             ) : (
                 <CircularProgress />

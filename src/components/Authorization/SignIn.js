@@ -3,6 +3,8 @@ import { Card, Button, Form, Alert} from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext'
 import { makeStyles } from '@material-ui/core/styles';
+import './SignIn.css'
+import Big from '../../assets/img/hito.jpg'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -12,9 +14,10 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "center"
     },
     signin__card: {
+        height: "100%",
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'space-around',
         flexDirection: 'column'
     }
 }));
@@ -45,29 +48,37 @@ const Login = () => {
     return (
         <div>
             <>
-            <Card>
-                <div className={classes.signin__card}>
-                    <h2 className={classes.signin__card__h2}>Авторизация</h2>
-                    {error && <Alert variant="danger">{error}</Alert>}
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group id="email">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" ref={emailRef} required />
-                        </Form.Group>
-                        <Form.Group id="password">
-                            <Form.Label>Пароль</Form.Label>
-                            <Form.Control type="password" ref={passwordRef} required />
-                        </Form.Group>
-                        <Button disabled={loading} className="w-100" type="submit">Авторизоваться</Button>
-                    </Form>
-                    <div className="w-100 text-center mt-3">
-                        <Link to='/forgot-password'>Забыли пароль?</Link>
+            <div className="hito">
+                {/* <div className="imagess">
+                    <img src={Big} alt="" />
+                </div> */}
+                <Card>
+                    <div className="big">
+                    <div className={classes.signin__card}>
+                        <h2 className={classes.signin__card__h2} >Авторизация</h2>
+                        {error && <Alert variant="danger">{error}</Alert>}
+                        <Form onSubmit={handleSubmit}>
+                            <Form.Group id="email">
+                                {/* <Form.Label>Email</Form.Label> */}
+                                <Form.Control className="signin__emailInput" placeholder="Email" type="email" ref={emailRef} required />
+                            </Form.Group>
+                            <Form.Group id="password">
+                                {/* <Form.Label>Пароль</Form.Label> */}
+                                <Form.Control className="signin__passInput" placeholder="Password" type="password" ref={passwordRef} required />
+                            </Form.Group>
+                            <Button disabled={loading} className="w-100" type="submit">Авторизоваться</Button>
+                        </Form>
+                        <div className="w-101 text-center mt-3">
+                            <Link id="color" to='/forgot-password'>Забыли пароль?</Link>
+                        </div>
+                        <div className="w-101 text-center mt-2">
+                            Нужен аккаунт? <Link id="color" to="/signup">Зарегистрироваться</Link>
+                        </div>
                     </div>
-                    <div className="w-100 text-center mt-2">
-                        Нужен аккаунт? <Link to="/signup">Зарегистрироваться</Link>
+                    
                     </div>
-                </div>
-            </Card>
+                </Card>
+            </div>
             </>
         </div>
     );

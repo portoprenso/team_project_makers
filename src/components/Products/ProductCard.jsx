@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
@@ -13,8 +12,6 @@ import { calcDiscountPercent } from '../../helpers/calcPrice'
 import { Button, Grid } from '@material-ui/core';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
-import { JSON_API } from '../../helpers/constants'
-import axios from 'axios'
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext';
 
@@ -66,7 +63,7 @@ export default function ProductCard({ item }) {
                     title={item.title}
                 />
                 <CardHeader className={classes.productCard__header}
-                    title={<Typography variant="h7">{item.title}</Typography>}
+                    title={<Typography variant="h6">{item.title}</Typography>}
                     subheader={<Typography color="textSecondary">{item.category}</Typography>}
                     subheader={<Typography color="textSecondary">{item.category}</Typography>}
                 />

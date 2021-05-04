@@ -1,12 +1,16 @@
 import React, { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import './Carousel.css'
+import Popular from '../Popular/Popular';
+import Prices from '../../Prices/Prices';
 // import { Carousel } from 'react-responsive-carousel';
 // import Albion from '../../assets/img/Albion-900x444.jpg'
+// import { Grid } from '@material-ui/core';
 
-import './Carousel.css'
 
 const MainCarousel = () => {
     return (
+        <>
         <Carousel className="carouselContainer" showThumbs={false}>
         <div className="video">
             {/* <img className="foto" src={Dota} alt="logo" /> */}
@@ -19,7 +23,12 @@ const MainCarousel = () => {
         </div>
       
         
-        </Carousel>
+    </Carousel>    
+    <Popular />
+    <Prices/>
+
+
+    </>
         );
 };
 
