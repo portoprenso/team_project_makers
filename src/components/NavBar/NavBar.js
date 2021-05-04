@@ -226,7 +226,7 @@ export default function Navbar() {
                     </IconButton>
                     <ul className="navbar__ul">
                         <li><Link exact to="/catalogue">КАТАЛОГ ПРОДУКЦИИ</Link></li>
-                        <li><Link>ПОДДЕРЖКА</Link></li>
+                        <li><Link exact to="/support">ПОДДЕРЖКА</Link></li>
                         <li><Link>МОИ ПОКУПКИ</Link></li>
                     </ul>
                     <div className={classes.search}>
