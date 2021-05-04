@@ -13,11 +13,12 @@ import SignUp from '../components/Authorization/SignUp'
 import ForgotPassword from '../components/Authorization/ForgotPassword'
 import UpdateProfile from '../components/Authorization/UpdateProfile'
 import DashBoard from '../components/Authorization/DashBoard'
+import RpgPage from '../components/GenresPages/RpgPage'
+import Popular from '../components/Popular/Popular';
 import GenresPages from '../components/GenresPages/GenresPages'
 import Cart from '../components/Cart/Cart';
 import ProductDetails from '../components/Products/ProductDetails';
 import EditProduct from '../components/Products/EditProduct';
-
 
 
 const Routes = () => {
@@ -27,6 +28,9 @@ const Routes = () => {
                 <BrowserRouter>
                     <Header />
                     <Switch>
+
+                    <PrivateRoute exact path="/" component={HomePage} />
+                    {/* <PrivateRoute exact path="/" component={Popular}/>  */}
                     <PrivateRoute exact path="/profile" component={DashBoard} />
                     <PrivateRoute path="/update-profile" component={UpdateProfile} />
                         <Route exact path='/cart' component={Cart} />
