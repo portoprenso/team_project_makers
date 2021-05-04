@@ -218,14 +218,14 @@ export default function Navbar() {
                     <Link style={{color: "inherit", textDecoration: "none"}} exact to="/homepage">
                         <img src={Logo} className={classes.navbar__logo}/>
                     </Link>
-                    <IconButton
+                    {/* <IconButton
                         edge="start"
                         className={classes.menuButton}
                         color="inherit"
                         aria-label="open drawer"
                     >
                         <MenuIcon className={classes.navbar__menuicon} />
-                    </IconButton>
+                    </IconButton> */}
                     <ul className="navbar__ul">
                         <li><Link exact to="/catalogue">КАТАЛОГ ПРОДУКЦИИ</Link></li>
                         <li><Link exact to="/support">ПОДДЕРЖКА</Link></li>
