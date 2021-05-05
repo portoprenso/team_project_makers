@@ -24,7 +24,13 @@ const useStyles = makeStyles((theme) => ({
           flexDirection: 'column',
           border: 'black solid 1px',
           padding: 50,
-          backgroundColor: 'white'
+          backgroundColor: 'white',
+          ['@media(max-width: 780px)'] : {
+                  padding: 5
+            },
+          ['@media(max-width: 600px)'] : {
+                  width: `100% !important`
+            }
       },
       textfieldsHeaders:{
         fontSize: '1.5rem',
@@ -35,7 +41,10 @@ const useStyles = makeStyles((theme) => ({
         },
         mainContainer: {
             display: 'flex',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            ['@media(max-width: 600px)'] : {
+                flexDirection: 'column'
+          }
         },
         tdItem: {
             padding: '10px!important'
@@ -50,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
         },
         textfields__item: {
             margin: '10px auto'
-        }
+        },
     }));
     
     const CheckoutPage = () => {
@@ -113,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
         <Grid xs={11} className={classes.checkout__root}>
             <Typography variant='h2'>Оформление заказа</Typography>
             <Grid className={classes.mainContainer}>
-                <Grid xs={8} className={classes.leftContainer}>
+                <Grid lg={8} xl={12} className={classes.leftContainer}>
                 <Typography className={classes.textfieldsCommentary}>Заполните простую форму и наши менеджеры свяжутся с вами, ответят на любые вопросы.</Typography>
                 <form noValidate autoComplete="off">
                 <div className={classes.textFieldsContainer}>

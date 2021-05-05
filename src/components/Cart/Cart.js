@@ -30,7 +30,7 @@ const Cart = () => {
         <div className="cart">
             {cart.products ? (
                 <div>
-                    <table>
+                    <table className="cart__table">
                         {/* <thead>
                         </thead> */}
                         <tbody>

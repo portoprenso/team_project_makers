@@ -102,3 +102,11 @@ a{
 .dashBoard__buttongroup{
     margin: 15px
 }
+
+@media screen and (max-width: 768px){
+    .fff{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
