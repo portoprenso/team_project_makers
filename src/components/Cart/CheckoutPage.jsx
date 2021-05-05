@@ -60,18 +60,25 @@ const useStyles = makeStyles((theme) => ({
     const nameRef = useRef()
     const phoneRef = useRef()
     const mailRef = useRef()
-    const commentaryRef = useRef()
+    const commentaryRef = useRef('asd')
 
-        async function getUserFromJson(email){
-            
-        }
+
+
+        const handleStopProp = (e) => {
+            e.stopPropagation();
+            return console.log("Works?");
+        };
+      
 
 
         const handleChange = async (email) => {
             let { data } = await axios('http://localhost:8000/dbUsers')
                 await data.forEach(item => {
-                    console.log(item)
-                    cart.comment = commentaryRef.current.children[1].children[0].value
+                    cart.comment = 'asd'
+                    console.log(cart.comment)
+                    console.log(phoneRef.current)
+                    console.log(phoneRef.current.children[1].children[0].value)
+                    // cart.comment = commentaryRef.current.children[1].children[0].value
                     if (email==item.email){
                         let newUser = {
                             name: item.name,
@@ -149,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
                 </form>
 
 
-                <Button onClick={() => handleChange(currentUser.email)} color='primary' variant='contained'><Link exact to="/buy">Оплатить</Link></Button>
+                <Button onClick={() => handleChange(currentUser.email)} color='primary' variant='contained'><Link onClick={(e) => handleStopProp(e)} exact to="/buy">Оплатить</Link></Button>
 
                     {/* <Typography required={true} className={classes.textfieldsHeaders} variant='p'>Ваше имя</Typography>
                     <TextareaAutosize required placeholder='Your name...'></TextareaAutosize>
