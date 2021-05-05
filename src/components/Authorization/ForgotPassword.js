@@ -3,6 +3,7 @@ import { Card, Button, Form, Alert } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext'
 import { makeStyles } from '@material-ui/core/styles';
+import './ForgotPassword.css'
 
 const useStyles = makeStyles((theme) => ({
     forgot__card__h2: {
@@ -43,26 +44,30 @@ const ForgotPassword = () => {
     return (
         <div>
             <>
+            <div className="hito">
             <Card>
-                <Card.Body className={classes.forgot__card}>
-                    <h2 className={classes.forgot__card__h2}>Сброс пароля</h2>
+                <div className="big">
+                <div className={classes.forgot__card}>
+                    <h2 className={classes.forgot__card__h2} id="sbr">Сброс пароля</h2>
                     {error && <Alert variant="danger">{error}</Alert>}
                     {message && <Alert variant="success">{message}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" ref={emailRef} required />
+                            {/* <Form.Label>Email</Form.Label> */}
+                            <Form.Control className="signin__emailInput" placeholder="Email" type="email" ref={emailRef} required />
                         </Form.Group>
-                        <Button disabled={loading} className="w-100" type="submit">Сбросить пароль</Button>
+                        <Button disabled={loading} className="ww-100" type="submit">Сбросить пароль</Button>
                     </Form>
-                    <div className="w-100 text-center mt-3">
-                        <Link to='/login'>Авторизоваться</Link>
+                    <div className="f-100 text-center mt-3">
+                        <Link id="color" to='/login'>Авторизоваться</Link>
                     </div>
-            <div className="w-100 text-center mt-2">
-                Нужен аккаунт? <Link to="/signup">Зарегистрироваться</Link>
+            <div className="f-100 text-center mt-2">
+                Нужен аккаунт? <Link id="color" to="/signup">Зарегистрироваться</Link>
             </div>
-                </Card.Body>
+                </div>
+                </div>
             </Card>
+            </div>
             </>
         </div>
     );

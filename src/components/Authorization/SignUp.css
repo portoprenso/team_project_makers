@@ -1,0 +1,132 @@
+.hito{
+    width: 100vw;
+    height: 720px;
+    margin: 0 auto;
+    /* background: url('../../assets/img/hito.jpg'); */
+    border-radius: 4px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/img/hito.jpg');
+    
+  
+    text-align: center;
+    /* padding: 10px; */
+    /* background: #ffffff; */
+    opacity: 0.7;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    /* border-top: solid 3px red;
+    border-bottom: solid 3px red; */
+}
+
+.signin__emailInput{
+    background: #fff!important;
+}
+
+.signin__passInput{
+    background: #fff!important;
+}
+
+.big{
+    height: 100%;
+}
+
+/* .imagess{
+    width: 100vw;
+    height:715px;
+} */
+
+/* .imagess>img{
+    width: auto;
+    height: auto;
+} */
+
+
+.classes.signin__card{
+    padding-top: 15%;
+}
+
+.classes.signin__card__h2{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    background: #ffffff;
+    opacity: 0.7;
+    margin-top: -50px;
+}
+
+.hito input{
+   display: flex;
+   justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+  height: 45px;
+  border-radius: 10px;  
+  border:none;
+  outline: none;
+  background-color: rgb(0, 213, 255);
+  margin-right: 40px;
+  padding: 10px;
+    margin-bottom: 20px;
+}
+.form-group{
+    margin-left: 40px;
+    /* padding: 15px; */
+    width: 300px;
+}
+
+input:focus{
+    color: #000000;
+    border-radius: 10px;
+    border: 2px solid #436fea;
+}
+
+.w-100{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-radius: 10px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    background-color: orange;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    
+}
+
+.classes.signin__card__h2,#email, #password,  .w-101 {
+  margin-top: 13vh;
+  margin-left: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.w-101{
+    color: black;
+
+}
+
+#color{
+    color: black;
+}
+
+
+
+
+
+::-webkit-input-placeholder {color:#3f3f44; padding-left: 10px;}
+::-moz-placeholder          {color:#3f3f44; padding-left: 10px;}
+:-moz-placeholder           {color:#3f3f44; padding-left: 10px;}
+:-ms-input-placeholder      {color:#3f3f44; padding-left: 10px;}
+
+
+

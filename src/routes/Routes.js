@@ -22,6 +22,7 @@ import EditProduct from '../components/Products/EditProduct';
 import Support from '../components/Support/Support';
 import Card from '../components/Cart/Buy/Buy';
 import CheckoutPage from '../components/Cart/CheckoutPage';
+import Thank from '../components/Thank you/Thank';
 
 
 
@@ -43,6 +44,7 @@ const Routes = () => {
                             <Redirect to="/homepage"/>
                         </Route>
                         <Route exact path='/forgot-password' component={ForgotPassword} />
+                        <Route exact path="/Thank" component={Thank}/>
                         <Route exact path='/signup' component={SignUp} />
                         <Route exact path='/login' component={SignIn}/>
                         <Route exact path='/update-profile' component={UpdateProfile}/>
