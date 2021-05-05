@@ -34,7 +34,7 @@ const ProductDetails = (props) => {
     const classes = useStyles()
 
     return (
-        <div>
+        <div className="body_details">
             <div className="details" >
             <div className="details__topBackgroung"></div>
             {/* <ul className="one">

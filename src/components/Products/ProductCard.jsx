@@ -14,6 +14,7 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext';
+import './ProductCard.css'
 
 
 
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         // paddingTop: '56.25%', // 16:9
     },
     productCard__price: {
-        alignSelf: 'center',
+        // alignSelf: 'center',
         display: 'flex',
         // flexDirection: 'column'
         alignItems: 'center',
@@ -42,9 +43,7 @@ const useStyles = makeStyles((theme) => ({
     productCard__header: {
         width: '40%'
     },
-    productCard__header__link: {
-        alignSelf: 'center'
-    }
+
 }));
 
 export default function ProductCard({ item }) {
@@ -57,12 +56,15 @@ export default function ProductCard({ item }) {
 
     return (
         <Card className={classes.root}>
-                <CardMedia
-                    className={classes.media}
+                {/* <CardMedia
+                    className={`${classes.media} testClass`}
                     image={item.image}
                     title={item.title}
-                />
-                <CardHeader className={classes.productCard__header}
+                /> */}
+
+                <div className="bigCardImage"><img src={`${item.image}`}/></div>
+
+                <CardHeader className={`${classes.productCard__header} ert `}
                     title={<Typography variant="h6">{item.title}</Typography>}
                     subheader={<Typography color="textSecondary">{item.category}</Typography>}
                     subheader={<Typography color="textSecondary">{item.category}</Typography>}
@@ -84,7 +86,7 @@ export default function ProductCard({ item }) {
                     <div></div>
                 )}
             </Grid>
-                <Typography className={classes.productCard__price} align="center" variant="h5" color="textPrimary" component="p">
+                <Typography className={`${classes.productCard__price} testClassPrice`} align="center" variant="h5" color="textPrimary" component="div">
                     <Button variant="contained" color="primary">{`-${calcDiscountPercent(item.oldPrice, item.price)}%`}</Button>
                     {`${item.price}с`}
                     <CardActions disableSpacing>

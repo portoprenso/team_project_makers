@@ -52,6 +52,7 @@ const Cart = () => {
                         </tbody>
                         <div className="btn_sum">
                             <h4>Общий итог: {calcTotalPrice(cart.products)}</h4>
+
                             
                             <Link exact to="/checkout"><button className="btn_click">Купить</button></Link>
                         </div>
