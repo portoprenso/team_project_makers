@@ -29,6 +29,12 @@ const ProductDetails = (props) => {
             textAlign: 'center',
             transition: '0.7s'
         }
+        // main__Container:{
+        //     display: 'flex',
+        //     ['@media(max-width: 1000px)'] : {
+        //         display: 'none'
+        //   }
+        // }
     }));
 
     const classes = useStyles()
@@ -42,7 +48,7 @@ const ProductDetails = (props) => {
                 <li>Каталог</li>
             </ul> */}
             <h1>{productDetails.title}</h1>
-            <div className="main">
+            <div className="main__Container">
                 <div className="main_menu_left">
 
                     <div className={`${classes.main_img} main_img`}>
