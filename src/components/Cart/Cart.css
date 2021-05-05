@@ -6,7 +6,7 @@ td {
 .cart td {
     padding: 10px 50px;
 }
-table{
+.cart__table{
     margin: 0 auto;
     height: 600px;
     margin-top: 50px;
@@ -54,3 +54,13 @@ li{
     color: rgb(255, 0, 0);
     background-color: #000;
 }   
+
+
+
+
+@media screen and (max-width: 768px){
+    .cart__table{
+        height: fit-content;
+        width: 80%;
+    }
+}
