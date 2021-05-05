@@ -396,6 +396,29 @@
           ],
           "totalPrice": 4328,
           "comment": "..."
+        },
+        {
+          "products": [
+            {
+              "item": {
+                "title": "DYING LIGHT",
+                "description": "От создателей популярных проектов Dead Island и Call of Juarez. Свыше 50 наград и номинаций от игровой индустрии. Именно эта игра про зомби от первого лица установила новые стандарты жанра. Даже спустя годы после выхода для игры выпускаются новые материалы и проводятся бесплатные события сообщества.",
+                "price": 339,
+                "oldPrice": 1299,
+                "discountPercent": "74",
+                "author": "Techland Publishing",
+                "category": "Экшены",
+                "image": "https://steampay.com/image/dying-light-enhanced-edition.jpg?1535877699",
+                "imageLarge": "https://steampay.com/product/dying-light-enhanced-edition.jpg?1535957870",
+                "countInStock": "5",
+                "id": 17
+              },
+              "count": 1,
+              "subPrice": 339
+            }
+          ],
+          "totalPrice": 339,
+          "comment": "kjhsfk"
         }
       ]
     }
