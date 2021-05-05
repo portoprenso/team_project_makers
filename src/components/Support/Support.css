@@ -8,7 +8,8 @@
     display: flex;
 }
 .logo_img{
-    margin-left: 650px;
+    
+    margin: 0 auto;
     margin-top: 50px;
 }
 .logo_img img{
@@ -113,4 +114,33 @@
 #green:hover{
     background-color: green;
     color: #fff;
+}
+
+
+@media all and (max-width: 1400px){
+  .top_text h1, h2{
+      font-size: 20px;
+  }
+  .main , .icon, .wrapper p, .classes.heading{
+      font-size: 20px;
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .question h2{
+      font-size: 20px;
+  }
+  .otzyv p, #green, #red{
+      font-size: 20px;
+  }
+  
+}
+
+@media all and (max-width: 355px){
+    .top{
+        font-size: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        height: 400px;
+        width: 330px;
+    }
 }
