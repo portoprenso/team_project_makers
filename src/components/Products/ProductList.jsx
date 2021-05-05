@@ -19,6 +19,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { JSON_API } from '../../helpers/constants'
 import axios from 'axios'
+import "./ProductList.css"
 
 
 // useStyles start here ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
@@ -36,15 +37,12 @@ const useStyles = makeStyles((theme) => ({
           justifyContent: 'space-evenly',
           marginTop: 50,
       },
-      productList__container__discountbar:{
-
-      },
       paginationClass:{
         marginTop: 50
       },
       root: {
         backgroundColor: theme.palette.background.paper,
-        width: "60%",
+        // width: "60%",
       },
       discountText: {
           height: 10,
@@ -101,6 +99,7 @@ const ProductList = (props) => {
 
     const getTestDiscount = async (history) => {
         let res = await axios(`${JSON_API}?_limit=8&${window.location.search}&_sort=discountPercent&_order=desc`)
+        console.log(res)
         settestDiscount(res)
         // console.log(res.data);
     }
@@ -147,15 +146,14 @@ const ProductList = (props) => {
         getTestDiscount(history)
         // getProductsDataDiscountSorted(history);
         // console.log(productsWithDiscount);
-    }
-        , []
-    )
+    },[])
+    console.log(testDiscount)
     return (
             <Grid className={classes.productList__root} xs={11}>
                 <Grid className={classes.productList__container}>
 
 
-                    <div className={classes.root}>
+                    <div className={`${classes.root} tabsContainer`}>
                         <AppBar position="static" color="default">
                             <Tabs
                             value={value}
@@ -165,9 +163,9 @@ const ProductList = (props) => {
                             variant="fullWidth"
                             aria-label="full width tabs example"
                             >
-                            <Tab onClick={() => getProductsDataIdSorted(history)} label="Новинки" {...a11yProps(0)} />
-                            <Tab onClick={() => getProductsDataStockSorted(history)} label="В наличии" {...a11yProps(1)} />
-                            <Tab onClick={() => getProductsDataExpectedSorted(history)} label="Ожидаемые" {...a11yProps(2)} />
+                            <Tab className="asd" onClick={() => getProductsDataIdSorted(history)} label="Новинки" {...a11yProps(0)} />
+                            <Tab className="asd" onClick={() => getProductsDataStockSorted(history)} label="В наличии" {...a11yProps(1)} />
+                            <Tab className="asd" onClick={() => getProductsDataExpectedSorted(history)} label="Ожидаемые" {...a11yProps(2)} />
                             </Tabs>
                         </AppBar>
                         <SwipeableViews
@@ -207,7 +205,7 @@ const ProductList = (props) => {
 
 
 
-                    <Grid className={classes.productList__container__discountbar} container item xs={3}>
+                    <Grid className="productList__container__discountbar" container item xs={3}>
                     <Typography variant="h4" className={classes.discountText}>Скидки</Typography>
                         {
                             testDiscount ?
