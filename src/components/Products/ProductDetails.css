@@ -3,7 +3,7 @@
     margin: 0;
 }
 .body_details{
-    height: 1600px
+    height: 1500px
 }
 
 .details__topBackgroung{
@@ -42,7 +42,7 @@ h1{
     padding-top: 40px;
     margin-left: 100px;
 }
-.main{
+.main__Container{
     display: flex;
 }
 /* .main_img{
@@ -202,6 +202,7 @@ h1{
 
 .nakonecto{
     background-color: rgb(224, 217, 217);
+    width: 100%;
     height: 400px;
     margin-top: 100px;
 }
@@ -217,6 +218,7 @@ h1{
     background-color: rgb(224, 217, 217);
     height: 400px;
     margin-top: 50px;
+    width: 100%;
 }
 .nakonecto2 p{
     padding-top: 40px;
@@ -225,4 +227,79 @@ h1{
 .nakonecto2 h2{
     padding-top: 40px;
     padding-left: 50px;
+}
+
+
+@media all and (max-width: 1400px) {
+    .mains_price_menu{
+        display: flex;
+        flex-direction: column;
+    }
+    .mains_price{
+        margin-left: 0px;
+    }
+    .btn_offset, .two_btn{
+        margin-left: 0px;
+    }
+    .nakonecto{
+        height: 300px;
+        margin-top: 50px;
+    }
+    .nakonecto p{
+        font-size: 13px;
+    }
+    .nakonecto h2{
+        font-size: 20px;
+    }
+    .nakonecto2{
+        height: 300px;
+        
+
+    }
+    .nakonecto2 h2{
+        font-size: 20px;
+    }
+    
+}
+@media all and (max-width: 1000px) {
+    .main__Container{
+        display: flex;
+        flex-direction: column;
+    }
+    .body_details{
+        height: 2300px;
+    }
+}
+
+@media all and (max-width: 750px) {
+    .nakonecto{
+        height: 300px;
+        margin-top: 50px;
+    }
+    .nakonecto p{
+        font-size: 8px;
+    }
+    .nakonecto h2{
+        font-size: 15px;
+    }
+    .nakonecto2{
+        height: 300px;
+        
+
+    }
+    .nakonecto2 h2{
+        font-size: 15px;
+    }
+}
+
+@media all and (max-width: 520px){
+    .btn_offset button{
+        width: 200px;
+        font-size: 12px;
+    }
+    .two_btn button{
+        width: 100px;
+        font-size: 8px;
+        padding: 4px;
+    }
 }
