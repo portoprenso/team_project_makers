@@ -49,7 +49,6 @@ const ProductsContextProvider = ({ children }) => {
 
     const getProductDetails = async (id) => {
         let { data } = await axios(`${JSON_API}/${id}`)
-        // console.log(data);
         dispatch({
             type: 'GET_PRODUCTS_DETAILS',
             payload: data
@@ -159,7 +158,6 @@ const ProductsContextProvider = ({ children }) => {
         }
         await filteredCart.products.filter(elem => elem.item.id != product.id)
         await localStorage.removeItem('cart')
-        // localStorage.clear();
         filteredCart.totalPrice = calcTotalPrice(filteredCart.products)
         await localStorage.setItem('cart', JSON.stringify(filteredCart))
         await dispatch({

@@ -20,7 +20,6 @@ import './ProductCard.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        // maxWidth: "100%",
         width: "100%",
         display: "flex",
         padding: 20,
@@ -28,15 +27,11 @@ const useStyles = makeStyles((theme) => ({
     },
     media: {
         backgroundSize: "contain",
-        // width: 500,
         width: "25%",
         minWidth: "10%",
-        // paddingTop: '56.25%', // 16:9
     },
     productCard__price: {
-        // alignSelf: 'center',
         display: 'flex',
-        // flexDirection: 'column'
         alignItems: 'center',
         width: '25%'
     },
@@ -52,26 +47,17 @@ export default function ProductCard({ item }) {
     const { addProductToCart, checkProductInCart, deleteProduct } = useContext(productsContext)
     const { currentUser } = useAuth()
 
-    // console.log(history);
-
     return (
         <Card className={classes.root}>
-                {/* <CardMedia
-                    className={`${classes.media} testClass`}
-                    image={item.image}
-                    title={item.title}
-                /> */}
-
-                <div className="bigCardImage"><img src={`${item.image}`}/></div>
-
-                <CardHeader className={`${classes.productCard__header} ert `}
-                    title={<Typography variant="h6">{item.title}</Typography>}
-                    subheader={<Typography color="textSecondary">{item.category}</Typography>}
-                    subheader={<Typography color="textSecondary">{item.category}</Typography>}
-                />
-                <Typography className={classes.productCard__header__link}>
-                    <Link item={item} id={item.id} exact to={`/catalogue/gamedetails/${item.id}`}>Подробнее</Link>
-                </Typography>
+            <div className="bigCardImage"><img src={`${item.image}`}/></div>
+            <CardHeader className={`${classes.productCard__header} ert `}
+                title={<Typography variant="h6">{item.title}</Typography>}
+                subheader={<Typography color="textSecondary">{item.category}</Typography>}
+                subheader={<Typography color="textSecondary">{item.category}</Typography>}
+            />
+            <Typography className={classes.productCard__header__link}>
+                <Link item={item} id={item.id} exact to={`/catalogue/gamedetails/${item.id}`}>Подробнее</Link>
+            </Typography>
             <Grid xs={1}>
                 { currentUser ? (<div>
                     <Button onClick={() => deleteProduct(item.id, history)}>

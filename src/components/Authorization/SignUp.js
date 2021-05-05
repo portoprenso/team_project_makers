@@ -46,6 +46,7 @@ const SignUp = () => {
             setError('Failed to create an account')
         }
         setLoading(false)
+        history.push('/login')
     }
     return (
         <div>
@@ -70,7 +71,9 @@ const SignUp = () => {
                             <Form.Control className="signin__passInput" placeholder="Password" type="password" ref={passwordConfirmRef} required />
                         </Form.Group>
                         <Button disabled={loading} className="w-100" type="submit">
-                        <Link id="color" to='/'>Зарегистрироваться</Link></Button>
+                        {/* <Link id="color" to='/'>Зарегистрироваться</Link> */}
+                        Зарегистрироваться
+                        </Button>
                     </Form>
                     <div className="w-101 text-center mt-2">
                         Уже есть аккаунт? <Link id="color" exact to="/login">Авторизоваться</Link>

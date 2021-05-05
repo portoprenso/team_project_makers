@@ -1,13 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
-import ProductsContextProvider, {productsContext} from "../../contexts/ProductsContext";
-import {Button, Grid, Typography} from "@material-ui/core";
+import {productsContext} from "../../contexts/ProductsContext";
+import { Grid, Typography } from "@material-ui/core";
 import ProductCard from "../Products/ProductCard";
 import Pagination from '@material-ui/lab/Pagination';
-import { BrowserRouter, Link, Route, Switch, useHistory } from 'react-router-dom'
-import AuthContextProvider, {authContext} from "../../contexts/AuthContext";
-import Header from '../Header/Header';
+import { useHistory } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
-import ProductCardSmall from '../Products/ProductCardSmall';
 import SideBar from '../SideBar/SideBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -16,19 +13,11 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'hidden',
         padding: theme.spacing(0, 3),
         margin: '0 auto',
-        // display: "flex",
-      },
-      paper: {
-        // margin: `${theme.spacing(1)}px auto`,
-        // padding: theme.spacing(2),
       },
       productList__container: {
           display: 'flex',
           justifyContent: 'space-evenly',
           marginTop: 50
-      },
-      productList__container__discountbar:{
-
       }
   }));
 
@@ -39,7 +28,6 @@ const GenresPages = (props) => {
     const { getProductsData, productsData, paginationPages } = useContext(productsContext)
     function getPage() {
         const search = new URLSearchParams(history.location.search)
-        // console.log(history);
         return search.get('_page')
     }
     const [page, setPage] = useState(getPage())
@@ -64,13 +52,6 @@ const GenresPages = (props) => {
                                 ))
                             }
                     </Grid>
-                    {/* <Grid className={classes.productList__container__discountbar} container item xs={3} spacing={6}>
-                        {
-                            productsData.map((item) => (
-                                <ProductCardSmall xs={12} sm={12} className={classes.paper} item={item} key={item.id} />
-                                ))
-                            }
-                    </Grid> */}
                     <SideBar {...props}/>
                 </Grid>
                 <Pagination page={+page} onChange={(event, page) => {handlePage(event, page)}} count={paginationPages} color="primary" />
