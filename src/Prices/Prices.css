@@ -82,13 +82,13 @@ a{
     padding-left: 16px;
 }
 
-.limited {
+/* .limited {
     max-height: 400px;
     overflow: hidden;
     position: relative;
-}
+} */
 
-.read-more-checker:checked ~  .limited {
+/* .read-more-checker:checked ~  .limited {
     max-height: none;
   }
 
@@ -106,7 +106,7 @@ a{
     height: 1900px;
     opacity: 1;
     transition: .3s;
-}
+} */
 
 .read-more-checker{
    opacity: 0;

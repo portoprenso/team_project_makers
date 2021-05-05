@@ -73,3 +73,14 @@
     border: 1px solid white;
   }
 
+
+/* @media all and (max-width: 1250px){
+   .signin__emailInput, .signin__passInput , .w-100, .makeStyles-signin__card__h2-12, .color, .hito {
+      display: flex;
+   }
+}
+
+
+@media all and (max-width: 1250px){
+
+} */
