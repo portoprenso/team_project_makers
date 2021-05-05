@@ -72,24 +72,11 @@ const useStyles = makeStyles((theme) => ({
     const commentaryRef = useRef('asd')
     const history = useHistory()
 
-
-
-        const handleStopProp = (e) => {
-            e.stopPropagation();
-            return console.log("Works?");
-        };
-      
-
-
         const handleChange = async (email) => {
             let { data } = await axios('http://localhost:8000/dbUsers')
             cart.comment = commentaryRef.current.children[1].children[0].value
                 await data.forEach(item => {
                     console.log(commentaryRef.current.children[1].children[0].value)
-                    // console.log(cart.comment)
-                    // console.log(phoneRef.current)
-                    // console.log(phoneRef.current.children[1].children[0].value)
-                    // cart.comment = commentaryRef.current.children[1].children[0].value
                     if (email==item.email){
                         let newUser = {
                             name: item.name,
@@ -110,9 +97,7 @@ const useStyles = makeStyles((theme) => ({
                 })
             console.log(cart);
             history.push('/buy')
-            // console.log(currentUser);
     }
-
 
     useEffect(() => {
         getCart()
@@ -170,67 +155,32 @@ const useStyles = makeStyles((theme) => ({
 
                 <Button onClick={() => handleChange(currentUser.email)} color='primary' variant='contained'>Оплатить</Button>
 
-                    {/* <Typography required={true} className={classes.textfieldsHeaders} variant='p'>Ваше имя</Typography>
-                    <TextareaAutosize required placeholder='Your name...'></TextareaAutosize>
-                    <Typography required className={classes.textfieldsHeaders} variant='p'>Телефон</Typography>
-                    <TextareaAutosize placeholder='Phone number...'></TextareaAutosize>
-                    <Typography required className={classes.textfieldsHeaders} variant='p'>Электронная Почта</Typography>
-                    <TextareaAutosize placeholder='E-Mail...'></TextareaAutosize>
-                    <Typography className={classes.textfieldsHeaders} variant='p'>Комментарий к заказу</Typography>
-                    <TextareaAutosize rowsMin={3} placeholder='Order commentary...'></TextareaAutosize> */}
                 </Grid>
                 <Grid xs={4} className={classes.rightContainer}>
-                    
-                    
-
-
-
-    <div className="cart">
-        {cart.products ? (
-            <div>
-                <table>
-                    {/* <thead>
-                        <tr>
-                            <th>Название</th>
-                            <th>Цена</th>
-                            <th>Количество</th>
-                            <th>Итог</th>
-                        </tr>
-                    </thead> */}
-                    <tbody>
-                        {cart.products.map(elem => (
-                                <tr key={elem.item.id}>
-                                    <li className={classes.tdItem}>Название: <strong>{elem.item.title}</strong></li>
-                                    <li className={classes.tdItem}>Цена: <strong>{elem.item.price}с</strong></li>
-                                    <li className={classes.tdItem}>Количество: <input min={0} onChange={(e) => changeProductCount(e.target.value, elem.item.id)} type="number" value={elem.count} /></li>
-                                    <li className={classes.tdItem}>Предварительный итог: <strong>{elem.subPrice}с</strong></li>
-                                    <hr />
-                                </tr>
-                        ))}
-                    </tbody>
-                </table>
-                <h4 className={classes.tableSumHeader}>Общий итог: {calcTotalPrice(cart.products)}</h4>
-            </div>
-        ) : (
-            <CircularProgress />
-        ) }
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    <div className="cart">
+                        {cart.products ? (
+                            <div>
+                                <table>
+                                    <tbody>
+                                        {cart.products.map(elem => (
+                                                <tr key={elem.item.id}>
+                                                    <li className={classes.tdItem}>Название: <strong>{elem.item.title}</strong></li>
+                                                    <li className={classes.tdItem}>Цена: <strong>{elem.item.price}с</strong></li>
+                                                    <li className={classes.tdItem}>Количество: <input min={0} onChange={(e) => changeProductCount(e.target.value, elem.item.id)} type="number" value={elem.count} /></li>
+                                                    <li className={classes.tdItem}>Предварительный итог: <strong>{elem.subPrice}с</strong></li>
+                                                    <hr />
+                                                </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                                <h4 className={classes.tableSumHeader}>Общий итог: {calcTotalPrice(cart.products)}</h4>
+                            </div>
+                        ) : (
+                            <CircularProgress />
+                        ) }
+                    </div>
                 </Grid>
             </Grid>
-
             </Grid>
     );
 };

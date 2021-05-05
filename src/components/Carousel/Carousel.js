@@ -14,12 +14,12 @@ const MainCarousel = () => {
         <Carousel className="carouselContainer" showThumbs={false}>
         <div className="video">
             {/* <img className="foto" src={Dota} alt="logo" /> */}
-            <video autoplay="autoplay" src="https://cdn-prod.mortalkombat.com/roster/spawn/video.mp4" muted loop></video>
+            <video autoPlay="autoplay" src="https://cdn-prod.mortalkombat.com/roster/spawn/video.mp4" muted loop></video>
         </div>
 
         <div className="video">
             
-            <video autoplay="autoplay" src="https://cdn-prod.mortalkombat.com/roster/kabal/video.mp4" muted loop></video>
+            <video autoPlay="autoplay" src="https://cdn-prod.mortalkombat.com/roster/kabal/video.mp4" muted loop></video>
         </div>
       
         

@@ -85,10 +85,13 @@ const DashBoard = ({title, body}) => {
     async function getOldOrders() {
       // console.log('asd')
       let { data } = await axios(`http://localhost:8000/dbUsers`)
-      // console.log(data);
+      console.log(data);
       let filteredOrders = []
+      console.log(currentUser.email)
       data.forEach(element => {
-        if(currentUser.email == element.email){
+        console.log(element.mail)
+        if(currentUser.email == element.mail){
+          console.log(element);
           filteredOrders.push(element.orders)
         }
       });
@@ -99,8 +102,6 @@ const DashBoard = ({title, body}) => {
     useEffect(() => {
       getOldOrders()
     }, []);
-
-    // getOldOrders()
 
   return (
     <div style={{dispaly:"flex"}}>
@@ -182,10 +183,6 @@ const DashBoard = ({title, body}) => {
     </form>
     </div>
     </div>
-        {/* <button onClick={receiveCookie}>Receive Cookie</button>
-        <button onClick={() => setCookie()}>Create Cookie</button> */}
-
-  
         <div>
           {oldOrders.length > 0 ? 
           
@@ -216,8 +213,6 @@ const DashBoard = ({title, body}) => {
                             <li>Комментарий: <span><strong>{item.comment}</strong></span></li>
                         </tbody>
                     </table>
-                    {/* <h4>Общий итог: {calcTotalPrice(cart.products)}</h4> */}
-                    {/* <Link exact to="/checkout"><Button>Купить</Button></Link> */}
                 </div>
             </Grid>
             )
@@ -225,7 +220,7 @@ const DashBoard = ({title, body}) => {
 
           )
           :
-          ('asd')
+          ('Старых заказов нет')
         }
         </div>
     </div>

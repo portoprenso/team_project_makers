@@ -1,23 +1,10 @@
 {
   "products": [
     {
-      "title": "DYING LIGHT",
-      "description": "От создателей популярных проектов Dead Island и Call of Juarez. Свыше 50 наград и номинаций от игровой индустрии. Именно эта игра про зомби от первого лица установила новые стандарты жанра. Даже спустя годы после выхода для игры выпускаются новые материалы и проводятся бесплатные события сообщества.",
-      "price": 339,
-      "oldPrice": 1299,
-      "discountPercent": "74",
-      "author": "Techland Publishing",
-      "category": "Экшены",
-      "image": "https://steampay.com/image/dying-light-enhanced-edition.jpg?1535877699",
-      "imageLarge": "https://steampay.com/product/dying-light-enhanced-edition.jpg?1535957870",
-      "countInStock": "5",
-      "id": 17
-    },
-    {
       "title": "Plants vs Zombies",
       "description": "Неугомонные зомби снова атакуют ваш дом. Не ищите спасительных пушек и мечей, а скорее сажайте чудо-растения, способные действительно эффективно противостоять лавинам противника. Генномодифицированная поросль готова убивать зомби пачками и самыми изысканными способами, так что не упустите шанс показать врагу, что природа отдохнула не только на них.",
-      "price": 175,
-      "oldPrice": 249,
+      "price": "175",
+      "oldPrice": "249",
       "discountPercent": "30",
       "author": "PopCap Games, Inc.",
       "category": "Стратегии",
@@ -51,19 +38,6 @@
       "imageLarge": "https://steampay.com/product/resident-evil-village.jpg?1611273085",
       "countInStock": "0",
       "id": 20
-    },
-    {
-      "title": "DYING LIGHT",
-      "description": "От создателей популярных проектов Dead Island и Call of Juarez. Свыше 50 наград и номинаций от игровой индустрии. Именно эта игра про зомби от первого лица установила новые стандарты жанра. Даже спустя годы после выхода для игры выпускаются новые материалы и проводятся бесплатные события сообщества.",
-      "price": 339,
-      "oldPrice": 1299,
-      "discountPercent": "74",
-      "author": "Techland Publishing",
-      "category": "Экшены",
-      "image": "https://steampay.com/image/dying-light-enhanced-edition.jpg?1535877699",
-      "imageLarge": "https://steampay.com/product/dying-light-enhanced-edition.jpg?1535957870",
-      "countInStock": "5",
-      "id": 21
     },
     {
       "title": "TERRARIA",
@@ -250,10 +224,247 @@
   ],
   "dbUsers": [
     {
-      "id": 1,
-      "name": "Gena",
-      "phone": "+996703933917",
-      "email": "portoprenso@gmail.com",
+      "name": "Ваше имя",
+      "phone": "Телефон",
+      "mail": "portoprenso@gmail.com",
       "orders": [
-  ]}]
+        {
+          "products": [
+            {
+              "item": {
+                "title": "Plants vs Zombies test",
+                "description": "Неугомонные зомби снова атакуют ваш дом. Не ищите спасительных пушек и мечей, а скорее сажайте чудо-растения, способные действительно эффективно противостоять лавинам противника. Генномодифицированная поросль готова убивать зомби пачками и самыми изысканными способами, так что не упустите шанс показать врагу, что природа отдохнула не только на них.",
+                "price": "175",
+                "oldPrice": "249",
+                "discountPercent": "30",
+                "author": "PopCap Games, Inc.",
+                "category": "Стратегии",
+                "image": "https://steampay.com/image/plants-vs-zombies.jpg?1505771258",
+                "imageLarge": "https://steampay.com/product/plants-vs-zombies.jpg?1526257075",
+                "countInStock": "0",
+                "id": 18
+              },
+              "count": 1,
+              "subPrice": 175
+            },
+            {
+              "item": {
+                "title": "INSURGENCY SANDSTORM",
+                "description": "Вымышленный конфликт уже не первый день сотрясает одно из государств Ближнего Востока и грозит перерасти в нечто большее. Именно поэтому туда в срочном порядке направлен отряд бойцов специального предназначения.Готовы присоединиться к ребятам и помочь им погасить в зародыше пламя новой мировой войны? Тогда спешите купить Insurgency: Sandstorm на steampay.com! Но не рассчитывайте взять противника на испуг. Враг отлично подготовлен и отменно вооружен, так что у вас будет неплохой шанс прочувствовать на своей шкуре, что такое командная работа в экстремальных условиях.",
+                "price": 545,
+                "oldPrice": 999,
+                "discountPercent": "46",
+                "author": "Focus Home Interactive",
+                "category": "Экшены",
+                "image": "https://steampay.com/image/insurgency-sandstorm.jpg?1557614812",
+                "imageLarge": "https://steampay.com/product/insurgency-sandstorm.jpg?1557621062",
+                "countInStock": "10",
+                "id": 19
+              },
+              "count": 1,
+              "subPrice": 545
+            },
+            {
+              "item": {
+                "title": "RESIDENT EVIL VILLAGE",
+                "description": "Испытайте survival horror, каким его еще не видели, в восьмой части легендарной серии Resident Evil — Resident Evil Village.\n\nСпустя несколько лет после кошмарных событий Resident Evil 7 biohazard, заслужившей признание критиков, начинается другая история. Итан Уинтерс и его жена Миа обосновались на новом месте, вдали от ужасов прошлого. Но не успели супруги насладиться безмятежной жизнью, как их вновь постигла трагедия.\n\n",
+                "price": 1745,
+                "oldPrice": 1999,
+                "discountPercent": "13",
+                "author": "CAPCOM Co., Ltd.",
+                "category": "Экшены",
+                "image": "https://steampay.com/image/resident-evil-village.jpg?1611272864",
+                "imageLarge": "https://steampay.com/product/resident-evil-village.jpg?1611273085",
+                "countInStock": "0",
+                "id": 20
+              },
+              "count": 1,
+              "subPrice": 1745
+            }
+          ],
+          "totalPrice": 2465,
+          "comment": "..."
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "Ваше имя",
+      "phone": "Телефон",
+      "mail": "portoprenso@gmail.com",
+      "orders": [
+        {
+          "products": [
+            {
+              "item": {
+                "title": "INSURGENCY SANDSTORM",
+                "description": "Вымышленный конфликт уже не первый день сотрясает одно из государств Ближнего Востока и грозит перерасти в нечто большее. Именно поэтому туда в срочном порядке направлен отряд бойцов специального предназначения.Готовы присоединиться к ребятам и помочь им погасить в зародыше пламя новой мировой войны? Тогда спешите купить Insurgency: Sandstorm на steampay.com! Но не рассчитывайте взять противника на испуг. Враг отлично подготовлен и отменно вооружен, так что у вас будет неплохой шанс прочувствовать на своей шкуре, что такое командная работа в экстремальных условиях.",
+                "price": 545,
+                "oldPrice": 999,
+                "discountPercent": "46",
+                "author": "Focus Home Interactive",
+                "category": "Экшены",
+                "image": "https://steampay.com/image/insurgency-sandstorm.jpg?1557614812",
+                "imageLarge": "https://steampay.com/product/insurgency-sandstorm.jpg?1557621062",
+                "countInStock": "10",
+                "id": 19
+              },
+              "count": 1,
+              "subPrice": 545
+            },
+            {
+              "item": {
+                "title": "RESIDENT EVIL VILLAGE",
+                "description": "Испытайте survival horror, каким его еще не видели, в восьмой части легендарной серии Resident Evil — Resident Evil Village.\n\nСпустя несколько лет после кошмарных событий Resident Evil 7 biohazard, заслужившей признание критиков, начинается другая история. Итан Уинтерс и его жена Миа обосновались на новом месте, вдали от ужасов прошлого. Но не успели супруги насладиться безмятежной жизнью, как их вновь постигла трагедия.\n\n",
+                "price": 1745,
+                "oldPrice": 1999,
+                "discountPercent": "13",
+                "author": "CAPCOM Co., Ltd.",
+                "category": "Экшены",
+                "image": "https://steampay.com/image/resident-evil-village.jpg?1611272864",
+                "imageLarge": "https://steampay.com/product/resident-evil-village.jpg?1611273085",
+                "countInStock": "0",
+                "id": 20
+              },
+              "count": "2",
+              "subPrice": 3490
+            }
+          ],
+          "totalPrice": 4035,
+          "comment": "Тестовый заказ"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "Ваше имя",
+      "phone": "Телефон",
+      "mail": "portoprenso@gmail.com",
+      "orders": [
+        {
+          "products": [
+            {
+              "item": {
+                "title": "Plants vs Zombies",
+                "description": "Неугомонные зомби снова атакуют ваш дом. Не ищите спасительных пушек и мечей, а скорее сажайте чудо-растения, способные действительно эффективно противостоять лавинам противника. Генномодифицированная поросль готова убивать зомби пачками и самыми изысканными способами, так что не упустите шанс показать врагу, что природа отдохнула не только на них.",
+                "price": "175",
+                "oldPrice": "249",
+                "discountPercent": "30",
+                "author": "PopCap Games, Inc.",
+                "category": "Стратегии",
+                "image": "https://steampay.com/image/plants-vs-zombies.jpg?1505771258",
+                "imageLarge": "https://steampay.com/product/plants-vs-zombies.jpg?1526257075",
+                "countInStock": "0",
+                "id": 18
+              },
+              "count": 1,
+              "subPrice": 175
+            },
+            {
+              "item": {
+                "title": "RESIDENT EVIL VILLAGE",
+                "description": "Испытайте survival horror, каким его еще не видели, в восьмой части легендарной серии Resident Evil — Resident Evil Village.\n\nСпустя несколько лет после кошмарных событий Resident Evil 7 biohazard, заслужившей признание критиков, начинается другая история. Итан Уинтерс и его жена Миа обосновались на новом месте, вдали от ужасов прошлого. Но не успели супруги насладиться безмятежной жизнью, как их вновь постигла трагедия.\n\n",
+                "price": 1745,
+                "oldPrice": 1999,
+                "discountPercent": "13",
+                "author": "CAPCOM Co., Ltd.",
+                "category": "Экшены",
+                "image": "https://steampay.com/image/resident-evil-village.jpg?1611272864",
+                "imageLarge": "https://steampay.com/product/resident-evil-village.jpg?1611273085",
+                "countInStock": "0",
+                "id": 20
+              },
+              "count": 1,
+              "subPrice": 1745
+            },
+            {
+              "item": {
+                "title": "BIOMUTANT",
+                "description": "Жанр постапокалиптических ARPG пополнился новинкой с открытым миром, онлайн боями, элементами шутера и уникальным протагонистом, готовым пройти через тернии к звездам. И это отлично, ведь до конца света осталось совсем немного!\n\nЗемля гибнет от выбросов недрами маслянистой жидкости, отравляющей все вокруг. Огромные лужи уже практически добрались до Дерева Жизни, но никому до этого нет дела. Уцелевшие племена разрознены и ведут междоусобные разборки за ресурсы. Миру нужен кто-то, кто остановит безумие. Рискнете купить BIOMUTANT на steampay.com и взять на себя миссию по спасению остатков мира?\n\n",
+                "price": 2895,
+                "oldPrice": 3419,
+                "discountPercent": "16",
+                "author": "THQ Nordic",
+                "category": "РПГ",
+                "image": "https://steampay.com/image/biomutant.jpg?1557529713",
+                "imageLarge": "https://steampay.com/product/biomutant.jpg?1557596243",
+                "countInStock": "0",
+                "id": 25
+              },
+              "count": 1,
+              "subPrice": 2895
+            }
+          ],
+          "totalPrice": 4815,
+          "comment": "..."
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "Ваше имя",
+      "phone": "Телефон",
+      "mail": "portoprenso@gmail.com",
+      "orders": [
+        {
+          "products": [
+            {
+              "item": {
+                "title": "Plants vs Zombies",
+                "description": "Неугомонные зомби снова атакуют ваш дом. Не ищите спасительных пушек и мечей, а скорее сажайте чудо-растения, способные действительно эффективно противостоять лавинам противника. Генномодифицированная поросль готова убивать зомби пачками и самыми изысканными способами, так что не упустите шанс показать врагу, что природа отдохнула не только на них.",
+                "price": "175",
+                "oldPrice": "249",
+                "discountPercent": "30",
+                "author": "PopCap Games, Inc.",
+                "category": "Стратегии",
+                "image": "https://steampay.com/image/plants-vs-zombies.jpg?1505771258",
+                "imageLarge": "https://steampay.com/product/plants-vs-zombies.jpg?1526257075",
+                "countInStock": "0",
+                "id": 18
+              },
+              "count": 1,
+              "subPrice": 175
+            },
+            {
+              "item": {
+                "title": "RESIDENT EVIL VILLAGE",
+                "description": "Испытайте survival horror, каким его еще не видели, в восьмой части легендарной серии Resident Evil — Resident Evil Village.\n\nСпустя несколько лет после кошмарных событий Resident Evil 7 biohazard, заслужившей признание критиков, начинается другая история. Итан Уинтерс и его жена Миа обосновались на новом месте, вдали от ужасов прошлого. Но не успели супруги насладиться безмятежной жизнью, как их вновь постигла трагедия.\n\n",
+                "price": 1745,
+                "oldPrice": 1999,
+                "discountPercent": "13",
+                "author": "CAPCOM Co., Ltd.",
+                "category": "Экшены",
+                "image": "https://steampay.com/image/resident-evil-village.jpg?1611272864",
+                "imageLarge": "https://steampay.com/product/resident-evil-village.jpg?1611273085",
+                "countInStock": "0",
+                "id": 20
+              },
+              "count": 1,
+              "subPrice": 1745
+            },
+            {
+              "item": {
+                "title": "BIOMUTANT",
+                "description": "Жанр постапокалиптических ARPG пополнился новинкой с открытым миром, онлайн боями, элементами шутера и уникальным протагонистом, готовым пройти через тернии к звездам. И это отлично, ведь до конца света осталось совсем немного!\n\nЗемля гибнет от выбросов недрами маслянистой жидкости, отравляющей все вокруг. Огромные лужи уже практически добрались до Дерева Жизни, но никому до этого нет дела. Уцелевшие племена разрознены и ведут междоусобные разборки за ресурсы. Миру нужен кто-то, кто остановит безумие. Рискнете купить BIOMUTANT на steampay.com и взять на себя миссию по спасению остатков мира?\n\n",
+                "price": 2895,
+                "oldPrice": 3419,
+                "discountPercent": "16",
+                "author": "THQ Nordic",
+                "category": "РПГ",
+                "image": "https://steampay.com/image/biomutant.jpg?1557529713",
+                "imageLarge": "https://steampay.com/product/biomutant.jpg?1557596243",
+                "countInStock": "0",
+                "id": 25
+              },
+              "count": 1,
+              "subPrice": 2895
+            }
+          ],
+          "totalPrice": 4815,
+          "comment": "..."
+        }
+      ],
+      "id": 5
+    }
+  ]
 }
