@@ -164,6 +164,7 @@ export default function Navbar() {
             onClose={handleMenuClose}
         >
             <Link exact to="/profile"><MenuItem onClick={handleMenuClose}>Мой профиль</MenuItem></Link>
+            <Link exact to="/support"><MenuItem onClick={handleMenuClose}>Поддержка</MenuItem></Link>
             {/* <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
         </Menu>
     );
@@ -180,24 +181,26 @@ export default function Navbar() {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
-                <Link exact to="/catalogue">КАТАЛОГ ПРОДУКЦИИ</Link>
-
-
-
-
-
-
-
+                <Link exact to="/catalogue">Каталог продукции</Link>
             </MenuItem>
             <MenuItem>
+                <Link exact to="/support">Поддержка</Link>
+            </MenuItem>
+            <MenuItem>
+                <Link exact to="/cart">Корзина</Link>
+            </MenuItem>
+            <MenuItem>
+                <Link exact to="/profile">Профиль</Link>
+            </MenuItem>
+            {/* <MenuItem>
                 <IconButton aria-label="show 11 new notifications" color="inherit">
                     <Badge badgeContent={cartLength} color="secondary">
                         <ShoppingCartIcon className={classes.navbar__ShoppingCartIcon} />
                     </Badge>
                 </IconButton>
                 <p>Cart</p>
-            </MenuItem>
-            <MenuItem onClick={handleProfileMenuOpen}>
+            </MenuItem> */}
+            {/* <MenuItem onClick={handleProfileMenuOpen}>
                 <IconButton
                     aria-label="account of current user"
                     aria-controls="primary-search-account-menu"
@@ -207,7 +210,7 @@ export default function Navbar() {
                     <AccountCircle />
                 </IconButton>
                 <p>Profile</p>
-            </MenuItem>
+            </MenuItem> */}
         </Menu>
     );
 
@@ -229,7 +232,7 @@ export default function Navbar() {
                     <ul className="navbar__ul">
                         <li><Link exact to="/catalogue">КАТАЛОГ ПРОДУКЦИИ</Link></li>
                         <li><Link exact to="/support">ПОДДЕРЖКА</Link></li>
-                        <li><Link>МОИ ПОКУПКИ</Link></li>
+                        <li><Link exact to="/cart">МОИ ПОКУПКИ</Link></li>
                     </ul>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>

@@ -31,42 +31,31 @@ const Cart = () => {
             {cart.products ? (
                 <div>
                     <table>
-                        <thead>
-                            <div className="img">
-                                <img src="https://прообзор.рф/wp-content/uploads/2019/04/cs-go-stream.jpg"/>
-                            </div>
-                            <ul>
-                                <li>Название: <span>CS Go</span></li>
-                                <li>Цена: <span>12$</span></li>
-                                <li>Старая цена: <span>11$</span></li>
-                                <li>Скидка: <span>1$</span></li>
-                                <li>Количество: <span>1</span></li>
-                                <li>Предварительный итог: <span>12$</span></li>
-                            </ul>
-                        </thead>
+                        {/* <thead>
+                        </thead> */}
                         <tbody>
                             {cart.products.map(elem => (
                                     <tr key={elem.item.id}>
-                                        <td>
-                                            <img style={{width: 100}} src={elem.item.image} />
-                                        </td>
-                                        <td>{elem.item.title}</td>
-                                        <td>{elem.item.price}</td>
-                                        <td>{elem.item.oldPrice}</td>
-                                        <td>{elem.item.discountPercent}%</td>
-                                        <td><input onChange={(e) => changeProductCount(e.target.value, elem.item.id)} type="number" value={elem.count} /></td>
-                                        <td>{elem.subPrice}</td>
-                                        <td><Button onClick={() => removeProductFromCart(elem.item)}>Удалить</Button></td>
+                                        <div className="img">
+                                            <img src={elem.item.image}/>
+                                        </div>
+                                        <li>Название: <strong><span>{elem.item.title}</span></strong></li>
+                                        <li>Цена: <strong><span>{elem.item.price}</span></strong></li>
+                                        <li>Старая цена: <strong><span>{elem.item.oldPrice}</span></strong></li>
+                                        <li>Скидка: <strong><span>{elem.item.discountPercent}</span></strong></li>
+                                        <li>Количество: <input min={0} onChange={(e) => changeProductCount(e.target.value, elem.item.id)} type="number" value={elem.count} /></li>
+                                        <li>Предварительный итог: <span><strong>{elem.subPrice}</strong></span></li>
+                                        <li><Button variant="contained" color="secondary" onClick={() => removeProductFromCart(elem.item)}>Удалить</Button></li>
+                                        <hr />
                                     </tr>
                             ))}
                         </tbody>
                         <div className="btn_sum">
                             <h4>Общий итог: {calcTotalPrice(cart.products)}</h4>
-                            <button className="btn_click">Купить</button>
+                            
+                            <Link exact to="/checkout"><button className="btn_click">Купить</button></Link>
                         </div>
                     </table>
-                    <h4>Общий итог: {calcTotalPrice(cart.products)}</h4>
-                    <Link exact to="/checkout"><Button>Купить</Button></Link>
                 </div>
             ) : (
                 <CircularProgress />

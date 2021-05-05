@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useRef } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { productsContext } from '../../contexts/ProductsContext';
 import { calcTotalPrice } from '../../helpers/calcPrice';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -61,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
     const phoneRef = useRef()
     const mailRef = useRef()
     const commentaryRef = useRef('asd')
+    const history = useHistory()
 
 
 
@@ -73,11 +74,12 @@ const useStyles = makeStyles((theme) => ({
 
         const handleChange = async (email) => {
             let { data } = await axios('http://localhost:8000/dbUsers')
+            cart.comment = commentaryRef.current.children[1].children[0].value
                 await data.forEach(item => {
-                    cart.comment = 'asd'
-                    console.log(cart.comment)
-                    console.log(phoneRef.current)
-                    console.log(phoneRef.current.children[1].children[0].value)
+                    console.log(commentaryRef.current.children[1].children[0].value)
+                    // console.log(cart.comment)
+                    // console.log(phoneRef.current)
+                    // console.log(phoneRef.current.children[1].children[0].value)
                     // cart.comment = commentaryRef.current.children[1].children[0].value
                     if (email==item.email){
                         let newUser = {
@@ -98,6 +100,7 @@ const useStyles = makeStyles((theme) => ({
                     }
                 })
             console.log(cart);
+            history.push('/buy')
             // console.log(currentUser);
     }
 
@@ -156,7 +159,7 @@ const useStyles = makeStyles((theme) => ({
                 </form>
 
 
-                <Button onClick={() => handleChange(currentUser.email)} color='primary' variant='contained'><Link onClick={(e) => handleStopProp(e)} exact to="/buy">Оплатить</Link></Button>
+                <Button onClick={() => handleChange(currentUser.email)} color='primary' variant='contained'>Оплатить</Button>
 
                     {/* <Typography required={true} className={classes.textfieldsHeaders} variant='p'>Ваше имя</Typography>
                     <TextareaAutosize required placeholder='Your name...'></TextareaAutosize>
@@ -177,21 +180,22 @@ const useStyles = makeStyles((theme) => ({
         {cart.products ? (
             <div>
                 <table>
-                    <thead>
+                    {/* <thead>
                         <tr>
                             <th>Название</th>
                             <th>Цена</th>
                             <th>Количество</th>
                             <th>Итог</th>
                         </tr>
-                    </thead>
+                    </thead> */}
                     <tbody>
                         {cart.products.map(elem => (
                                 <tr key={elem.item.id}>
-                                    <td className={classes.tdItem}>{elem.item.title}</td>
-                                    <td className={classes.tdItem}>{elem.item.price}</td>
-                                    <td className={classes.tdItem}><input onChange={(e) => changeProductCount(e.target.value, elem.item.id)} type="number" value={elem.count} /></td>
-                                    <td className={classes.tdItem}>{elem.subPrice}</td>
+                                    <li className={classes.tdItem}>Название: <strong>{elem.item.title}</strong></li>
+                                    <li className={classes.tdItem}>Цена: <strong>{elem.item.price}с</strong></li>
+                                    <li className={classes.tdItem}>Количество: <input min={0} onChange={(e) => changeProductCount(e.target.value, elem.item.id)} type="number" value={elem.count} /></li>
+                                    <li className={classes.tdItem}>Предварительный итог: <strong>{elem.subPrice}с</strong></li>
+                                    <hr />
                                 </tr>
                         ))}
                     </tbody>

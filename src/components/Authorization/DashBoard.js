@@ -197,31 +197,23 @@ const DashBoard = ({title, body}) => {
             <Grid className={classes.oldOrders__itemContainer}>
                   <div>
                     <table>
-                        <thead>
-                            <tr>
-                                <th>Изображение</th>
-                                <th>Название</th>
-                                <th>Цена</th>
-                                <th>Старая цена</th>
-                                <th>Скидка</th>
-                                <th>Количество</th>
-                                <th>Предварительный итог</th>
-                            </tr>
-                        </thead>
                         <tbody>
                             {item.products.map(elem => (
                                     <tr key={elem.item.id}>
-                                        <td>
-                                            <img style={{width: 100}} src={elem.item.image} />
-                                        </td>
-                                        <td>{elem.item.title}</td>
-                                        <td>{elem.item.price}</td>
-                                        <td>{elem.item.oldPrice}</td>
-                                        <td>{elem.item.discountPercent}%</td>
-                                        <td>{elem.count}</td>
-                                        <td>{elem.subPrice}</td>
-                                    </tr>
+                                    <div className="img">
+                                        <img src={elem.item.image}/>
+                                    </div>
+                                    <li>Название: <strong><span>{elem.item.title}</span></strong></li>
+                                    <li>Цена: <strong><span>{elem.item.price}</span></strong></li>
+                                    <li>Старая цена: <strong><span>{elem.item.oldPrice}</span></strong></li>
+                                    <li>Скидка: <strong><span>{elem.item.discountPercent}</span></strong></li>
+                                    <li>Количество: <strong>{elem.count}</strong></li>
+                                    <li>Предварительный итог: <span><strong>{elem.subPrice}</strong></span></li>
+                                    <hr />
+                                </tr>
                             ))}
+                            <li>Общий итог: <span><strong>{item.totalPrice}</strong></span></li>
+                            <li>Комментарий: <span><strong>{item.comment}</strong></span></li>
                         </tbody>
                     </table>
                     {/* <h4>Общий итог: {calcTotalPrice(cart.products)}</h4> */}
