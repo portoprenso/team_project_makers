@@ -307,12 +307,24 @@
               },
               "count": 1,
               "subPrice": 545
-            }
-          ],
-          "totalPrice": 1059
-        },
-        {
-          "products": [
+            },
+            {
+              "item": {
+                "title": "TERRARIA",
+                "description": "Встретили предложение купить Terraria на steampay.com – поспешите воспользоваться им, и вы не пожалеете! О том, что перед вами нереально увлекательный проект, говорит уже тот факт, что в игре смешана куча жанров. Порой сложно понять, какое направление превалирует, настолько тесно они переплелись. Инди-платформер, щедро сдобренный элементами ролевки и приключениями, порой предстает в облике чистейшей песочницы.\n\nВас ждет путешествие по отменно прорисованному, яркому миру. Вы сможете общаться с другими персонажами, изобретать и строить, заниматься геологическими исследованиями и просто наслаждаться жизнью… если, конечно, не будете заняты отражением атак местных аборигенов. Все и просто, и сложно, и чертовски увлекательно. Ну что, вперед?\n\n",
+                "price": 195,
+                "oldPrice": 249,
+                "discountPercent": "22",
+                "author": "Re-Logic",
+                "category": "РПГ",
+                "image": "https://steampay.com/image/terraria.jpg?1505771258",
+                "imageLarge": "https://steampay.com/product/terraria.jpg?1526257080",
+                "countInStock": "152",
+                "id": 22
+              },
+              "count": 1,
+              "subPrice": 195
+            },
             {
               "item": {
                 "title": "DYING LIGHT",
@@ -325,237 +337,67 @@
                 "image": "https://steampay.com/image/dying-light-enhanced-edition.jpg?1535877699",
                 "imageLarge": "https://steampay.com/product/dying-light-enhanced-edition.jpg?1535957870",
                 "countInStock": "5",
-                "id": 17
+                "id": 21
               },
-              "count": "1",
+              "count": 1,
               "subPrice": 339
             },
             {
               "item": {
-                "title": "Plants vs Zombies",
-                "description": "Неугомонные зомби снова атакуют ваш дом. Не ищите спасительных пушек и мечей, а скорее сажайте чудо-растения, способные действительно эффективно противостоять лавинам противника. Генномодифицированная поросль готова убивать зомби пачками и самыми изысканными способами, так что не упустите шанс показать врагу, что природа отдохнула не только на них.",
-                "price": 175,
-                "oldPrice": 249,
-                "discountPercent": "30",
-                "author": "PopCap Games, Inc.",
-                "category": "Стратегии",
-                "image": "https://steampay.com/image/plants-vs-zombies.jpg?1505771258",
-                "imageLarge": "https://steampay.com/product/plants-vs-zombies.jpg?1526257075",
+                "title": "RESIDENT EVIL VILLAGE",
+                "description": "Испытайте survival horror, каким его еще не видели, в восьмой части легендарной серии Resident Evil — Resident Evil Village.\n\nСпустя несколько лет после кошмарных событий Resident Evil 7 biohazard, заслужившей признание критиков, начинается другая история. Итан Уинтерс и его жена Миа обосновались на новом месте, вдали от ужасов прошлого. Но не успели супруги насладиться безмятежной жизнью, как их вновь постигла трагедия.\n\n",
+                "price": 1745,
+                "oldPrice": 1999,
+                "discountPercent": "13",
+                "author": "CAPCOM Co., Ltd.",
+                "category": "Экшены",
+                "image": "https://steampay.com/image/resident-evil-village.jpg?1611272864",
+                "imageLarge": "https://steampay.com/product/resident-evil-village.jpg?1611273085",
                 "countInStock": "0",
-                "id": 18
+                "id": 20
               },
               "count": 1,
-              "subPrice": 175
+              "subPrice": 1745
             },
             {
               "item": {
-                "title": "INSURGENCY SANDSTORM",
-                "description": "Вымышленный конфликт уже не первый день сотрясает одно из государств Ближнего Востока и грозит перерасти в нечто большее. Именно поэтому туда в срочном порядке направлен отряд бойцов специального предназначения.Готовы присоединиться к ребятам и помочь им погасить в зародыше пламя новой мировой войны? Тогда спешите купить Insurgency: Sandstorm на steampay.com! Но не рассчитывайте взять противника на испуг. Враг отлично подготовлен и отменно вооружен, так что у вас будет неплохой шанс прочувствовать на своей шкуре, что такое командная работа в экстремальных условиях.",
-                "price": 545,
-                "oldPrice": 999,
-                "discountPercent": "46",
-                "author": "Focus Home Interactive",
-                "category": "Экшены",
-                "image": "https://steampay.com/image/insurgency-sandstorm.jpg?1557614812",
-                "imageLarge": "https://steampay.com/product/insurgency-sandstorm.jpg?1557621062",
-                "countInStock": "10",
-                "id": 19
+                "title": "THE ELDER SCROLLS V: SKYRIM",
+                "description": "The Elder Scrolls V: Skyrim Special Edition — это улучшенное и расширенное переиздание оригинальной The Elder Scrolls V: Skyrim, в котором были добавлены новые враги, снаряжение, локации, персонажи, а также включены все DLC.",
+                "price": 595,
+                "oldPrice": 1399,
+                "discountPercent": "58",
+                "author": "Bethesda Softworks",
+                "category": "РПГ",
+                "image": "https://steampay.com/image/the-elder-scrolls-v-skyrim-special-edition.jpg?1505771258",
+                "imageLarge": "https://steampay.com/product/the-elder-scrolls-v-skyrim.jpg?1527843110",
+                "countInStock": "53",
+                "id": 23
               },
               "count": 1,
-              "subPrice": 545
+              "subPrice": 595
+            },
+            {
+              "item": {
+                "title": "CONAN EXILES",
+                "description": "Более кровавой и жестокой игры на выживание геймерское сообщество еще не видело! Её сложно назвать RPG – это скорее survival, хотя тоже со своими фишками. Готовы в роли отверженного и обездоленного изгнанника скитаться по дикой пустоши, беспощадной к слабакам? Тогда вам стоит купить Conan Exiles в магазине steampay.com!\nЗдесь предстоит не просто борьба за жизнь: сюжет отправляет покорять мир, на просторы которого вас выбросят абсолютно голого и беспомощного. Сумеет ли ваш герой заложить и развить основы своего величия? Хватит ли у вас духу приносить в жертву богам себе подобных?\n\nВас ждет потрясающее, ломающее психику и заставляющее шевелиться волосы действо с тайнами и интригами, войнами и строительством. Погрузитесь в разгадки первых, разорвите паутину вторых, отыщите знания, накопленные древними цивилизациями, и станьте счастливым победителем, судить которого не посмеет никто!",
+                "price": 395,
+                "oldPrice": 899,
+                "discountPercent": "57",
+                "author": "Funcom",
+                "category": "РПГ",
+                "image": "https://steampay.com/image/conan-exiles.jpg?1505771258",
+                "imageLarge": "https://steampay.com/product/conan-exiles.jpg?1526257065",
+                "countInStock": "12",
+                "id": 24
+              },
+              "count": 1,
+              "subPrice": 395
             }
           ],
-          "totalPrice": 1059,
-          "comment": "ksdklsdl"
-        },
-        {
-          "products": [
-            {
-              "item": {
-                "title": "DYING LIGHT",
-                "description": "От создателей популярных проектов Dead Island и Call of Juarez. Свыше 50 наград и номинаций от игровой индустрии. Именно эта игра про зомби от первого лица установила новые стандарты жанра. Даже спустя годы после выхода для игры выпускаются новые материалы и проводятся бесплатные события сообщества.",
-                "price": 339,
-                "oldPrice": 1299,
-                "discountPercent": "74",
-                "author": "Techland Publishing",
-                "category": "Экшены",
-                "image": "https://steampay.com/image/dying-light-enhanced-edition.jpg?1535877699",
-                "imageLarge": "https://steampay.com/product/dying-light-enhanced-edition.jpg?1535957870",
-                "countInStock": "5",
-                "id": 17
-              },
-              "count": "1",
-              "subPrice": 339
-            },
-            {
-              "item": {
-                "title": "Plants vs Zombies",
-                "description": "Неугомонные зомби снова атакуют ваш дом. Не ищите спасительных пушек и мечей, а скорее сажайте чудо-растения, способные действительно эффективно противостоять лавинам противника. Генномодифицированная поросль готова убивать зомби пачками и самыми изысканными способами, так что не упустите шанс показать врагу, что природа отдохнула не только на них.",
-                "price": 175,
-                "oldPrice": 249,
-                "discountPercent": "30",
-                "author": "PopCap Games, Inc.",
-                "category": "Стратегии",
-                "image": "https://steampay.com/image/plants-vs-zombies.jpg?1505771258",
-                "imageLarge": "https://steampay.com/product/plants-vs-zombies.jpg?1526257075",
-                "countInStock": "0",
-                "id": 18
-              },
-              "count": 1,
-              "subPrice": 175
-            },
-            {
-              "item": {
-                "title": "INSURGENCY SANDSTORM",
-                "description": "Вымышленный конфликт уже не первый день сотрясает одно из государств Ближнего Востока и грозит перерасти в нечто большее. Именно поэтому туда в срочном порядке направлен отряд бойцов специального предназначения.Готовы присоединиться к ребятам и помочь им погасить в зародыше пламя новой мировой войны? Тогда спешите купить Insurgency: Sandstorm на steampay.com! Но не рассчитывайте взять противника на испуг. Враг отлично подготовлен и отменно вооружен, так что у вас будет неплохой шанс прочувствовать на своей шкуре, что такое командная работа в экстремальных условиях.",
-                "price": 545,
-                "oldPrice": 999,
-                "discountPercent": "46",
-                "author": "Focus Home Interactive",
-                "category": "Экшены",
-                "image": "https://steampay.com/image/insurgency-sandstorm.jpg?1557614812",
-                "imageLarge": "https://steampay.com/product/insurgency-sandstorm.jpg?1557621062",
-                "countInStock": "10",
-                "id": 19
-              },
-              "count": 1,
-              "subPrice": 545
-            }
-          ],
-          "totalPrice": 1059,
+          "totalPrice": 4328,
           "comment": "..."
         }
       ]
-    },
-    {
-      "name": "Test",
-      "phone": "654654654",
-      "mail": "emailfortest@mail.ru",
-      "orders": [
-        {
-          "products": [
-            {
-              "item": {
-                "title": "DYING LIGHT",
-                "description": "От создателей популярных проектов Dead Island и Call of Juarez. Свыше 50 наград и номинаций от игровой индустрии. Именно эта игра про зомби от первого лица установила новые стандарты жанра. Даже спустя годы после выхода для игры выпускаются новые материалы и проводятся бесплатные события сообщества.",
-                "price": 339,
-                "oldPrice": 1299,
-                "discountPercent": "74",
-                "author": "Techland Publishing",
-                "category": "Экшены",
-                "image": "https://steampay.com/image/dying-light-enhanced-edition.jpg?1535877699",
-                "imageLarge": "https://steampay.com/product/dying-light-enhanced-edition.jpg?1535957870",
-                "countInStock": "5",
-                "id": 17
-              },
-              "count": 1,
-              "subPrice": 339
-            },
-            {
-              "item": {
-                "title": "Plants vs Zombies",
-                "description": "Неугомонные зомби снова атакуют ваш дом. Не ищите спасительных пушек и мечей, а скорее сажайте чудо-растения, способные действительно эффективно противостоять лавинам противника. Генномодифицированная поросль готова убивать зомби пачками и самыми изысканными способами, так что не упустите шанс показать врагу, что природа отдохнула не только на них.",
-                "price": 175,
-                "oldPrice": 249,
-                "discountPercent": "30",
-                "author": "PopCap Games, Inc.",
-                "category": "Стратегии",
-                "image": "https://steampay.com/image/plants-vs-zombies.jpg?1505771258",
-                "imageLarge": "https://steampay.com/product/plants-vs-zombies.jpg?1526257075",
-                "countInStock": "0",
-                "id": 18
-              },
-              "count": 1,
-              "subPrice": 175
-            },
-            {
-              "item": {
-                "title": "INSURGENCY SANDSTORM",
-                "description": "Вымышленный конфликт уже не первый день сотрясает одно из государств Ближнего Востока и грозит перерасти в нечто большее. Именно поэтому туда в срочном порядке направлен отряд бойцов специального предназначения.Готовы присоединиться к ребятам и помочь им погасить в зародыше пламя новой мировой войны? Тогда спешите купить Insurgency: Sandstorm на steampay.com! Но не рассчитывайте взять противника на испуг. Враг отлично подготовлен и отменно вооружен, так что у вас будет неплохой шанс прочувствовать на своей шкуре, что такое командная работа в экстремальных условиях.",
-                "price": 545,
-                "oldPrice": 999,
-                "discountPercent": "46",
-                "author": "Focus Home Interactive",
-                "category": "Экшены",
-                "image": "https://steampay.com/image/insurgency-sandstorm.jpg?1557614812",
-                "imageLarge": "https://steampay.com/product/insurgency-sandstorm.jpg?1557621062",
-                "countInStock": "10",
-                "id": 19
-              },
-              "count": 1,
-              "subPrice": 545
-            }
-          ],
-          "totalPrice": 1059,
-          "comment": "Test"
-        }
-      ],
-      "id": 2
-    },
-    {
-      "name": "Ваше имя",
-      "phone": "Телефон",
-      "mail": "portoprenso@gmail.com",
-      "orders": [
-        {
-          "products": [
-            {
-              "item": {
-                "title": "DYING LIGHT",
-                "description": "От создателей популярных проектов Dead Island и Call of Juarez. Свыше 50 наград и номинаций от игровой индустрии. Именно эта игра про зомби от первого лица установила новые стандарты жанра. Даже спустя годы после выхода для игры выпускаются новые материалы и проводятся бесплатные события сообщества.",
-                "price": 339,
-                "oldPrice": 1299,
-                "discountPercent": "74",
-                "author": "Techland Publishing",
-                "category": "Экшены",
-                "image": "https://steampay.com/image/dying-light-enhanced-edition.jpg?1535877699",
-                "imageLarge": "https://steampay.com/product/dying-light-enhanced-edition.jpg?1535957870",
-                "countInStock": "5",
-                "id": 17
-              },
-              "count": "1",
-              "subPrice": 339
-            },
-            {
-              "item": {
-                "title": "Plants vs Zombies",
-                "description": "Неугомонные зомби снова атакуют ваш дом. Не ищите спасительных пушек и мечей, а скорее сажайте чудо-растения, способные действительно эффективно противостоять лавинам противника. Генномодифицированная поросль готова убивать зомби пачками и самыми изысканными способами, так что не упустите шанс показать врагу, что природа отдохнула не только на них.",
-                "price": 175,
-                "oldPrice": 249,
-                "discountPercent": "30",
-                "author": "PopCap Games, Inc.",
-                "category": "Стратегии",
-                "image": "https://steampay.com/image/plants-vs-zombies.jpg?1505771258",
-                "imageLarge": "https://steampay.com/product/plants-vs-zombies.jpg?1526257075",
-                "countInStock": "0",
-                "id": 18
-              },
-              "count": 1,
-              "subPrice": 175
-            },
-            {
-              "item": {
-                "title": "INSURGENCY SANDSTORM",
-                "description": "Вымышленный конфликт уже не первый день сотрясает одно из государств Ближнего Востока и грозит перерасти в нечто большее. Именно поэтому туда в срочном порядке направлен отряд бойцов специального предназначения.Готовы присоединиться к ребятам и помочь им погасить в зародыше пламя новой мировой войны? Тогда спешите купить Insurgency: Sandstorm на steampay.com! Но не рассчитывайте взять противника на испуг. Враг отлично подготовлен и отменно вооружен, так что у вас будет неплохой шанс прочувствовать на своей шкуре, что такое командная работа в экстремальных условиях.",
-                "price": 545,
-                "oldPrice": 999,
-                "discountPercent": "46",
-                "author": "Focus Home Interactive",
-                "category": "Экшены",
-                "image": "https://steampay.com/image/insurgency-sandstorm.jpg?1557614812",
-                "imageLarge": "https://steampay.com/product/insurgency-sandstorm.jpg?1557621062",
-                "countInStock": "10",
-                "id": 19
-              },
-              "count": 1,
-              "subPrice": 545
-            }
-          ],
-          "totalPrice": 1059,
-          "comment": "..."
-        }
-      ],
-      "id": 3
     }
   ]
 }
