@@ -68,7 +68,7 @@ const Buy = (props) => {
                     onFocus={e => setFocus(e.target.name)}
                 />
                
-                <Link to="/">
+                <Link to="/Thank">
                 <button onClick={() => clearCart(props.history)} className="card__btn">Buy</button>
                 
                     </Link> 
