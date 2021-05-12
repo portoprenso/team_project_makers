@@ -14,7 +14,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import '../Support/Support.css'
-import Logo from '../../assets/img/logo.svg'
+import Logo from '../../assets/img/manga-logo.png'
 
 const options = [
   'None',
@@ -98,7 +98,7 @@ export default function Support() {
                 </div>  
             </div>
             <div className="top_text">
-                <h2>Добро пожаловать в службу поддержки Steampay!</h2>
+                <h2>Добро пожаловать в службу поддержки MangaLib!</h2>
                 <h1>Как мы можем вам помочь?</h1>
             </div>
         </div>
@@ -140,7 +140,7 @@ export default function Support() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>Если игра мне не понравится, могу ли я вернуть свои деньги?</Typography>
+          <Typography className={classes.heading}>Если книга мне не понравится, могу ли я вернуть свои деньги?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -180,7 +180,7 @@ export default function Support() {
           aria-controls="panel3a-content"
           id="panel3a-header"
         >
-          <Typography className={classes.heading}>Как купить игру?</Typography>
+          <Typography className={classes.heading}>Как купить книгу?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

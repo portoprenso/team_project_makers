@@ -138,7 +138,7 @@ a{
 
 }
 
-.container__fluid {
+.container__fluid__contain {
     max-width: 1236px;
     padding-left: 24px;
     padding-right: 24px;
@@ -154,6 +154,110 @@ a{
 .ul-orange{
     display: flex;
     flex-direction: column;
+}
+
+.game__price{
+    color: blue;
+}
+
+@media all and (max-width: 1000px){
+    .reduction-prices__title{
+        text-align: center;
+        font-size: 15px;
+    }
+    /* .container-fluid__contain{
+        width: 580px;
+        display: flex;
+        justify-content: center;
+    } */
+
+
+}
+
+@media all and (max-width: 1000px){
+    .reduction-prices{
+        width: 139% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+@media all and (max-width: 809px){
+    .reduction-prices{
+        width: 151% !important;
+        display: flex !important;
+        justify-content: center !important;
+        
+    }
+    .game__image-fotka{
+        display: flex;
+        justify-content: center;
+        width: 227px;
+        height: 220px;
+    }
+}
+
+@media all and (max-width: 768px){
+    .reduction-prices{
+        width: 170% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+@media all and (max-width: 666px){
+    .reduction-prices{
+        width: 185% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+@media all and (max-width: 620px){
+    .reduction-prices{
+        width: 198% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+@media all and (max-width: 570px){
+    .reduction-prices{
+        width: 215% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+@media all and (max-width: 515px){
+    .reduction-prices{
+        width: 238% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+@media all and (max-width: 462px){
+    .reduction-prices{
+        width: 269% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+@media all and (max-width: 400px){
+    .reduction-prices{
+        width: 305% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+@media all and (max-width: 360px){
+    .reduction-prices{
+        width: 340% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
 }
 
 

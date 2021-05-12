@@ -23,6 +23,14 @@ import Support from '../components/Support/Support';
 import Card from '../components/Cart/Buy/Buy';
 import CheckoutPage from '../components/Cart/CheckoutPage';
 import Thank from '../components/Thank you/Thank';
+import Manga from '../components/Manga/Manga';
+import Manga2 from '../components/Manga/Manga2';
+import Manga3 from '../components/Manga/Manga3';
+
+
+import app from '../firebase';
+import chat from '../components/chat/chat';
+
 
 
 
@@ -35,6 +43,7 @@ const Routes = () => {
                     <Switch>
 
                     <PrivateRoute exact path="/" component={HomePage} />
+
                     {/* <PrivateRoute exact path="/" component={Popular}/>  */}
                     <PrivateRoute exact path="/profile" component={DashBoard} />
                     <PrivateRoute path="/update-profile" component={UpdateProfile} />
@@ -54,6 +63,12 @@ const Routes = () => {
                         <Route exact path='/support' component={Support}/>
                         <Route exact path="/checkout" component={CheckoutPage}/>
                         <Route exact path="/buy" component={Card}/>
+                        <Route exact path="/Manga" component={Manga} />
+                        <Route exact path="/Manga2" component={Manga2} />
+                        <Route exact path="/Manga3/:id" component={Manga3}  />
+                        <Route exact path="/chat" componnent={chat}/>
+                    
+                       
                     </Switch>
                     <Footer />
                 </BrowserRouter>

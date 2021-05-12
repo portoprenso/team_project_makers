@@ -2,7 +2,8 @@
 
 .top{
     height: 350px;
-    background-color: rgb(43, 22, 134);
+    background-color: white;
+    background-image: url('');
 }
 .logo{
     display: flex;
@@ -10,9 +11,10 @@
 .logo_img{
     margin: 0 auto;
     margin-top: 50px;
+   
 }
 .logo_img img{
-    width: 200px;
+    width: 300px;
 
 }
 .navbar{
@@ -21,7 +23,7 @@
 .top_text{
     padding-top: 120px;
     text-align: center;
-    color: #fff;
+    color: black;
 }
 .top_text h2{
     font-size: 20px;

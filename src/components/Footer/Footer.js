@@ -1,64 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css'
-import Icon from '../../assets/img/free-icon-house-key-69891.png'
-import Icon2 from '../../assets/img/settings.png'
-import Icon3 from '../../assets/img/percentage2.png'
-import Icon4 from '../../assets/img/filled-chat.png'
 
+function play(){
+  document.body.style.backgroundColor="red"
+  document.body.style.сolor="#fff"
+
+   
+
+}
+
+function color(){
+  document.body.style.backgroundColor="#fff"
+ 
+
+}
+
+function list(){
+  document.body.style.сolor="#fff"
+}
 
 const Footer = () => {
-    return (
-        <div className="footer__container">
-            <div className="footer__container__block">
-            <div className="footer__container__main">
-                <img className="icons" src={Icon} alt="" />
-           <p className="footer__container__footer">Лицензионные ключи от официальных издателей</p>
-            </div>
-             <div className="footer__container__main">
-           <img className="footer__container__icons" src={Icon2} alt=""/>
-           <p className="footer__container__footer">Гарантированная техподдержка вашей покупки</p>
-             </div>
-             <div className="footer__container__main">
-                <img className="footer__container__icons" src={Icon3} alt=""/>
-           <p className="footer__container__footer">Регулярные акции, скидки и бонусы</p>
-             </div>
-             <div className="footer__container__main">
-             <img className="footer__container__icons" src={Icon4} alt="" />
-           <p className="footer__container__footer">Более 9000 положительных отзывов от реальных клиентов</p>
-             </div>
-             </div>
-             <div className="footer__container-right">
-                <div className="footer__container__footer">
+  const [color, setColor] = useState(false)
 
-      
-                  <div className="footer__container__href">
-                    <h3>
-                        © 2012–2021 STEAMPAY
-
-                  <p className="footer__container__text">Все права защищены. Полное или частичное копирование материалов сайта <br></br> без согласования с администрацией запрещено!<br></br>
-      Все названия игр, компаний, торговых марок, логотипы и игровые материалы <br></br> являются собственностью соответствующих владельцев.</p>
-                        </h3>
-                       {/* <a href=""><h3> Соглашение</h3></a>
-
-            
-                        
-                        <a href=""><h3>Партнерам</h3></a>
-            
-                        
-                        <a href=""><h3>Поддержка</h3></a>
-            
-                        
-                        <a href=""><h3>О сайте</h3></a> */}
-      
-                  </div>
-               
-                  <div className="footer__container__footer__left">
-                  </div>
-              </div>
-              </div>
-              </div>
-        
-    );
+  const handleColor = () => {
+    setColor(!color)
+  }
+  return (
+    // <footer className="container__footer">
+    <footer className={color ? "container__footer" : "footer_black"}>
+      <div className="footer__inner paper">
+        <div className="footer__theme-toggler">
+          <h3>Тема сайта</h3>
+          <span className="footer-t-previews">
+            {/* <input  type="button" value="A" onClick={color} class="footer-t-preview tooltip" data-toggle-theme="light" data-place="top" aria-label="Светлая"/> */}
+            <input  type="button" value="A" onClick={handleColor} class="footer-t-preview tooltip" data-toggle-theme="light" data-place="top" aria-label="Светлая"/>
+            <input type="button" value="A" onClick={play} class="footer-t-preview tooltip" data-toggle-theme="dark" data-place="top" aria-label="Темная"/>
+          </span>
+        </div>
+         <div onClick={list} class="pb-10 asd " id="dmca">
+         В случаях нарушения авторских прав - обращайтесь на почту info@mangalib.me
+         </div>
+         <div class="footer__menu clearfix">
+           <div class="footer__copyright">
+             <span>© 2021</span>
+             <a rel="nofollow" href="" >MangaLib</a>
+           </div>
+           <ul class="footer__nav clearfix">
+             <a class="footer__nav-link" rel="nofollow" target="_blank" href="" title="Обратная связь">Обратная связь</a>
+             <a class="footer__nav-link" rel="nofollow" target="_blank" href="" title="Для правообладателей">Для правообладателей</a>
+             <a class="footer__nav-link" rel="nofollow" target="_blank" href="" title="Пользовательское соглашение">Пользовательское соглашение</a>
+             <a class="footer__nav-link" rel="nofollow" target="_blank" href="" title="DMCA">DMCA</a>
+             <a class="footer__nav-link" rel="nofollow" target="_blank" href="" title="Список манги">Список манги</a>
+             <a class="footer__nav-link" rel="nofollow" target="_blank" href="" title="Лицензия">Лицензия</a>
+           </ul>
+         </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

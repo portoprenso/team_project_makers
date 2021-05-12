@@ -48,8 +48,9 @@ export default function ProductCard({ item }) {
     const { currentUser } = useAuth()
 
     return (
+        <div className="procuctss">
         <Card className={classes.root}>
-            <div className="bigCardImage"><img src={`${item.image}`}/></div>
+            <div className="bigCardImage"><img  style={{width: '200px',height: '150px'}}  src={`${item.image}`}/></div>
             <CardHeader className={`${classes.productCard__header} ert `}
                 title={<Typography variant="h6">{item.title}</Typography>}
                 subheader={<Typography color="textSecondary">{item.category}</Typography>}
@@ -85,5 +86,6 @@ export default function ProductCard({ item }) {
                     </CardActions>
                 </Typography>
         </Card>
+        </div>
     );
 }

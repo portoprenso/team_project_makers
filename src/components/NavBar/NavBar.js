@@ -12,14 +12,26 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import {Link, useHistory} from "react-router-dom";
 import {productsContext} from "../../contexts/ProductsContext";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import Logo from '../../assets/img/logo.svg'
+import Logo from '../../assets/img/manga-logo.png';
 import SearchIcon from '@material-ui/icons/Search';
 
 import './NavBar.css'
 
+
 const useStyles = makeStyles((theme) => ({
     grow: {
         flexGrow: 1,
+        position: 'fixed',
+        zIndex: 100,
+        // overflow: 'hidden',
+        // backgroundColor: '#333',
+        // position: 'fixed', /*Set the navbar to fixed position */
+        // top: '0', /* Position the navbar at the top of the page */
+        // width: '100%',
+        // background: 'orange',
+        // marginBottom: '40px',
+        top:0
+       
     },
     navbar__container: {
         backgroundColor: "white",
@@ -173,6 +185,7 @@ export default function Navbar() {
             <MenuItem>
                 <Link exact to="/profile">Профиль</Link>
             </MenuItem>
+            
         </Menu>
     );
 
@@ -184,7 +197,8 @@ export default function Navbar() {
                         <img src={Logo} className={classes.navbar__logo}/>
                     </Link>
                     <ul className="navbar__ul">
-                        <li><Link exact to="/catalogue">КАТАЛОГ ПРОДУКЦИИ</Link></li>
+                        <li><Link exact to="/catalogue">КАТАЛОГ МАНГИ</Link></li>
+                        <li><Link exact to="/chat">ЧАТ</Link></li>
                         <li><Link exact to="/support">ПОДДЕРЖКА</Link></li>
                         <li><Link exact to="/cart">МОИ ПОКУПКИ</Link></li>
                     </ul>
@@ -216,6 +230,7 @@ export default function Navbar() {
                         </IconButton>
                         <Link style={{color: "inherit"}} exact to="/cart" >
                             <IconButton aria-label="show 17 new notifications" color="inherit">
+                                
                                 <Badge badgeContent={cartLength} color="secondary">
                                     <ShoppingCartIcon className={classes.navbar__ShoppingCartIcon} />
                                 </Badge>

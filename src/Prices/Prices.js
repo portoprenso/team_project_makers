@@ -1,17 +1,17 @@
 import React from 'react';
 import './Prices.css'
-import foto from '../assets/img/total-war-three-kingdoms.jpg'
-import foto2 from '../assets/img/nba-2k21.jpg'
-import foto3 from '../assets/img/assassins-creed-odyssey.jpg'
-import foto4 from '../assets/img/conan-exiles.webp'
+import foto from '../assets/img/kniga.jpg'
+import foto2 from '../assets/img/kniga2.jpg'
+import foto3 from '../assets/img/kniga3.jpg'
+
 
 const Prices = () => {
     return (
         <>
                  <section className="reduction-prices">
-                     <div className="container-fluid">
+                     <div className="container-fluid__contain">
                       <div className="reduction-prices__header">
-                          <h2 className="reduction-prices__title">Снижение цен</h2>
+                          <h2 className="reduction-prices__title">Популярные книги</h2>
                           <div className="reduction-prices__buttons section-arrows">
                               <div className="section-arrows__prev section-arrows__disabled"></div>
                               <div className="section-arrows__next"></div>
@@ -26,10 +26,10 @@ const Prices = () => {
                                   <div className="game__desc">
                                       <div className="game__price-overlay">
                                           <div className="game__price">
-                                              1395 $
+                                              
                                           </div>
                                           <div className="game__discount">
-                                              -44%
+                                              
                                           </div>
                                       </div>
                                   </div>
@@ -43,10 +43,10 @@ const Prices = () => {
                                   <div className="game__desc">
                                       <div className="game__price-overlay">
                                           <div className="game__price">
-                                              35 $
+                                              
                                           </div>
                                           <div className="game__discount">
-                                              -77%
+                                             
                                           </div>
                                       </div>
                                   </div>
@@ -60,36 +60,20 @@ const Prices = () => {
                                   <div className="game__desc">
                                       <div className="game__price-overlay">
                                           <div className="game__price">
-                                              112 $
+                                              
                                           </div>
                                           <div className="game__discount">
-                                              -73%
+                                            
                                           </div>
                                       </div>
                                   </div>
                               </a>
                           </div>
-                          <div className="game-list__item">
-                              <a href="" className="game">
-                                  <div className="game__image-wrapper">
-                                      <img className="game__image" src={foto4} alt="3SwitcheD"/> 
-                                  </div>
-                                  <div className="game__desc">
-                                      <div className="game__price-overlay">
-                                          <div className="game__price">
-                                              19$
-                                          </div>
-                                          <div className="game__discount">
-                                              -90%
-                                          </div>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
+                         
                       </div>
                      </div>
                  </section>
-                 <section className="page-text">
+                 {/* <section className="page-text">
                      <div className="container__fluid">
                          <div className="page-text__blocks">
                              <div className="page-text__content">
@@ -152,7 +136,7 @@ const Prices = () => {
                          </div>
                    
         
-                 </section>
+                 </section> */}
                  </>
     );
 };

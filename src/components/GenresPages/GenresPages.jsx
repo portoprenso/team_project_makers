@@ -43,7 +43,7 @@ const GenresPages = (props) => {
     )
     return (
             <Grid className={classes.productList__root} xs={11}>
-                <Typography className={classes.productCard__price} align="center" variant="h4" color="textPrimary">Ролевые игры</Typography>
+                <Typography className={classes.productCard__price} align="center" variant="h4" color="textPrimary">Мир аниме</Typography>
                 <Grid className={classes.productList__container}>
                     <Grid className={classes.productList__container__mainbar} container item xs={8} spacing={6}>
                         {

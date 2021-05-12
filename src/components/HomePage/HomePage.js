@@ -6,11 +6,13 @@ import ProductList from '../Products/ProductList';
 import Catalog1 from '../Products/Catalog1'
 import Catalog2 from '../Products/Catalog2'
 import MainCarousel from '../Carousel/Carousel';
+import Card2 from '../Card2/Card2';
 
 const HomePage = () => {
     return (
         <div>
             <MainCarousel/>
+            {/* <Card2/> */}
             <ProductList />
 
 

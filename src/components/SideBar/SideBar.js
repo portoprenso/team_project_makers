@@ -70,9 +70,9 @@ const SideBar = ({ history }) => {
             <FormControl component="fieldset">
             <FormLabel component="legend">Жанры</FormLabel>
             <RadioGroup value={genre} onChange={handleChangeGenre} aria-label="genre" name="genre1">
-                <FormControlLabel value="Экшены" control={<Radio />} label="Экшены" name="actions"/>
-                <FormControlLabel value="РПГ" control={<Radio />} label="РПГ" name="rpg"/>
-                <FormControlLabel value="Стратегии" control={<Radio />} label="Стратегии" name="strategy"/>
+                <FormControlLabel value="Книги" control={<Radio />} label="Книги" name="actions"/>
+                <FormControlLabel value="Аксессуары" control={<Radio />} label="Аксессуары" name="rpg"/>
+                <FormControlLabel value="Одежда" control={<Radio />} label="Одежда" name="strategy"/>
                 <FormControlLabel value="all" control={<Radio />} label="All" name="all"/>
             </RadioGroup>
 

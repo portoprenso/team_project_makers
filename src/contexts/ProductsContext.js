@@ -224,6 +224,7 @@ const ProductsContextProvider = ({ children }) => {
         await axios.delete(`${JSON_API}/${id}`)
         getProductsData(story)
     }
+    
 
 
     const [state, dispatch] = useReducer(reducer, INIT_STATE)

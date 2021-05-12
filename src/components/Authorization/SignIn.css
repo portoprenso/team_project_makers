@@ -1,12 +1,12 @@
 .hito{
     width: 100vw;
-    height: 720px;
+    height: 750px;
     margin: 0 auto;
     /* background: url('../../assets/img/hito.jpg'); */
     border-radius: 4px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../../assets/img/hito.jpg');
+    background-image: url('../../assets/img/anime-login.jpg');
     
   
     text-align: center;
@@ -64,7 +64,7 @@
     display: block;
   margin: 0 auto;
   width: 80%;
-  height: 45px;
+  height: 30px;
   border-radius: 10px;  
   border:none;
   outline: none;

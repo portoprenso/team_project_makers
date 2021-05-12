@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useRef, useState} from 'react';
 import './DashBoard.css'
-import Pro from './../../assets/img/hqdefault.jpg'
+import Pro from './../../assets/img/caitama.jpg'
 import { Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
@@ -108,7 +108,7 @@ const DashBoard = ({title, body}) => {
       <div className='fff'>
     <Card>
         <Card.Body>
-            <h2 className="text-center mb-4">Profile</h2>
+            <h2 className="text-center mb-4"></h2>
             <div className="card-container">
       <div className="card-content">
       <div className="image-container">

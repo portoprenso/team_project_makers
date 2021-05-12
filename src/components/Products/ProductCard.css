@@ -43,3 +43,13 @@
         align-self: unset !important;
     }
 }
+
+/* @media all and (max-width: 1000px){
+    .productss {
+       width: 320% !important;
+      
+      
+      
+       /* width: 159% !important; */
+
+       
